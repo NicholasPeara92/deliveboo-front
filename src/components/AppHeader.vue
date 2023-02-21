@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <div class="header_container">
+    <h2>Header</h2>
     <router-link :to="{ name: 'contact-us' }">Contatti</router-link>
   </div>
 </template>
@@ -10,4 +11,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.header_container{
+  border: 2px solid black;
+}
+</style>

@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div>
+    <h2 class="footer_container">Footer</h2>
+  </div>
 </template>
 
 <script>
@@ -8,4 +10,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.footer_container{
+  border: 2px solid black;
+}
+</style>
