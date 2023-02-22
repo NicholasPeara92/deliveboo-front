@@ -6,9 +6,14 @@
         <div>
             <img :src="restaurant.image" alt="">
         </div>
-        <ul>   
-            <li>Categoria: {{ restaurant.categories }} </li>
+        <ul>
             <li>Tel: {{ restaurant.telephone }}</li> 
+            <li>
+                <ul>
+                    <li v-for="category in restaurant.categories">{{ category }}</li>
+                </ul>
+            </li>
+            
         </ul>
         <a href="#">Guarda il menu</a>
     </div>
