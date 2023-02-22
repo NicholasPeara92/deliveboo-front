@@ -1,12 +1,19 @@
 <template>
-  <section>
-    <h1>Ristoranti:</h1>
-    <div class="restaurants_container">
-      <div v-for="restaurant in restaurants" class="restaurants_card">
+<h1>Ristoranti:</h1>
+<div class="restaurants-container">
+    <div v-for="restaurant in restaurants" class="restaurants-card">
         <h4>{{ restaurant.name }}</h4>
+        <div>
+            <img :src="restaurant.image" alt="">
+        </div>
         <ul>
-          <li>Tel: {{ restaurant.telephone }}</li>
-          <li>Categoria: {{ restaurant.category }}</li>
+            <li>Tel: {{ restaurant.telephone }}</li> 
+            <li>
+                <ul>
+                    <li v-for="category in restaurant.categories">{{ category }}</li>
+                </ul>
+            </li>
+            
         </ul>
         <a href="#">Guarda il menu</a>
       </div>
@@ -36,14 +43,17 @@ export default {
 </script>
 
 <style scoped>
-section {
-  padding-top: 100px;
+.restaurants-container{
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-.restaurants_container {
-  padding: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.restaurants-card{
+    min-width: 250px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid black;
 }
 .restaurants_card {
   min-width: 250px;
