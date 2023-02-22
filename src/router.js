@@ -2,8 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 // Pages
 import HomePage from "./pages/HomePage.vue";
-import ContactUs from "./pages/ContactUs.vue";
-import Restaurants from "./pages/Restaurants.vue"
+import Restaurants from "./pages/Restaurants.vue";
 import Page404 from "./pages/Page404.vue";
 
 const router = createRouter({
@@ -13,11 +12,6 @@ const router = createRouter({
       path: "/",
       name: "homepage",
       component: HomePage,
-    },
-    {
-      path: "/contatti",
-      name: "contact-us",
-      component: ContactUs,
     },
     {
       path: "/restaurants",
