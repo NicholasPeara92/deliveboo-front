@@ -31,11 +31,11 @@ export default {
       display: inline-block;
       padding: 20px 10px;
       text-decoration: none;
-      color: black;
+      color: white;
       font-weight: bold;
     }
     a:hover {
-      color: red;
+      color: #1eeabd;
     }
   }
 }

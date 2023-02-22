@@ -22,7 +22,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-header img {
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  background-color: transparent;
+}
+img {
   max-width: 150px;
   object-fit: contain;
 }
