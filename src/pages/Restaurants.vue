@@ -4,13 +4,15 @@
     <div v-for="restaurant in restaurants" class="restaurants-card">
       <h4>{{ restaurant.name }}</h4>
       <div>
-        <img :src="restaurant.image" alt="" />
+        <img width="100" :src="restaurant.image_url" alt="" />
       </div>
       <ul>
         <li>Tel: {{ restaurant.telephone }}</li>
         <li>
           <ul>
-            <li v-for="category in restaurant.categories">{{ category }}</li>
+            <li v-for="category in restaurant.categories">
+              {{ category.name }}
+            </li>
           </ul>
         </li>
       </ul>
