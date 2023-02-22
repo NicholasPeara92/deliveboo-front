@@ -1,5 +1,8 @@
 <template>
 <h1>Qui ci mettiamo i ristoranti</h1>
+<div>
+    <div v-for="restaurant in restaurants">{{ restaurant.name }}</div>
+</div>
 </template>
 
 <script>
@@ -14,13 +17,12 @@ export default {
         restaurants:[],
     };
   },
-
+  
   created() {
     axios.get(`${this.store.api_url}/restaurants`).then((response) => {
       this.restaurants = response.data;
     });
   },
-
 
 };
 </script>
