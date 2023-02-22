@@ -30,6 +30,10 @@ window.addEventListener('scroll', function() {
 </script>
 
 <style lang="scss" scoped>
+$primary-color: #00ccbc; // blu
+$secondary-color: #6c757d; // grigio scuro
+$font-color: #fff; // bianco
+
 header {
   position: fixed;
   top: 0;
@@ -50,15 +54,25 @@ img {
   object-fit: contain;
 }
 button {
-  margin-top: 10px;
-  border-radius: 10px;
-  padding: 10px 20px;
-  border: 1px solid gray;
-  background-color: white;
-  font-weight: bold;
-  margin-left: 5px;
+  margin-right:10px;
+  background-color: $primary-color;
+  color: $font-color;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+
+  &:active {
+    background-color: darken($primary-color, 20%);
+  }
   a{
-    color: black;
+    color: white;
     text-decoration: none;
     
   }

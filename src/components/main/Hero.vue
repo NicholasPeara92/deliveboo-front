@@ -16,6 +16,8 @@ export default {};
 
 <style lang="scss" scoped>
 .hero {
+  display: flex;
+  justify-content: center;
   position: relative;
   height: 600px;
   img {
@@ -27,7 +29,6 @@ export default {};
     text-align: center;
     position: absolute;
     bottom: 300px;
-    left: 31%;
     color: white;
 
     button {
