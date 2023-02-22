@@ -6,7 +6,7 @@
         Raggiungi più clienti con DeliveBoo! Gestiamo noi la consegna, così tu
         puoi dedicarti a offrire i migliori piatti e prodotti
       </h3>
-      <button><a href="http://127.0.0.1:8000/register"></a> Inizia ora!</button>
+      <button><a href="http://127.0.0.1:8000/register">inizia ora!</a></button>
     </div>
     <img src="../../assets/partner.PNG" alt="" />
   </section>
@@ -16,4 +16,5 @@
 export default {};
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+</style>
