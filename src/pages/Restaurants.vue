@@ -1,11 +1,14 @@
 <template>
 <h1>Ristoranti:</h1>
-<div class="restaurants_container">
-    <div v-for="restaurant in restaurants" class="restaurants_card">
+<div class="restaurants-container">
+    <div v-for="restaurant in restaurants" class="restaurants-card">
         <h4>{{ restaurant.name }}</h4>
-        <ul>
-            <li>Tel: {{ restaurant.telephone }}</li>           
-            <li>Categoria: {{ restaurant.category }}</li>
+        <div>
+            <img :src="restaurant.image" alt="">
+        </div>
+        <ul>   
+            <li>Categoria: {{ restaurant.categories }} </li>
+            <li>Tel: {{ restaurant.telephone }}</li> 
         </ul>
         <a href="#">Guarda il menu</a>
     </div>
@@ -35,13 +38,13 @@ export default {
 </script>
 
 <style scoped>
-.restaurants_container{
+.restaurants-container{
     padding: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.restaurants_card{
+.restaurants-card{
     min-width: 250px;
     padding: 10px;
     margin-bottom: 20px;
