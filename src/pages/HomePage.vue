@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>Home Page</h1>
+  <div class="container-fluid px-0">
+    <img src="../assets/Fast-food-hamburger-cola_5120x2880.jpg" alt="" />
   </div>
 </template>
 
@@ -10,4 +10,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+img {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+</style>
