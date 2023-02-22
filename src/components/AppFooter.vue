@@ -25,8 +25,8 @@ import { ref } from 'vue'
       <div class="lista">
         <ul>        
           <li><h5>Porta DeliveBoo con te</h5></li>
-          <li><a href="*"><img src="" alt="playstore"></a></li>
-          <li><a href="*"><img src="" alt="appstore"></a></li>
+          <li><a href="*"><img class="google" src="../assets/google.png" alt="playstore"></a></li>
+          <li><a href="*"><img class="apple" src="../assets/Apple 300x104.png" alt="appstore"></a></li>
         </ul>
       </div>
     </div>
@@ -56,6 +56,14 @@ import { ref } from 'vue'
           }
         a{
           color: #00cdbc;
+        }
+        .google{
+          width: 104px;
+          height: 40px;
+        }
+        .apple{
+          width: 104px;
+          height: 40px;
         }
       }
     }
