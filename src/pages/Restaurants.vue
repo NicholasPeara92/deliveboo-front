@@ -1,10 +1,13 @@
 <template>
   <h1>Ristoranti:</h1>
   <div class="restaurants-container">
-    <div v-for="restaurant in restaurants" class="restaurants-card">
+    <div
+      v-for="restaurant in restaurants"
+      class="restaurants-card d-flex flex-column justify-content-center align-items-center"
+    >
       <h4>{{ restaurant.name }}</h4>
       <div>
-        <img width="100" :src="restaurant.image_url" alt="" />
+        <img width="100" class="my-3" :src="restaurant.image_url" alt="" />
       </div>
       <ul>
         <li>Tel: {{ restaurant.telephone }}</li>
