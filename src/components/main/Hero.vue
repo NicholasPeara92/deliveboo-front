@@ -1,8 +1,11 @@
 <template>
   <section class="hero">
-    <router-link :to="{ name: 'restaurants' }">
-      <button>VAI AI RISTORANTI</button>
-    </router-link>
+    <div class="hero-content">
+      <h1>Ipiatti dei ristoranti che ami, a domicilio</h1>
+      <router-link :to="{ name: 'restaurants' }">
+        <button>VAI AI RISTORANTI</button>
+      </router-link>
+    </div>
     <img src="../../assets/Fast-food-hamburger-cola_5120x2880.jpg" alt="" />
   </section>
 </template>
@@ -20,16 +23,22 @@ export default {};
     height: 100%;
     object-fit: cover;
   }
-  button {
+  .hero-content {
+    text-align: center;
     position: absolute;
-    bottom: 150px;
-    left: 48%;
-    border-radius: 20px;
-    padding: 10px 20px;
-    border: 1px solid #1eeabd;
-    background-color: #1eeabd;
+    bottom: 300px;
+    left: 33%;
     color: white;
-    font-weight: bold;
+
+    button {
+      margin-top: 50px;
+      border-radius: 20px;
+      padding: 10px 20px;
+      border: 1px solid #1eeabd;
+      background-color: #1eeabd;
+      color: white;
+      font-weight: bold;
+    }
   }
 }
 </style>
