@@ -1,26 +1,28 @@
 <template>
-  <h1>Ristoranti:</h1>
-  <div class="restaurants-container">
-    <div
-      v-for="restaurant in restaurants"
-      class="restaurants-card d-flex flex-column justify-content-center align-items-center"
-    >
-      <h4>{{ restaurant.name }}</h4>
-      <div>
-        <img width="100" class="my-3" :src="restaurant.image_url" alt="" />
+  <div class="container">
+    <h1>Ristoranti:</h1>
+    <div class="restaurants-container">
+      <div
+        v-for="restaurant in restaurants"
+        class="restaurants-card d-flex flex-column justify-content-center align-items-center"
+      >
+        <h4>{{ restaurant.name }}</h4>
+        <div>
+          <img width="100" class="my-3" :src="restaurant.image_url" alt="" />
+        </div>
+        <ul>
+          <li>Tel: {{ restaurant.telephone }}</li>
+          <li>
+            Categorie:
+            <ul>
+              <li v-for="category in restaurant.categories">
+                {{ category.name }}
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <a href="#">Guarda il menu</a>
       </div>
-      <ul>
-        <li>Tel: {{ restaurant.telephone }}</li>
-        <li>
-          Categorie:
-          <ul>
-            <li v-for="category in restaurant.categories">
-              {{ category.name }}
-            </li>
-          </ul>
-        </li>
-      </ul>
-      <a href="#">Guarda il menu</a>
     </div>
   </div>
 </template>
