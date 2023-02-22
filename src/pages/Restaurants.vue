@@ -21,7 +21,9 @@
             </ul>
           </li>
         </ul>
-        <a href="#">Guarda il menu</a>
+        <!-- <router-link :to="{ name: 'menu' }">Guarda il menu</router-link> -->
+
+        <router-link :to="{ name: 'menu', params: { slug: restaurant.slug } }">Guarda il menu</router-link>
       </div>
     </div>
   </div>
