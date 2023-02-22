@@ -25,8 +25,8 @@ import { ref } from 'vue'
       <div class="lista">
         <ul>        
           <li><h5>Porta DeliveBoo con te</h5></li>
-          <li><a href="*">PlayStore</a></li>
-          <li><a href="*">AppStore</a></li>
+          <li><a href="*"><img src="" alt="playstore"></a></li>
+          <li><a href="*"><img src="" alt="appstore"></a></li>
         </ul>
       </div>
     </div>
@@ -45,8 +45,9 @@ import { ref } from 'vue'
     .lista{
       align-items:center; 
       color: white;
-      padding-top: 50px ;
+      padding-top: 50px;
         ul{
+          padding-top: 20px ;
           background-color: #434848;
           list-style-type: none;
           height: 150px;
