@@ -36,15 +36,14 @@ $font-color: #fff; // bianco
 
 header {
   position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
+  width: 100%;
   z-index: 100;
   background-color: transparent;
   @media only screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content:flex-end;
+    background-color: opacify($color: #000000, $amount: 1);
   }
     &.scrolled {     background-color: #2E3333;   }    
 }

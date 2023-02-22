@@ -20,6 +20,7 @@ export default {};
   justify-content: center;
   position: relative;
   height: 600px;
+  
   img {
     width: 100%;
     height: 100%;
@@ -28,7 +29,10 @@ export default {};
   .hero-content {
     text-align: center;
     position: absolute;
-    bottom: 300px;
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;
+    flex-direction: column;
     color: white;
 
     button {
