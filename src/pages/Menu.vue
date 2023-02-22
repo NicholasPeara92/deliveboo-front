@@ -1,8 +1,17 @@
 <template>
   <h3>Menu</h3>
-  <div v-for="product in restaurant.products">
-    <h6>{{ product.name }}</h6>
+  <div class="menu-container">
+    
+    <div v-for="product in restaurant.products" class="product-card">
+        <div class="product-image-box">
+            <img :src="product.image_url" alt="{{ product.name }}">
+        </div>
+        <h5>{{ product.name }}</h5>
+        <h6>{{ product.type }}</h6>
+        <strong>{{ product.price }}€</strong>
+    </div>
   </div>
+  
 </template>
 
 <script>
@@ -28,4 +37,24 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.menu-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px;
+}
+.product-card{
+    border: 1px solid black;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.product-image-box{
+    max-width: 300px;
+}
+.product-image-box img{
+    width: 100%;
+    height: 100px;
+    display: block;
+}
+</style>
