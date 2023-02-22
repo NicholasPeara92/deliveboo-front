@@ -74,7 +74,7 @@ export default {};
 
 <style lang="scss" scoped>
 #about {
-  background-color: black;
+  background-color: #2E3333;
   position: relative;
   z-index: 2;
   width: 100%;

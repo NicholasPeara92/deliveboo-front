@@ -24,7 +24,6 @@ export default {
   ul {
     display: flex;
     list-style: none;
-    justify-content: center;
     margin-bottom: 0;
     padding-left: 0;
     a {

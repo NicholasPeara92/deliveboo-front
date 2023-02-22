@@ -19,6 +19,14 @@ export default {
     HeaderNav,
   },
 };
+window.addEventListener('scroll', function() {
+  let navbar = document.querySelector('header');
+  if (window.scrollY > 50) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
 </script>
 
 <style lang="scss" scoped>
@@ -29,7 +37,14 @@ header {
   left: 0;
   z-index: 100;
   background-color: transparent;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+    &.scrolled {     background-color: #2E3333;   }    
 }
+
 img {
   max-width: 150px;
   object-fit: contain;
@@ -48,4 +63,7 @@ button {
     
   }
 }
+
+
+
 </style>

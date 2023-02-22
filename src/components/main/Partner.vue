@@ -17,21 +17,23 @@ export default {};
 
 <style lang="scss" scoped>
 .partner {
-  background-color: white;
-  position: relative;
-  height: 900px;
+    padding: 100px;
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    position: relative;
+    height: 1000px;
+
 
   .section {
     background-image: url(../../assets/partner.PNG);
-    max-width: 1200px;
     text-align: center;
     position: absolute;
     top: 100px;
-    left: 40%;
-    width: 900px;
-    height: 600px;
-    border-radius: 50px;
-    background-position: center;
+    width: 1600px;
+    height: 800px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px rgba(1, 1, 1, 0.75);
 
     h3 {
       margin-top: 100px;

@@ -25,25 +25,24 @@ import { ref } from 'vue'
                         </ul>
                     </div>
                     <div class="col-sm-4 col-md-3 item">
-                        <h3>Porta con te DeliveBoo</h3>
+                        <h5>Porta con te DeliveBoo</h5>
                         <ul>
                           <li><a href="*"><img class="google" src="../assets/google.png" alt="playstore"></a></li>
                           <li><a href="*"><img class="apple" src="../assets/Apple 300x104.png" alt="appstore"></a></li> 
                         </ul>
                     </div>
-                    <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                    <div class="col-lg-3 item social"><a href="#"><i class="fa-brands fa-facebook-f"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-instagram"></i></a>
                         <p class="copyright">DeliveBoo  © classe 76 - 2023</p>
                     </div>
                 </div>
             </div>
     </div>
 </template>
-<!--------------------------------->
+
 <style lang="scss" scoped>
 .body {
   padding:50px 0;
-  background-color:#4b4c4d;
-  color:#fff;
+  background-color:#2E3333;
 }
 
 .body h3 {
@@ -61,10 +60,22 @@ ul {
   margin-bottom:0;
 }
 
+h5{
+  color: white;
+}
+
+p{
+  color:white;
+}
+
+i{
+  color: white;
+}
 ul a {
   color:inherit;
   text-decoration:none;
   opacity:0.8;
+  color: #00ccbc
 }
 
 ul a:hover {
