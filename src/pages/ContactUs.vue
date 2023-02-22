@@ -1,6 +1,22 @@
 <template>
-  <div>
-    <h1>Contatti</h1>
+  <div class="background">
+    <header class="hero">
+      <div class="contact">
+        <div class="back"></div>
+      </div>
+      <div class="headerhero">
+        <div class="title">
+          <h1>Contatti</h1>
+        </div>
+      </div>
+    </header>
+    <div class="table">
+      <div class="answer">
+        <div>
+          <h2>Domande per il costumer service</h2>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -10,4 +26,54 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.background {
+  background-color: #f9fafa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  .hero {
+    position: relative;
+    color: #fff;
+    .contact {
+      bottom: -150px;
+      position: absolute;
+      width: 100%;
+      .back {
+        background-color: #007e8a;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 1000px;
+        background: #007e8a;
+        transform: skewY(-6deg);
+        transform-origin: 50%;
+      }
+    }
+  }
+  .headerhero {
+    position: relative;
+    margin-top: 100px;
+    .title {
+      padding: 0 65px;
+      text-align: center;
+      h1 {
+        color: #fff;
+        font-size: 40px;
+        line-height: 48px;
+      }
+    }
+  }
+  .table {
+    width: 50%;
+    padding: 0 65px;
+    position: relative;
+    .answer {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 35px;
+      color: black;
+    }
+  }
+}
+</style>
