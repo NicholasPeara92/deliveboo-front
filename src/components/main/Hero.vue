@@ -1,7 +1,7 @@
 <template>
   <section class="hero">
     <div class="hero-content">
-      <h1>Ipiatti dei ristoranti che ami, a domicilio</h1>
+      <h1>I piatti dei ristoranti che ami, a domicilio</h1>
       <router-link :to="{ name: 'restaurants' }">
         <button>VAI AI RISTORANTI</button>
       </router-link>
