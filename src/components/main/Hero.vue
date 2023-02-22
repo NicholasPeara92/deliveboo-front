@@ -28,11 +28,8 @@ export default {};
     padding: 10px 20px;
     border: 1px solid #1eeabd;
     background-color: #1eeabd;
-    a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+    color: white;
+    font-weight: bold;
   }
 }
 </style>
