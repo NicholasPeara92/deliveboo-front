@@ -5,7 +5,8 @@
     </router-link>
     <HeaderNav />
     <div class="header-buttons">
-      <button>bottone</button>
+      <button><a href="http://127.0.0.1:8000/register">Registrati</a></button>
+      <button><a href="http://127.0.0.1:8000/login">Log in</a></button>
     </div>
   </header>
 </template>
