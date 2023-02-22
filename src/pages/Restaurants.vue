@@ -9,6 +9,7 @@
       <ul>
         <li>Tel: {{ restaurant.telephone }}</li>
         <li>
+          Categorie:
           <ul>
             <li v-for="category in restaurant.categories">
               {{ category.name }}
