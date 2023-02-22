@@ -5,66 +5,132 @@ import { ref } from 'vue'
 
 <!--------------------------------->
 <template>
-  <div class="body">
-    <div class="container">
-      <div class="lista">
-        <ul>
-          <li><h5>Scopri DeliveBoo</h5></li>
-          <li><a href="*">Chi siamo</a></li>
-          <li><a href="*">Ristoranti</a></li>
-          <li><a href="*">Diventa Nostro partner</a></li>
-        </ul>
-      </div>
-      <div class="lista">
-        <ul>
-          <li><h5>Aiuto</h5></li>
-          <li><a href="*">Contatti</a></li>
-          <li><a href="*">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="lista">
-        <ul>        
-          <li><h5>Porta DeliveBoo con te</h5></li>
-          <li><a href="*"><img class="google" src="../assets/google.png" alt="playstore"></a></li>
-          <li><a href="*"><img class="apple" src="../assets/Apple 300x104.png" alt="appstore"></a></li>
-        </ul>
-      </div>
+    <div class="body">
+      
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                      <h5>Scopri DeliveBoo</h5>
+                        <ul>
+                          <li><a href="*">Chi siamo</a></li>
+                          <li><a href="*">Ristoranti</a></li>
+                          <li><a href="*">Diventa Nostro partner</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                      <h5>Aiuto</h5>
+                        <ul>
+                          <li><a href="*">Contatti</a></li>
+                          <li><a href="*">FAQ</a></li>      
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 col-md-3 item">
+                        <h3>Porta con te DeliveBoo</h3>
+                        <ul>
+                          <li><a href="*"><img class="google" src="../assets/google.png" alt="playstore"></a></li>
+                          <li><a href="*"><img class="apple" src="../assets/Apple 300x104.png" alt="appstore"></a></li> 
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 item social"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+                        <p class="copyright">DeliveBoo  © classe 76 - 2023</p>
+                    </div>
+                </div>
+            </div>
     </div>
-  </div>
 </template>
 <!--------------------------------->
 <style lang="scss" scoped>
-.body{
-  background-color: #2e3333;
-  overflow: hidden;
-  height: 300px;
+.body {
+  padding:50px 0;
+  background-color:#4b4c4d;
+  color:#fff;
 }
-.container{
-  display: flex;
-  justify-content: space-between;
-    .lista{
-      align-items:center; 
-      color: white;
-      padding-top: 50px;
-        ul{
-          padding-top: 20px ;
-          background-color: #434848;
-          list-style-type: none;
-          height: 150px;
-          width: 250px;
-          margin-top: 20px;
-          }
-        a{
-          color: #00cdbc;
-        }
-        .google{
-          width: 104px;
-          height: 40px;
-        }
-        .apple{
-          width: 104px;
-          height: 40px;
-        }
-      }
-    }
+
+.body h3 {
+  margin-top:0;
+  margin-bottom:12px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.8;
+}
+
+ul a:hover {
+  opacity:1;
+}
+
+.item.social {
+  text-align:right;
+}
+
+@media (max-width:767px) {
+  .body .item {
+    text-align:center;
+    padding-bottom:20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .body .item.social {
+    text-align:center;
+  }
+}
+
+.body .item.social > a {
+  font-size:24px;
+  width:40px;
+  height:40px;
+  line-height:40px;
+  display:inline-block;
+  text-align:center;
+  border-radius:50%;
+  border:1px solid #ccc;
+  margin-left:10px;
+  margin-top:22px;
+  color:inherit;
+  opacity:0.75;
+}
+
+.body .item.social > a:hover {
+  opacity:0.9;
+}
+
+@media (max-width:991px) {
+  .body .item.social > a {
+    margin-top:40px;
+  }
+}
+
+@media (max-width:767px) {
+  .body .item.social > a {
+    margin-top:10px;
+  }
+}
+
+.body .copyright {
+  margin-top:14px;
+  margin-bottom:0;
+  font-size:13px;
+  opacity:0.6;
+}
+.google{
+  width: 104px;
+  height: 40px;
+  }
+.apple{
+  width: 104px;
+  height: 40px;
+}
 </style>

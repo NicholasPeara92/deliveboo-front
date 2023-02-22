@@ -14,6 +14,30 @@
       <div class="answer">
         <div>
           <h2>Domande per il costumer service</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quidem
+            obcaecati accusamus laudantium voluptates nostrum provident,
+            necessitatibus sint ab. Ullam ducimus laboriosam, sequi veritatis
+            quas suscipit commodi eligendi sit porro. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Officiis, placeat. Cum delectus fuga
+            sapiente omnis laudantium similique voluptatem ea totam temporibus
+            sit veniam cumque dolorem voluptatum, unde necessitatibus laborum
+            quam. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Perferendis dolor magni amet obcaecati odit? Illo, est, illum nobis
+            voluptas itaque similique, inventore in deleniti corrupti at odit
+            veritatis atque nulla? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Recusandae eius, vitae libero accusantium
+            consequatur cupiditate debitis dolore voluptatum suscipit
+            exercitationem harum ipsum assumenda eveniet praesentium temporibus
+            possimus laboriosam modi ea. Lorem ipsum, dolor sit amet consectetur
+            adipisicing elit. Consectetur dolores earum nostrum non aspernatur
+            quam dolore ut quo error. Sint quisquam ut quo voluptates expedita,
+            assumenda earum iusto minima illum? Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. In voluptatum sit, expedita
+            dignissimos laboriosam voluptas provident omnis impedit libero sed
+            voluptate, quo neque nostrum excepturi tempora voluptatem commodi
+            debitis recusandae!
+          </p>
         </div>
       </div>
     </div>
@@ -31,7 +55,7 @@ export default {
   background-color: #f9fafa;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 70vh;
   .hero {
     position: relative;
     color: #fff;
@@ -40,7 +64,7 @@ export default {
       position: absolute;
       width: 100%;
       .back {
-        background-color: #00ccbc;
+        background-color: #007e8a;
         width: 100%;
         height: 500px;
         transform: skewY(-6deg);
@@ -62,14 +86,21 @@ export default {
     }
   }
   .table {
-    width: 50%;
+    width: 100%;
     padding: 0 65px;
     position: relative;
+    display: flex;
+    justify-content: center;
+
     .answer {
       display: flex;
       justify-content: center;
       margin-bottom: 35px;
       color: black;
+      width: 80%;
+      background-color: #f9fafa;
+      border-radius: 7px;
+      box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     }
   }
 }
