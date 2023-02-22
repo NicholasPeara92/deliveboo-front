@@ -5,7 +5,6 @@
     </router-link>
     <HeaderNav />
     <div class="header-buttons">
-      <AppButton />
       <button>bottone</button>
     </div>
   </header>

@@ -1,19 +1,17 @@
 <template>
   <div class="container-fluid px-0">
-    <img src="../assets/Fast-food-hamburger-cola_5120x2880.jpg" alt="" />
+    <Hero />
   </div>
 </template>
 
 <script>
+import Hero from "../components/main/Hero.vue";
 export default {
   name: "HomePage",
+  components: {
+    Hero,
+  },
 };
 </script>
 
-<style lang="scss" scoped>
-img {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-}
-</style>
+<style lang="scss" scoped></style>
