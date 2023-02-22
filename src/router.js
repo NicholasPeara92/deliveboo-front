@@ -3,7 +3,8 @@ import { createRouter, createWebHistory } from "vue-router";
 // Pages
 import HomePage from "./pages/HomePage.vue";
 import ContactUs from "./pages/ContactUs.vue";
-import Restaurants from "./pages/Restaurants.vue"
+import Restaurants from "./pages/Restaurants.vue";
+import Menu from "./pages/Menu.vue";
 import Page404 from "./pages/Page404.vue";
 
 const router = createRouter({
@@ -23,6 +24,11 @@ const router = createRouter({
       path: "/restaurants",
       name: "restaurants",
       component: Restaurants,
+    },
+    {
+      path: "/menu/:slug",
+      name: "menu",
+      component: Menu,
     },
     {
       path: "/:pathMatch(.*)*",
