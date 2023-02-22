@@ -1,8 +1,8 @@
 <template>
   <header class="d-flex justify-content-between py-3 px-4">
-    <a href="">
+    <router-link :to="{ name: 'homepage' }">
       <img src="../assets/deliverboo.png" alt="" />
-    </a>
+    </router-link>
     <HeaderNav />
     <div class="header-buttons">
       <AppButton />
