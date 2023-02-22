@@ -27,15 +27,15 @@ export default {};
     text-align: center;
     position: absolute;
     bottom: 300px;
-    left: 33%;
+    left: 31%;
     color: white;
 
     button {
       margin-top: 50px;
       border-radius: 20px;
       padding: 10px 20px;
-      border: 1px solid #1eeabd;
-      background-color: #1eeabd;
+      border: 1px solid #00ccbc;
+      background-color: #00ccbc;
       color: white;
       font-weight: bold;
     }
