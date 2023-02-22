@@ -27,7 +27,7 @@ export default {};
     text-align: center;
     position: absolute;
     bottom: 300px;
-    left: 33%;
+    left: 31%;
     color: white;
 
     button {
