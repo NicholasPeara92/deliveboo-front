@@ -1,7 +1,7 @@
 <template>
   <section id="about" class="py-4">
     <div class="container text-center">
-      <h3 class="mb-4">Il nostro team</h3>
+      <h3 class="mb-4 text-white">Il nostro team</h3>
       <div class="row">
         <div class="col">
           <div class="card">
@@ -74,7 +74,10 @@ export default {};
 
 <style lang="scss" scoped>
 #about {
-  background-color: #00ccbc;
+  background-color: black;
+  position: relative;
+  z-index: 2;
+  width: 100%;
 }
 img {
   max-width: 80px;

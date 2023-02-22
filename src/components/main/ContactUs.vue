@@ -40,12 +40,9 @@ export default {
       position: absolute;
       width: 100%;
       .back {
-        background-color: #007e8a;
-        position: absolute;
-        bottom: 0;
+        background-color: #00ccbc;
         width: 100%;
-        height: 1000px;
-        background: #007e8a;
+        height: 500px;
         transform: skewY(-6deg);
         transform-origin: 50%;
       }
