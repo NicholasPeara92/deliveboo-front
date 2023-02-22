@@ -3,7 +3,7 @@
     <div class="section">
       <h1>Diventa nostro partner!</h1>
       <h3>
-        Raggiungi più clienti con DeliveBoo! Gestiamo noi la consegna <br>, così tu
+        Raggiungi più clienti con DeliveBoo! Gestiamo noi la consegna <br> così tu
         puoi dedicarti a offrire i migliori piatti e prodotti
       </h3>
       <button><a href="http://127.0.0.1:8000/register">inizia ora!</a></button>
@@ -37,9 +37,11 @@ export default {};
         padding: 10px 20px;
         border: 1px solid #00ccbc;
         background-color: #00ccbc;
-        color: white;
         font-weight: bold;
-
+        a{
+            color: white;
+            text-decoration: none;
+        }
         }
     }
 }

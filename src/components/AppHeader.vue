@@ -34,4 +34,18 @@ img {
   max-width: 150px;
   object-fit: contain;
 }
+button {
+  margin-top: 50px;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: 1px solid gray;
+  background-color: white;
+  font-weight: bold;
+  margin-left: 5px;
+  a{
+    color: black;
+    text-decoration: none;
+    
+  }
+}
 </style>
