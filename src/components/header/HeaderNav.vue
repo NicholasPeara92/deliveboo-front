@@ -30,11 +30,11 @@ export default {
       display: inline-block;
       padding: 20px 10px;
       text-decoration: none;
-      color: white;
+      color: #00ccbc;
       font-weight: bold;
     }
     a:hover {
-      color: #00ccbc;
+      color: darken(#00ccbc, 10%);
     }
   }
 }
