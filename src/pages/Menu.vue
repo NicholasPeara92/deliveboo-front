@@ -1,32 +1,3 @@
-<template>
-  <div class="container mt-5">
-    <h3 class="pt-5">Menu</h3>
-    <input
-      type="text"
-      placeholder="Inserisci il nome"
-      v-model="searchProductName"
-    />
-    <select v-model="searchProductType" name="type" id="type">
-      <option value="">Nessuna Tipologia</option>
-      <option v-for="type in typeList">{{ type }}</option>
-    </select>
-    <div class="menu-container">
-      <div
-        v-for="(product, index) in productList"
-        :key="index"
-        class="product-card"
-      >
-        <div class="product-image-box">
-          <img :src="product.image_url" alt="{{ product.name }}" />
-        </div>
-        <h5>{{ product.name }}</h5>
-        <h6>{{ product.type }}</h6>
-        <strong>{{ product.price }}€</strong>
-      </div>
-    </div>
-  </div>
-</template>
-
 <script>
 import axios from "axios";
 import { store } from "../store";
@@ -85,6 +56,34 @@ export default {
 };
 </script>
 
+<template>
+  <div class="container mt-5">
+    <h3 class="pt-5">Menu</h3>
+    <input
+      type="text"
+      placeholder="Inserisci il nome"
+      v-model="searchProductName"
+    />
+    <select v-model="searchProductType" name="type" id="type">
+      <option value="">Nessuna Tipologia</option>
+      <option v-for="type in typeList">{{ type }}</option>
+    </select>
+
+    <div class="menu-container">
+      <div v-for="(product, index) in productList" :key="index" class="product-card">
+        <div class="product-image-box">
+          <img :src="product.image_url" alt="{{ product.name }}" />
+        </div>
+        <div class="body">
+          <h5>{{ product.name }}</h5>
+          <h6>{{ product.type }}</h6>
+        </div>
+        <strong>{{ product.price }}€</strong>
+      </div>
+    </div>
+  </div>
+</template>
+
 <style>
 .menu-container {
   display: flex;
@@ -98,7 +97,7 @@ export default {
   margin-bottom: 10px;
 }
 .product-image-box {
-  max-width: 300px;
+  width: 210px;
 }
 .product-image-box img {
   width: 100%;
