@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="text-center"><strong>RISTORANTI</strong></h1>
+    <h1 class="text-center py-sm-5"><strong>RISTORANTI</strong></h1>
     <div class="d-flex justify-content-center my-5">
       <input
         type="text"
@@ -17,10 +17,10 @@
         <option v-for="category in categories">{{ category.name }}</option>
       </select>
     </div>
-    <div class="restaurants-container">
+    <div class="d-flex justify-content-around flex-wrap m-3">
       <!-- CARD -->
       <div
-        class="card mb-3 px-1 py-1"
+        class="card mb-3 mx-1 py-1"
         style="max-width: 540px"
         v-for="(restaurant, index) in restaurantList"
         :key="index"
@@ -35,7 +35,7 @@
           </div>
           <div class="col-md-8 position-relative">
             <div class="card-body">
-              <h5 class="card-title">{{ restaurant.name }}</h5>
+              <h5 class="ms-card-title card-title">{{ restaurant.name }}</h5>
               <p class="card-text">
                 This is a wider card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
@@ -139,12 +139,6 @@ export default {
 .container {
   margin-top: 120px;
 }
-.restaurants-container {
-  padding: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 .restaurants-card {
   min-width: 250px;
   padding: 10px;
@@ -162,26 +156,8 @@ export default {
   object-fit: contain;
 }
 
-button {
-  margin-right: 10px;
-  background-color: $primary-color;
-  color: $font-color;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-  &:hover {
-    background-color: darken($primary-color, 10%);
-  }
-
-  &:active {
-    background-color: darken($primary-color, 20%);
-  }
-  a {
-    color: white;
-    text-decoration: none;
-  }
+.ms-card-title {
+  text-transform: uppercase;
+  font-weight: bold;
 }
 </style>
