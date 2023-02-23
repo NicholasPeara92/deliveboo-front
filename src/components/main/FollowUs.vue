@@ -9,13 +9,15 @@
             Vedrai quando il rider ha ritirato l'ordine, che potrai seguire
             passo passo, e riceverai una notifica quando sarà quasi da te.
           </p>
-          <a href="https://www.apple.com/it/app-store/"
+          <a
+            href="https://apps.apple.com/it/app/deliveroo-food-delivery-app/id1001501844"
             ><img
               class="apple"
               src="../../assets/Apple 300x104.png"
               alt="appstore"
           /></a>
-          <a href="https://play.google.com/store/games?hl=it&gl=US"
+          <a
+            href="https://play.google.com/store/apps/details?id=com.deliveroo.orderapp&hl=it&gl=US"
             ><img class="google" src="../../assets/google.png" alt="playstore"
           /></a>
         </div>
