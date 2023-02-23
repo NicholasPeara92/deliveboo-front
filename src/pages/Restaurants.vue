@@ -12,9 +12,7 @@
       id="type"
       @onChange="myChangeEvent()"
     >
-      <option v-for="type in restaurantList">
-        {{ type.name }}
-      </option>
+      <option v-for="type in restaurantList">{{ type.type }}</option>
     </select>
     <div class="restaurants-container">
       <div
@@ -22,7 +20,7 @@
         :key="index"
         class="restaurants-card d-flex flex-column justify-content-center align-items-center"
       >
-        <h4>{{ restaurant.name }}</h4>
+        <h4>{{ restaurant.type }}</h4>
         <div>
           <img width="100" class="my-3" :src="restaurant.image_url" alt="" />
         </div>
@@ -59,16 +57,14 @@ export default {
       restaurants: [],
       searchRestaurantName: "",
       searchRestaurantType: "",
-      result: "",
     };
   },
   methods: {
     myChangeEvent(val) {
       console.log(this.newArray);
-      this.newArray = this.restaurantList.filter(
+      this.newArray = this.restaurant.filter(
         (restaurant) => restaurant.type === val
       );
-      console.log(this.newArray);
     },
   },
 
@@ -78,11 +74,12 @@ export default {
     });
   },
   computed: {
+    typeList() {
+      this.types = [];
+      this.restaurant.forEach((element) => {});
+    },
     restaurantList() {
-      if (
-        this.searchRestaurantName.length > 0 ||
-        this.searchRestaurantType.length > 0
-      ) {
+      if (this.searchRestaurantName.length > 0) {
         this.result = this.restaurants.filter((restaurant) =>
           restaurant.name.toLowerCase().includes(this.searchRestaurantName)
         );
