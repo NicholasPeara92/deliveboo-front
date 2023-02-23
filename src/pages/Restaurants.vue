@@ -6,6 +6,16 @@
       placeholder="Inserisci il nome"
       v-model="searchRestaurantName"
     />
+    <select
+      v-model="searchRestaurantType"
+      name="type"
+      id="type"
+      @onChange="myChangeEvent()"
+    >
+      <option v-for="type in restaurantList">
+        {{ type.name }}
+      </option>
+    </select>
     <div class="restaurants-container">
       <div
         v-for="(restaurant, index) in restaurantList"
@@ -48,7 +58,18 @@ export default {
       store,
       restaurants: [],
       searchRestaurantName: "",
+      searchRestaurantType: "",
+      result: "",
     };
+  },
+  methods: {
+    myChangeEvent(val) {
+      console.log(this.newArray);
+      this.newArray = this.restaurantList.filter(
+        (restaurant) => restaurant.type === val
+      );
+      console.log(this.newArray);
+    },
   },
 
   created() {
@@ -58,11 +79,17 @@ export default {
   },
   computed: {
     restaurantList() {
-      if (this.searchRestaurantName.length > 0) {
-        console.log(this.restaurants);
-        return this.restaurants.filter((restaurant) =>
+      if (
+        this.searchRestaurantName.length > 0 ||
+        this.searchRestaurantType.length > 0
+      ) {
+        this.result = this.restaurants.filter((restaurant) =>
           restaurant.name.toLowerCase().includes(this.searchRestaurantName)
         );
+        // this.result = this.result.filter(
+        //   (restaurant) => restaurant.type === this.searchRestaurantType
+        // );
+        return this.result;
       } else {
         return this.restaurants;
       }
