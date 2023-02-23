@@ -14,29 +14,26 @@
       <div class="answer">
         <div>
           <h2>Domande per il costumer service</h2>
+          <h6>Domande sul tuo ordine?</h6>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quidem
-            obcaecati accusamus laudantium voluptates nostrum provident,
-            necessitatibus sint ab. Ullam ducimus laboriosam, sequi veritatis
-            quas suscipit commodi eligendi sit porro. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Officiis, placeat. Cum delectus fuga
-            sapiente omnis laudantium similique voluptatem ea totam temporibus
-            sit veniam cumque dolorem voluptatum, unde necessitatibus laborum
-            quam. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Perferendis dolor magni amet obcaecati odit? Illo, est, illum nobis
-            voluptas itaque similique, inventore in deleniti corrupti at odit
-            veritatis atque nulla? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Recusandae eius, vitae libero accusantium
-            consequatur cupiditate debitis dolore voluptatum suscipit
-            exercitationem harum ipsum assumenda eveniet praesentium temporibus
-            possimus laboriosam modi ea. Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Consectetur dolores earum nostrum non aspernatur
-            quam dolore ut quo error. Sint quisquam ut quo voluptates expedita,
-            assumenda earum iusto minima illum? Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. In voluptatum sit, expedita
-            dignissimos laboriosam voluptas provident omnis impedit libero sed
-            voluptate, quo neque nostrum excepturi tempora voluptatem commodi
-            debitis recusandae!
+            Siamo qui per aiutarti! Mandaci una email a
+            <a href="">support@deliveboo.it</a>
+          </p>
+          <h2>Contatti Media</h2>
+          <p>
+            Per le interviste o altre richieste media, per favore scrivi una
+            mail a <a href="">press@deliveboo.it</a>
+          </p>
+          <p>
+            Purtroppo l'ufficio stampa non ha accesso alle informazioni sugli
+            account, quindi non può essere d'aiuto con le richieste dei clienti.
+            Si prega di contattare il servizio clienti.
+          </p>
+          <p>
+            <em
+              >Sede legale: Deliveboo Italy S.R.L. Via Fabio Filzi 83
+              Castellaneta (TA) 74011</em
+            >
           </p>
         </div>
       </div>
@@ -93,13 +90,18 @@ export default {
 
     .answer {
       display: flex;
+      padding: 30px;
       justify-content: center;
       margin-bottom: 35px;
       color: black;
-      width: 80%;
+      width: 70%;
       background-color: #f9fafa;
       border-radius: 7px;
       box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+      a {
+        text-decoration: none;
+        color: #00a396;
+      }
     }
   }
 }
