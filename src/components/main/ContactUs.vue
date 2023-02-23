@@ -6,20 +6,20 @@
       </div>
       <div class="headerhero">
         <div class="title">
-          <h1>Contatti</h1>
+          <h1>Contattaci</h1>
         </div>
       </div>
     </header>
     <div class="table">
       <div class="answer">
         <div>
-          <h2>Domande per il costumer service</h2>
+          <h2><strong>Domande Per Il Customer Service</strong></h2>
           <h6>Domande sul tuo ordine?</h6>
           <p>
             Siamo qui per aiutarti! Mandaci una email a
             <a href="mailto:press@deliveboo.it">support@deliveboo.it</a>
           </p>
-          <h2>Contatti Media</h2>
+          <h2><strong>Contatti Media</strong></h2>
           <p>
             Per le interviste o altre richieste media, per favore scrivi una
             mail a <a href="mailto:press@deliveboo.it">press@deliveboo.it</a>
@@ -70,9 +70,10 @@ export default {
   }
   .headerhero {
     position: relative;
-    margin-top: 100px;
+    margin-top: 50px;
     .title {
       padding: 0 65px;
+      margin-bottom: 20px;
       text-align: center;
       h1 {
         color: #fff;
