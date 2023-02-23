@@ -3,7 +3,7 @@ export default {
   name: "HeaderNav",
   data() {
     return {
-      links: ["HOME", "ABOUT", "CONTACT"],
+      links: ["HOME", "ABOUT", "CONTATTI", "RISTORANTI"],
     };
   },
 };
