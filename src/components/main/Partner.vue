@@ -30,8 +30,8 @@ $font-color: #fff; // bianco
 
   .section {
     background-image: url(../../assets/partner.PNG);
-    width: 1400px;
-    height: 700px;
+    width: 100%;
+    height: 43.75rem;
     text-align: center;
     position: absolute;
     border-radius: 25px;
