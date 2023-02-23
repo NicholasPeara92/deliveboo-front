@@ -5,7 +5,7 @@
     </div>
       <div class="container-cards">
           <div class="card">
-            <img src="../../assets/deliveroo-3442893-2875354.webp" alt="" />
+            <img src="../../assets/img_avatar.png" alt="" />
             <h5>Pino</h5>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a
@@ -15,8 +15,8 @@
             </p>
         </div>
           <div class="card">
-            <img src="../../assets/deliveroo-3442893-2875354.webp" alt="" />
-            <h5>Pino</h5>
+            <img src="../../assets/img_avatar2.png" alt="" />
+            <h5>Giulia</h5>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a
               id dolor dolorem! Doloremque quisquam facilis debitis architecto?
@@ -25,8 +25,8 @@
             </p>
         </div>
           <div class="card">
-            <img src="../../assets/deliveroo-3442893-2875354.webp" alt="" />
-            <h5>Pino</h5>
+            <img src="../../assets/img_avatar.png" alt="" />
+            <h5>Andrea</h5>
             <p>
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a
               id dolor dolorem! Doloremque quisquam facilis debitis architecto?
@@ -34,6 +34,7 @@
               explicabo ad quae!
             </p>
             </div>
+            
         </div>
   </section>
 </template>
@@ -84,12 +85,7 @@ export default {};
 &:hover {
 transform: translateY(-5px);
 }
-// @media only screen and (max-width: 768px) {
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
 
-//   }
   .card-title{
     font-size: 18px;
     font-weight: bold;

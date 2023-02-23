@@ -15,6 +15,9 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+$primary-color: #00ccbc; // blu
+$secondary-color: #6c757d; // grigio scuro
+$font-color: #fff; // bianco
 .hero {
   display: flex;
   justify-content: center;
@@ -36,13 +39,27 @@ export default {};
     color: white;
 
     button {
-      margin-top: 50px;
-      border-radius: 20px;
-      padding: 10px 20px;
-      border: 1px solid #00ccbc;
-      background-color: #00ccbc;
-      color: white;
-      font-weight: bold;
+      margin-right:10px;
+      background-color: $primary-color;
+      color: $font-color;
+      border: none;
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+      a {
+        font-size: 28px;
+        color: white;
+        text-decoration: none;
+      }
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+
+      &:active {
+        background-color: darken($primary-color, 20%);
+      }
     }
   }
 }
