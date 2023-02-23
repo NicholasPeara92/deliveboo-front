@@ -61,11 +61,12 @@
                 longer.
               </p>
               <!-- Bottone guarda il menu -->
-              <router-link
-                :to="{ name: 'menu', params: { slug: restaurant.slug } }"
-                class="btn btn-primary"
-                >Guarda il menu</router-link
-              >
+              <button class="ms-btn-primary">
+                <router-link
+                  :to="{ name: 'menu', params: { slug: restaurant.slug } }"
+                  >Guarda il menu</router-link
+                >
+              </button>
               <!-- Fine bottone -->
             </div>
             <!-- Badge categorie -->
@@ -153,7 +154,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .container {
   margin-top: 120px;
 }
@@ -178,5 +179,28 @@ export default {
 
 .my-class {
   object-fit: contain;
+}
+
+button {
+  margin-right: 10px;
+  background-color: $primary-color;
+  color: $font-color;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+
+  &:active {
+    background-color: darken($primary-color, 20%);
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
 }
 </style>

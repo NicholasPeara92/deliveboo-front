@@ -5,8 +5,12 @@
     </router-link>
     <HeaderNav />
     <div class="header-buttons">
-      <button><a href="http://127.0.0.1:8000/register">Registrati</a></button>
-      <button><a href="http://127.0.0.1:8000/login">Log in</a></button>
+      <button class="ms-btn-primary">
+        <a href="http://127.0.0.1:8000/register">Registrati</a>
+      </button>
+      <button class="ms-btn-primary">
+        <a href="http://127.0.0.1:8000/login">Log in</a>
+      </button>
     </div>
   </header>
 </template>
@@ -58,28 +62,5 @@ header {
 img {
   max-width: 150px;
   object-fit: contain;
-}
-button {
-  margin-right: 10px;
-  background-color: $primary-color;
-  color: $font-color;
-  border: none;
-  border-radius: 4px;
-  padding: 8px 16px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
-
-  &:hover {
-    background-color: darken($primary-color, 10%);
-  }
-
-  &:active {
-    background-color: darken($primary-color, 20%);
-  }
-  a {
-    color: white;
-    text-decoration: none;
-  }
 }
 </style>
