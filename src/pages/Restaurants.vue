@@ -6,6 +6,10 @@
       placeholder="Inserisci il nome"
       v-model="searchRestaurantName"
     />
+    <select v-model="searchRestaurantCategory" name="type" id="type">
+      <option value="">Nessuna Tipologia</option>
+      <option v-for="category in categories">{{ category.name }}</option>
+    </select>
     <div class="restaurants-container">
       <div
         v-for="(restaurant, index) in restaurantList"
@@ -47,36 +51,58 @@ export default {
     return {
       store,
       restaurants: [],
+      categories: [],
       searchRestaurantName: "",
-      searchRestaurantType: "",
+      searchRestaurantCategory: "",
     };
-  },
-  methods: {
-    myChangeEvent(val) {
-      console.log(this.newArray);
-      this.newArray = this.restaurant.filter(
-        (restaurant) => restaurant.type === val
-      );
-    },
   },
 
   created() {
     axios.get(`${this.store.api_url}/restaurants`).then((response) => {
       this.restaurants = response.data;
     });
+    axios.get(`${this.store.api_url}/categories`).then((response) => {
+      this.categories = response.data;
+    });
   },
   computed: {
     restaurantList() {
-      if (this.searchRestaurantName.length > 0) {
-        this.result = this.restaurants.filter((restaurant) =>
+      this.restaurantsId = [];
+      if (
+        this.searchRestaurantName.length > 0 ||
+        this.searchRestaurantCategory.length > 0
+      ) {
+        this.filteredRestaurants = this.restaurants.filter((restaurant) =>
           restaurant.name.toLowerCase().includes(this.searchRestaurantName)
         );
-        // this.result = this.result.filter(
-        //   (restaurant) => restaurant.type === this.searchRestaurantType
-        // );
-        return this.result;
+
+        this.filteredRestaurants.forEach((element) => {
+          element.categories.forEach((element) => {
+            if (element.name === this.searchRestaurantCategory) {
+              this.restaurantsId.push(element.pivot.restaurant_id);
+            }
+          });
+        });
+
+        console.log(this.restaurantsId);
+        this.finalArray = [];
+        this.restaurantsId.forEach((element) => {
+          this.finalArray.push(
+            this.filteredRestaurants.find(
+              (restaurant) => restaurant.id === element
+            )
+          );
+        });
+
+        console.log(this.restaurantsId);
+        if (this.restaurantsId.lenght) console.log(this.lenght);
+        console.log(this.finalArray);
+        console.log(this.filteredRestaurants);
+        return this.finalArray;
       } else {
-        return this.restaurants;
+        this.finalArray = this.restaurants;
+        console.log(this.finalArray);
+        return this.finalArray;
       }
     },
   },
