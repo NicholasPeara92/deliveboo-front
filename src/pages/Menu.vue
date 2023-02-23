@@ -12,7 +12,7 @@
       id="type"
       @onChange="myChangeEvent()"
     >
-      <option v-for="type in typeList">{{}}</option>
+      <option v-for="type in typeList">{{ type }}</option>
     </select>
     <div class="menu-container">
       <div
@@ -43,12 +43,12 @@ export default {
       restaurant: [],
       products: [],
       searchProductName: "",
+      searchProductType: "",
     };
   },
   methods: {
     myChangeEvent(val) {
-      console.log(this.newArray);
-      this.newArray = this.restaurant.filter(
+      productList = this.restaurant.filter(
         (restaurant) => restaurant.type === val
       );
     },
@@ -63,10 +63,16 @@ export default {
         );
       });
   },
+
   computed: {
     typeList() {
       this.types = [];
-      this.products.forEach((element) => {});
+      this.products.forEach((element) => {
+        if (!this.types.includes(element.type)) {
+          this.types.push(element.type);
+        }
+      });
+      return this.types;
     },
     productList() {
       if (this.searchProductName.length > 0) {
