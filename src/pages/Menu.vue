@@ -71,17 +71,11 @@ export default {
         this.filteredProducts = this.products.filter((product) =>
           product.name.toLowerCase().includes(this.searchProductName)
         );
-
-        console.log(this.filteredProducts);
-
         this.filteredProducts = this.filteredProducts.filter((product) =>
           product.type
             .toLowerCase()
             .includes(this.searchProductType.toLowerCase())
         );
-
-        console.log(this.filteredProducts);
-
         return this.filteredProducts;
       } else {
         return this.products;
