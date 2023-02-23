@@ -3,39 +3,38 @@
     <div class="container-titleCards">
       <h3 class="titleCard mb-4 text-white">Il nostro team</h3>
     </div>
-      <div class="container-cards">
-          <div class="card">
-            <img src="../../assets/img_avatar.png" alt="" />
-            <h5>Pino</h5>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a
-              id dolor dolorem! Doloremque quisquam facilis debitis architecto?
-              Eum earum corrupti inventore doloremque ut id in nesciunt
-              explicabo ad quae!
-            </p>
-        </div>
-          <div class="card">
-            <img src="../../assets/img_avatar2.png" alt="" />
-            <h5>Giulia</h5>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a
-              id dolor dolorem! Doloremque quisquam facilis debitis architecto?
-              Eum earum corrupti inventore doloremque ut id in nesciunt
-              explicabo ad quae!
-            </p>
-        </div>
-          <div class="card">
-            <img src="../../assets/img_avatar.png" alt="" />
-            <h5>Andrea</h5>
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a
-              id dolor dolorem! Doloremque quisquam facilis debitis architecto?
-              Eum earum corrupti inventore doloremque ut id in nesciunt
-              explicabo ad quae!
-            </p>
-            </div>
-            
-        </div>
+    <div class="container-cards">
+      <div class="card">
+        <img src="../../assets/img_avatar.png" alt="" />
+        <h5>Pino</h5>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
+          dolor dolorem! Doloremque quisquam facilis debitis architecto? Eum
+          earum corrupti inventore doloremque ut id in nesciunt explicabo ad
+          quae!
+        </p>
+      </div>
+      <div class="card">
+        <img src="../../assets/img_avatar2.png" alt="" />
+        <h5>Giulia</h5>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
+          dolor dolorem! Doloremque quisquam facilis debitis architecto? Eum
+          earum corrupti inventore doloremque ut id in nesciunt explicabo ad
+          quae!
+        </p>
+      </div>
+      <div class="card">
+        <img src="../../assets/img_avatar.png" alt="" />
+        <h5>Andrea</h5>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
+          dolor dolorem! Doloremque quisquam facilis debitis architecto? Eum
+          earum corrupti inventore doloremque ut id in nesciunt explicabo ad
+          quae!
+        </p>
+      </div>
+    </div>
   </section>
 </template>
 
@@ -44,10 +43,9 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-
 .about {
   height: 500px;
-  background-color: #2E3333;
+  background-color: #2e3333;
   position: relative;
   z-index: 2;
   width: 100%;
@@ -55,14 +53,13 @@ export default {};
   flex-direction: column;
   text-align: center;
   align-items: center;
- 
+
   @media only screen and (max-width: 768px) {
     height: 1300px;
-
   }
 }
 
-.container-cards{
+.container-cards {
   display: flex;
   flex-direction: row;
   @media only screen and (max-width: 768px) {
@@ -71,7 +68,7 @@ export default {};
     justify-content: center;
   }
 }
-.card{
+.card {
   width: auto;
   height: 350px;
   border-radius: 5px;
@@ -82,17 +79,17 @@ export default {};
   margin-right: 10px;
   margin-top: 20px;
 
-&:hover {
-transform: translateY(-5px);
-}
+  &:hover {
+    transform: translateY(-5px);
+  }
 
-  .card-title{
+  .card-title {
     font-size: 18px;
     font-weight: bold;
     color: #333;
-    margin-bottom: 10px
+    margin-bottom: 10px;
   }
-  .card-description{
+  .card-description {
     font-size: 14px;
     color: #666;
   }

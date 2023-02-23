@@ -16,39 +16,37 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-
 $primary-color: #00ccbc; // blu
 $secondary-color: #6c757d; // grigio scuro
 $font-color: #fff; // bianco
 .partner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    position: relative;
-    height: 900px;
-    width:100%;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  position: relative;
+  height: 900px;
+  width: 100%;
 
   .section {
     background-image: url(../../assets/partner.PNG);
-    width: 1400px;
-    height: 700px;
+    width: 100%;
+    height: 43.75rem;
     text-align: center;
     position: absolute;
     border-radius: 25px;
     box-shadow: 0px 0px 20px rgba(1, 1, 1, 0.75);
-    background-position:center;
+    background-position: center;
 
-      @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 768px) {
       height: 800px;
-      width: auto;
+      width: 500px;
       padding: 50px;
-
     }
     h3 {
       margin-top: 100px;
       font-size: 48px;
+      font-weight: bold;
     }
     p {
       font-size: 30px;
@@ -56,7 +54,7 @@ $font-color: #fff; // bianco
     }
 
     button {
-      margin-right:10px;
+      margin-right: 10px;
       background-color: $primary-color;
       color: $font-color;
       border: none;
@@ -69,6 +67,7 @@ $font-color: #fff; // bianco
         font-size: 28px;
         color: white;
         text-decoration: none;
+        font-weight: bold;
       }
       &:hover {
         background-color: darken($primary-color, 10%);

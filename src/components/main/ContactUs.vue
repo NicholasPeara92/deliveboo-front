@@ -6,27 +6,26 @@
       </div>
       <div class="headerhero">
         <div class="title">
-          <h1>Contattaci</h1>
+          <h2>Contattaci</h2>
         </div>
       </div>
     </header>
     <div class="table">
       <div class="answer">
         <div>
-          <h2><strong>Domande Per Il Customer Service</strong></h2>
+          <h3><strong>Domande Per Il Customer Service</strong></h3>
           <h6>Domande sul tuo ordine?</h6>
           <p>
             Siamo qui per aiutarti! Mandaci una email a
-            <a href="mailto:press@deliveboo.it">support@deliveboo.it</a>
+            <a href="mailto:press@deliveboo.it">support@deliveboo.it</a>.
           </p>
-          <h2><strong>Contatti Media</strong></h2>
+          <h3><strong>Contatti Media</strong></h3>
           <p>
             Per le interviste o altre richieste media, per favore scrivi una
-            mail a <a href="mailto:press@deliveboo.it">press@deliveboo.it</a>
-          </p>
-          <p>
-            Purtroppo l'ufficio stampa non ha accesso alle informazioni sugli
-            account, quindi non può essere d'aiuto con le richieste dei clienti.
+            mail a <a href="mailto:press@deliveboo.it">press@deliveboo.it</a> .
+            <br />Purtroppo l'ufficio stampa non ha accesso alle informazioni
+            sugli account, quindi non può essere d'aiuto con le richieste dei
+            clienti. <br />
             Si prega di contattare il servizio clienti.
           </p>
           <p>
@@ -75,7 +74,7 @@ export default {
       padding: 0 65px;
       margin-bottom: 20px;
       text-align: center;
-      h1 {
+      h2 {
         color: #fff;
         font-size: 40px;
         line-height: 48px;
@@ -102,6 +101,10 @@ export default {
       a {
         text-decoration: none;
         color: #00a396;
+      }
+      a:hover {
+        text-decoration: underline;
+        opacity: 55%;
       }
     }
   }
