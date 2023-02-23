@@ -34,10 +34,6 @@ window.addEventListener("scroll", function () {
 </script>
 
 <style lang="scss" scoped>
-$primary-color: #00ccbc; // blu
-$secondary-color: #6c757d; // grigio scuro
-$font-color: #fff; // bianco
-
 header {
   position: fixed;
   width: 100%;
