@@ -19,12 +19,12 @@ export default {
     HeaderNav,
   },
 };
-window.addEventListener('scroll', function() {
-  let navbar = document.querySelector('header');
+window.addEventListener("scroll", function () {
+  let navbar = document.querySelector("header");
   if (window.scrollY > 50) {
-    navbar.classList.add('scrolled');
+    navbar.classList.add("scrolled");
   } else {
-    navbar.classList.remove('scrolled');
+    navbar.classList.remove("scrolled");
   }
 });
 </script>
@@ -39,13 +39,17 @@ header {
   width: 100%;
   z-index: 100;
   background-color: transparent;
+  align-items: center;
   @media only screen and (max-width: 768px) {
     display: flex;
     flex-direction: column;
-    justify-content:flex-end;
+    justify-content: flex-end;
     background-color: opacify($color: #000000, $amount: 1);
   }
-    &.scrolled {     background-color: #2E3333;   }    
+  &.scrolled {
+    background-color: #2e3333;
+    opacity: 0.7;
+  }
 }
 
 img {
@@ -53,7 +57,7 @@ img {
   object-fit: contain;
 }
 button {
-  margin-right:10px;
+  margin-right: 10px;
   background-color: $primary-color;
   color: $font-color;
   border: none;
@@ -70,13 +74,9 @@ button {
   &:active {
     background-color: darken($primary-color, 20%);
   }
-  a{
+  a {
     color: white;
     text-decoration: none;
-    
   }
 }
-
-
-
 </style>

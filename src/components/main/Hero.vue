@@ -23,7 +23,12 @@ $font-color: #fff; // bianco
   justify-content: center;
   position: relative;
   height: 600px;
-  
+  h1 {
+    font-size: 42px;
+    font-weight: bold;
+    color: $primary-color;
+  }
+
   img {
     width: 100%;
     height: 100%;
@@ -39,7 +44,7 @@ $font-color: #fff; // bianco
     color: white;
 
     button {
-      margin-right:10px;
+      margin-right: 10px;
       background-color: $primary-color;
       color: $font-color;
       border: none;
