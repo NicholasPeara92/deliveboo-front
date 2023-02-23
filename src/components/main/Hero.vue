@@ -3,8 +3,14 @@
     <div class="hero-content">
       <h1>I piatti dei ristoranti che ami, a domicilio</h1>
       <router-link :to="{ name: 'restaurants' }">
-        <button>VAI AI RISTORANTI</button>
+        <button class="my-5">VAI AI RISTORANTI</button>
       </router-link>
+      <b>
+        <p>
+          <a id="login" href="http://127.0.0.1:8000/login">Accedi</a> per
+          visualizzare il tuo profilo.
+        </p>
+      </b>
     </div>
     <img src="../../assets/Fast-food-hamburger-cola_5120x2880.jpg" alt="" />
   </section>
@@ -23,6 +29,13 @@ $font-color: #fff; // bianco
   justify-content: center;
   position: relative;
   height: 600px;
+  #login {
+    text-decoration: none;
+    color: $primary-color;
+  }
+  #login:hover {
+    color: darken($primary-color, 10%);
+  }
   h1 {
     font-size: 42px;
     font-weight: bold;
