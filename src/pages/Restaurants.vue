@@ -6,14 +6,6 @@
       placeholder="Inserisci il nome"
       v-model="searchRestaurantName"
     />
-    <select
-      v-model="searchRestaurantType"
-      name="type"
-      id="type"
-      @onChange="myChangeEvent()"
-    >
-      <option v-for="type in restaurantList">{{ type.type }}</option>
-    </select>
     <div class="restaurants-container">
       <div
         v-for="(restaurant, index) in restaurantList"
@@ -74,10 +66,6 @@ export default {
     });
   },
   computed: {
-    typeList() {
-      this.types = [];
-      this.restaurant.forEach((element) => {});
-    },
     restaurantList() {
       if (this.searchRestaurantName.length > 0) {
         this.result = this.restaurants.filter((restaurant) =>
