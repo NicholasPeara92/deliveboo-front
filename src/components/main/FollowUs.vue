@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <div class="follow">
+      <div class="follow p-4">
         <div class="left">
           <h2><strong>Segui Gli Ordini Passo Passo</strong></h2>
           <p>
