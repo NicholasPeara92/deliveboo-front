@@ -1,15 +1,22 @@
 <template>
   <div class="container">
-    <h1>Ristoranti:</h1>
-    <input
-      type="text"
-      placeholder="Inserisci il nome"
-      v-model="searchRestaurantName"
-    />
-    <select v-model="searchRestaurantCategory" name="type" id="type">
-      <option value="">Nessuna Tipologia</option>
-      <option v-for="category in categories">{{ category.name }}</option>
-    </select>
+    <h1 class="text-center"><strong>RISTORANTI</strong></h1>
+    <div class="d-flex justify-content-center my-5">
+      <input
+        type="text"
+        placeholder="Inserisci il nome"
+        v-model="searchRestaurantName"
+      />
+      <select
+        class="ms-2"
+        v-model="searchRestaurantCategory"
+        name="type"
+        id="type"
+      >
+        <option value="">Nessuna Tipologia</option>
+        <option v-for="category in categories">{{ category.name }}</option>
+      </select>
+    </div>
     <div class="restaurants-container">
       <!-- <div
         v-for="(restaurant, index) in restaurantList"
