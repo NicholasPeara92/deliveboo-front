@@ -56,15 +56,29 @@ export default {
       width: 104px;
       height: 40px;
       margin-left: 10px;
+      margin-bottom: 20px;
     }
     .apple {
       width: 104px;
       height: 40px;
+      margin-bottom: 20px;
     }
   }
   .right {
     width: 60%;
     .map {
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .follow {
+    display: flex;
+    flex-direction: column;
+    .left {
+      width: 100%;
+    }
+    .right {
       width: 100%;
     }
   }
