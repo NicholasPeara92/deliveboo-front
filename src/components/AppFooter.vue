@@ -1,5 +1,10 @@
 <script setup>
 import { ref } from "vue";
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 </script>
 
 <!--------------------------------->
@@ -41,14 +46,21 @@ import { ref } from "vue";
           </ul>
         </div>
         <div class="col-lg-3 item social">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a
+          <a class="ms-0" href="#"><i class="fa-brands fa-facebook-f"></i></a
           ><a href="#"><i class="fa-brands fa-twitter"></i></a
           ><a href="#"><i class="fa-brands fa-instagram"></i></a>
           <p class="copyright">DeliveBoo © classe 76 - 2023</p>
         </div>
       </div>
     </div>
+    <div>
+      <button onclick="topFunction()" class="back-to-top-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#fff" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.707 14.293c-.391.391-1.023.391-1.414 0l-4.293-4.293-4.293 4.293c-.391.391-1.023.391-1.414 0-.391-.391-.391-1.023 0-1.414l4.999-4.999c.191-.191.447-.293.707-.293s.516.102.707.293l4.999 4.999c.391.391.391 1.023 0 1.414z"/></svg>
+    </button>
+    </div>
   </div>
+  
+
 </template>
 
 <style lang="scss" scoped>
@@ -105,7 +117,7 @@ ul a:hover {
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .body .item.social {
     text-align: center;
   }
@@ -156,4 +168,37 @@ ul a:hover {
   width: 104px;
   height: 40px;
 }
+
+.back-to-top-btn {
+  background-color: #66CCCC;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 100;
+}
+
+.back-to-top-btn:hover {
+  background-color: #55AAAA;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top-btn svg {
+  width: 24px;
+  height: 24px;
+  fill: #fff;
+  transform: rotate(-90deg);
+}
+
 </style>
