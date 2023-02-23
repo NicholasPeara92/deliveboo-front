@@ -6,12 +6,8 @@
       placeholder="Inserisci il nome"
       v-model="searchProductName"
     />
-    <select
-      v-model="searchRestaurantType"
-      name="type"
-      id="type"
-      @onChange="myChangeEvent()"
-    >
+    <select v-model="searchProductType" name="type" id="type">
+      <option value="">Nessuna Tipologia</option>
       <option v-for="type in typeList">{{ type }}</option>
     </select>
     <div class="menu-container">
@@ -46,13 +42,6 @@ export default {
       searchProductType: "",
     };
   },
-  methods: {
-    myChangeEvent(val) {
-      productList = this.restaurant.filter(
-        (restaurant) => restaurant.type === val
-      );
-    },
-  },
   created() {
     axios
       .get(`${this.store.api_url}/restaurant/${this.$route.params.slug}`)
@@ -75,11 +64,25 @@ export default {
       return this.types;
     },
     productList() {
-      if (this.searchProductName.length > 0) {
-        console.log(this.products);
-        return this.products.filter((product) =>
+      if (
+        this.searchProductName.length > 0 ||
+        this.searchProductType.length > 0
+      ) {
+        this.filteredProducts = this.products.filter((product) =>
           product.name.toLowerCase().includes(this.searchProductName)
         );
+
+        console.log(this.filteredProducts);
+
+        this.filteredProducts = this.filteredProducts.filter((product) =>
+          product.type
+            .toLowerCase()
+            .includes(this.searchProductType.toLowerCase())
+        );
+
+        console.log(this.filteredProducts);
+
+        return this.filteredProducts;
       } else {
         return this.products;
       }
