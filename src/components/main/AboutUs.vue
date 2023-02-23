@@ -5,7 +5,7 @@
     </div>
     <div class="container-cards">
       <div class="card">
-        <img src="../../assets/img_avatar.png" alt="" />
+        <img src="../../assets/person 2.png" alt="" />
         <h5>Pino</h5>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
@@ -13,7 +13,7 @@
         </p>
       </div>
       <div class="card">
-        <img src="../../assets/img_avatar2.png" alt="" />
+        <img src="../../assets/person 1.png" alt="" />
         <h5>Giulia</h5>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
@@ -21,7 +21,15 @@
         </p>
       </div>
       <div class="card">
-        <img src="../../assets/img_avatar.png" alt="" />
+        <img src="../../assets/person 3.png" alt="" />
+        <h5>Antonino</h5>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
+          dolor dolorem! Doloremque quisquam facilis debitis architecto?
+        </p>
+      </div>
+      <div class="card">
+        <img src="../../assets/person 4.png" alt="" />
         <h5>Andrea</h5>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
@@ -29,16 +37,8 @@
         </p>
       </div>
       <div class="card">
-        <img src="../../assets/img_avatar.png" alt="" />
-        <h5>Andrea</h5>
-        <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
-          dolor dolorem! Doloremque quisquam facilis debitis architecto?
-        </p>
-      </div>
-      <div class="card">
-        <img src="../../assets/img_avatar.png" alt="" />
-        <h5>Andrea</h5>
+        <img src="../../assets/person 5.png" alt="" />
+        <h5>Camilla</h5>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
           dolor dolorem! Doloremque quisquam facilis debitis architecto?
@@ -106,7 +106,7 @@ export default {};
 }
 
 img {
-  max-width: 80px;
+  max-width: 120px;
   border-radius: 50%;
   margin: auto;
 }
