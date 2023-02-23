@@ -1,13 +1,15 @@
 <template>
-  <h3>Menu</h3>
-  <div class="menu-container">
-    <div v-for="product in products" class="product-card">
-      <div class="product-image-box">
-        <img :src="product.image_url" alt="{{ product.name }}" />
+  <div class="container mt-5">
+    <h3 class="pt-5">Menu</h3>
+    <div class="menu-container">
+      <div v-for="product in products" class="product-card">
+        <div class="product-image-box">
+          <img :src="product.image_url" alt="{{ product.name }}" />
+        </div>
+        <h5>{{ product.name }}</h5>
+        <h6>{{ product.type }}</h6>
+        <strong>{{ product.price }}€</strong>
       </div>
-      <h5>{{ product.name }}</h5>
-      <h6>{{ product.type }}</h6>
-      <strong>{{ product.price }}€</strong>
     </div>
   </div>
 </template>
