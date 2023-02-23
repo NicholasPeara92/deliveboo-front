@@ -1,13 +1,7 @@
 <script setup>
 import { ref } from "vue";
-
-function topFunction() {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-}
 </script>
 
-<!--------------------------------->
 <template>
   <div class="body">
     <div class="container">
@@ -54,9 +48,9 @@ function topFunction() {
       </div>
     </div>
     <div>
-      <button onclick="topFunction()" class="back-to-top-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#fff" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.707 14.293c-.391.391-1.023.391-1.414 0l-4.293-4.293-4.293 4.293c-.391.391-1.023.391-1.414 0-.391-.391-.391-1.023 0-1.414l4.999-4.999c.191-.191.447-.293.707-.293s.516.102.707.293l4.999 4.999c.391.391.391 1.023 0 1.414z"/></svg>
-    </button>
+      <button onclick="topFunction()" class="top-btn">
+        <a href="#top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#fff" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.707 14.293c-.391.391-1.023.391-1.414 0l-4.293-4.293-4.293 4.293c-.391.391-1.023.391-1.414 0-.391-.391-.391-1.023 0-1.414l4.999-4.999c.191-.191.447-.293.707-.293s.516.102.707.293l4.999 4.999c.391.391.391 1.023 0 1.414z"/></svg></a>
+      </button>
     </div>
   </div>
   
@@ -169,7 +163,7 @@ ul a:hover {
   height: 40px;
 }
 
-.back-to-top-btn {
+.top-btn {
   background-color: #66CCCC;
   border-radius: 50%;
   color: #fff;
@@ -189,16 +183,15 @@ ul a:hover {
   z-index: 100;
 }
 
-.back-to-top-btn:hover {
+.top-btn:hover {
   background-color: #55AAAA;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.back-to-top-btn svg {
+.top-btn svg {
   width: 24px;
   height: 24px;
   fill: #fff;
-  transform: rotate(-90deg);
 }
 
 </style>
