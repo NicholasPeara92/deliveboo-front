@@ -23,9 +23,9 @@ import { ref } from "vue";
           </ul>
         </div>
         <div class="col-sm-4 col-md-3 item">
-          <h5>Porta con te DeliveBoo</h5>
-          <ul>
-            <li>
+          <h5 class="text-center">Porta con te DeliveBoo</h5>
+          <ul class="d-flex justify-content-center">
+            <li class="me-3">
               <a href="https://play.google.com/store/games?hl=it&gl=US"
                 ><img class="google" src="../assets/google.png" alt="playstore"
               /></a>
@@ -112,7 +112,7 @@ ul a:hover {
 }
 
 .body .item.social > a {
-  font-size: 24px;
+  font-size: 20px;
   width: 40px;
   height: 40px;
   line-height: 40px;
