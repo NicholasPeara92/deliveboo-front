@@ -1,7 +1,7 @@
 <template>
   <section class="about py-4">
     <div class="container-titleCards">
-      <h3 class="titleCard mb-4 text-white">Il nostro team</h3>
+      <h3 class="titleCard mb-4 text-white">Il Nostro Team</h3>
     </div>
     <div class="container-cards">
       <div class="card">
@@ -56,6 +56,7 @@ export default {};
 .about {
   height: 500px;
   background-color: #2e3333;
+  opacity: 90%;
   position: relative;
   z-index: 2;
   width: 100%;
