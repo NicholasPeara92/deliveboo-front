@@ -136,6 +136,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+h1 {
+  @media only screen and (max-width: 768px) {
+    margin-top: 150px;
+  }
+  @media only screen and (max-width: 576px) {
+    margin-top: 200px;
+  }
+}
 .container {
   margin-top: 120px;
 }
