@@ -1,9 +1,15 @@
 <template>
   <div class="container">
     <h1>Ristoranti:</h1>
+    <input
+      type="text"
+      placeholder="Inserisci il nome"
+      v-model="searchRestaurantName"
+    />
     <div class="restaurants-container">
       <div
-        v-for="restaurant in restaurants"
+        v-for="(restaurant, index) in restaurantList"
+        :key="index"
         class="restaurants-card d-flex flex-column justify-content-center align-items-center"
       >
         <h4>{{ restaurant.name }}</h4>
@@ -41,6 +47,7 @@ export default {
     return {
       store,
       restaurants: [],
+      searchRestaurantName: "",
     };
   },
 
@@ -48,6 +55,18 @@ export default {
     axios.get(`${this.store.api_url}/restaurants`).then((response) => {
       this.restaurants = response.data;
     });
+  },
+  computed: {
+    restaurantList() {
+      if (this.searchRestaurantName.length > 0) {
+        console.log(this.restaurants);
+        return this.restaurants.filter((restaurant) =>
+          restaurant.name.toLowerCase().includes(this.searchRestaurantName)
+        );
+      } else {
+        return this.restaurants;
+      }
+    },
   },
 };
 </script>
