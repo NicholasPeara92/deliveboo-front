@@ -9,9 +9,7 @@
         <h5>Pino</h5>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
-          dolor dolorem! Doloremque quisquam facilis debitis architecto? Eum
-          earum corrupti inventore doloremque ut id in nesciunt explicabo ad
-          quae!
+          dolor dolorem! Doloremque quisquam facilis debitis architecto?
         </p>
       </div>
       <div class="card">
@@ -19,9 +17,7 @@
         <h5>Giulia</h5>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
-          dolor dolorem! Doloremque quisquam facilis debitis architecto? Eum
-          earum corrupti inventore doloremque ut id in nesciunt explicabo ad
-          quae!
+          dolor dolorem! Doloremque quisquam facilis debitis architecto?
         </p>
       </div>
       <div class="card">
@@ -29,9 +25,23 @@
         <h5>Andrea</h5>
         <p>
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
-          dolor dolorem! Doloremque quisquam facilis debitis architecto? Eum
-          earum corrupti inventore doloremque ut id in nesciunt explicabo ad
-          quae!
+          dolor dolorem! Doloremque quisquam facilis debitis architecto?
+        </p>
+      </div>
+      <div class="card">
+        <img src="../../assets/img_avatar.png" alt="" />
+        <h5>Andrea</h5>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
+          dolor dolorem! Doloremque quisquam facilis debitis architecto?
+        </p>
+      </div>
+      <div class="card">
+        <img src="../../assets/img_avatar.png" alt="" />
+        <h5>Andrea</h5>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
+          dolor dolorem! Doloremque quisquam facilis debitis architecto?
         </p>
       </div>
     </div>
@@ -55,7 +65,7 @@ export default {};
   align-items: center;
 
   @media only screen and (max-width: 768px) {
-    height: 1300px;
+    height: auto;
   }
 }
 
