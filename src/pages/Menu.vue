@@ -57,17 +57,20 @@ export default {
 </script>
 
 <template>
+
   <div class="container mt-5">
-    <h3 class="pt-5">Menu</h3>
-    <input
-      type="text"
-      placeholder="Inserisci il nome"
-      v-model="searchProductName"
-    />
-    <select v-model="searchProductType" name="type" id="type">
-      <option value="">Nessuna Tipologia</option>
-      <option v-for="type in typeList">{{ type }}</option>
-    </select>
+    <div class="header">
+      <h3 class="pt-5">Menu</h3>
+      <input
+        type="text"
+        placeholder="Inserisci il nome"
+        v-model="searchProductName"
+      />
+      <select v-model="searchProductType" name="type" id="type">
+        <option value="">Nessuna Tipologia</option>
+        <option v-for="type in typeList">{{ type }}</option>
+      </select>
+    </div>
 
     <div class="menu-container">
       <div v-for="(product, index) in productList" :key="index" class="product-card">
@@ -85,11 +88,17 @@ export default {
 </template>
 
 <style>
+
+.header{
+  padding-top: 100px;
+}
+
 .menu-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 50px;
+  padding: 70px;
+  
 }
 .product-card {
   border: 1px solid black;
