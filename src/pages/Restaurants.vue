@@ -18,32 +18,6 @@
       </select>
     </div>
     <div class="restaurants-container">
-      <!-- <div
-        v-for="(restaurant, index) in restaurantList"
-        :key="index"
-        class="restaurants-card d-flex flex-column justify-content-center align-items-center"
-      >
-        <h4>{{ restaurant.type }}</h4>
-        <div>
-          <img width="100" class="my-3" :src="restaurant.image_url" alt="" />
-        </div>
-        <ul>
-          <li>Tel: {{ restaurant.telephone }}</li>
-          <li>
-            Categorie:
-            <ul>
-              <li v-for="category in restaurant.categories">
-                {{ category.name }}
-              </li>
-            </ul>
-          </li>
-        </ul>
-        
-        <router-link :to="{ name: 'menu', params: { slug: restaurant.slug } }"
-          >Guarda il menu</router-link
-        >
-      </div> -->
-
       <!-- CARD -->
       <div
         class="card mb-3 px-1 py-1"
