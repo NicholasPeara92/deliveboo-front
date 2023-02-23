@@ -1,5 +1,5 @@
 <template>
-  <div class="container mt-5">
+  <div class="container">
     <h1>Ristoranti:</h1>
     <div class="restaurants-container">
       <div
@@ -23,7 +23,9 @@
         </ul>
         <!-- <router-link :to="{ name: 'menu' }">Guarda il menu</router-link> -->
 
-        <router-link :to="{ name: 'menu', params: { slug: restaurant.slug } }">Guarda il menu</router-link>
+        <router-link :to="{ name: 'menu', params: { slug: restaurant.slug } }"
+          >Guarda il menu</router-link
+        >
       </div>
     </div>
   </div>
@@ -51,6 +53,9 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  margin-top: 120px;
+}
 .restaurants-container {
   padding: 30px;
   display: flex;
