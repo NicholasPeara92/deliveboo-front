@@ -17,12 +17,12 @@
           <h6>Domande sul tuo ordine?</h6>
           <p>
             Siamo qui per aiutarti! Mandaci una email a
-            <a href="">support@deliveboo.it</a>
+            <a href="mailto:press@deliveboo.it">support@deliveboo.it</a>
           </p>
           <h2>Contatti Media</h2>
           <p>
             Per le interviste o altre richieste media, per favore scrivi una
-            mail a <a href="">press@deliveboo.it</a>
+            mail a <a href="mailto:press@deliveboo.it">press@deliveboo.it</a>
           </p>
           <p>
             Purtroppo l'ufficio stampa non ha accesso alle informazioni sugli
