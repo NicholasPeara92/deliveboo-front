@@ -57,18 +57,23 @@ export default {
 </script>
 
 <template>
-  <div class="container mt-5">
-    <h3 class="pt-5">Menu</h3>
-    <input
-      type="text"
-      placeholder="Inserisci il nome"
-      v-model="searchProductName"
-    />
-    <select v-model="searchProductType" name="type" id="type">
-      <option value="">Nessuna Tipologia</option>
-      <option v-for="type in typeList">{{ type }}</option>
-    </select>
 
+  <div class="container mt-5">
+    <div class="header">
+      <h1 class="pt-5">Menu</h1>
+      <div class="input">
+        <input
+          type="text"
+          placeholder="Inserisci il nome"
+          v-model="searchProductName"
+        />
+      </div>
+      <select v-model="searchProductType" name="type" id="type">
+        <option value="">Nessuna Tipologia</option>
+        <option v-for="type in typeList">{{ type }}</option>
+      </select>
+
+    </div>
     <div class="menu-container">
       <div v-for="(product, index) in productList" :key="index" class="product-card">
         <div class="product-image-box">
@@ -85,19 +90,33 @@ export default {
 </template>
 
 <style>
+.input{
+  padding-bottom: 5px;
+}
+
+.header{
+  padding-top: 100px;
+}
+
 .menu-container {
   display: flex;
+  gap: 15px;
   flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 50px;
+  padding: 70px;
+
+  
 }
 .product-card {
-  border: 1px solid black;
+  border: 1px solid;
   padding: 10px;
   margin-bottom: 10px;
+  border-radius: 5%;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px 8px #888888;
 }
 .product-image-box {
-  width: 210px;
+  width: 250px;
 }
 .product-image-box img {
   width: 100%;

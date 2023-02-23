@@ -2,6 +2,7 @@
   <div class="container-fluid px-0">
     <Hero />
     <Partner />
+    <FollowUs />
     <AboutUs />
     <ContactUs />
   </div>
@@ -10,6 +11,7 @@
 <script>
 import Hero from "../components/main/Hero.vue";
 import Partner from "../components/main/Partner.vue";
+import FollowUs from "../components/main/FollowUs.vue";
 import AboutUs from "../components/main/AboutUs.vue";
 import ContactUs from "../components/main/ContactUs.vue";
 export default {
@@ -17,6 +19,7 @@ export default {
   components: {
     Hero,
     Partner,
+    FollowUs,
     AboutUs,
     ContactUs,
   },

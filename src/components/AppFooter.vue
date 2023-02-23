@@ -25,12 +25,14 @@ import { ref } from "vue";
           <h5 class="text-center">Porta con te DeliveBoo</h5>
           <ul class="d-flex justify-content-center">
             <li class="me-3">
-              <a href="https://play.google.com/store/games?hl=it&gl=US"
+              <a
+                href="https://play.google.com/store/apps/details?id=com.deliveroo.orderapp&hl=it&gl=US"
                 ><img class="google" src="../assets/google.png" alt="playstore"
               /></a>
             </li>
             <li>
-              <a href="https://www.apple.com/it/app-store/"
+              <a
+                href="https://apps.apple.com/it/app/deliveroo-food-delivery-app/id1001501844"
                 ><img
                   class="apple"
                   src="../assets/Apple 300x104.png"
@@ -49,12 +51,21 @@ import { ref } from "vue";
     </div>
     <div>
       <button onclick="topFunction()" class="top-btn">
-        <a href="#top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="#fff" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.707 14.293c-.391.391-1.023.391-1.414 0l-4.293-4.293-4.293 4.293c-.391.391-1.023.391-1.414 0-.391-.391-.391-1.023 0-1.414l4.999-4.999c.191-.191.447-.293.707-.293s.516.102.707.293l4.999 4.999c.391.391.391 1.023 0 1.414z"/></svg></a>
+        <a href="#top"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+          >
+            <path
+              fill="#fff"
+              d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.707 14.293c-.391.391-1.023.391-1.414 0l-4.293-4.293-4.293 4.293c-.391.391-1.023.391-1.414 0-.391-.391-.391-1.023 0-1.414l4.999-4.999c.191-.191.447-.293.707-.293s.516.102.707.293l4.999 4.999c.391.391.391 1.023 0 1.414z"
+            /></svg
+        ></a>
       </button>
     </div>
   </div>
-  
-
 </template>
 
 <style lang="scss" scoped>
@@ -164,7 +175,7 @@ ul a:hover {
 }
 
 .top-btn {
-  background-color: #66CCCC;
+  background-color: #66cccc;
   border-radius: 50%;
   color: #fff;
   display: inline-flex;
@@ -184,7 +195,7 @@ ul a:hover {
 }
 
 .top-btn:hover {
-  background-color: #55AAAA;
+  background-color: #55aaaa;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -193,5 +204,4 @@ ul a:hover {
   height: 24px;
   fill: #fff;
 }
-
 </style>
