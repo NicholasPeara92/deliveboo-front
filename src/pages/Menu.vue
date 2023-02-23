@@ -1,8 +1,17 @@
 <template>
   <div class="container mt-5">
     <h3 class="pt-5">Menu</h3>
+    <input
+      type="text"
+      placeholder="Inserisci il nome"
+      v-model="searchProductName"
+    />
     <div class="menu-container">
-      <div v-for="product in products" class="product-card">
+      <div
+        v-for="(product, index) in productList"
+        :key="index"
+        class="product-card"
+      >
         <div class="product-image-box">
           <img :src="product.image_url" alt="{{ product.name }}" />
         </div>
@@ -25,9 +34,9 @@ export default {
       store,
       restaurant: [],
       products: [],
+      searchProductName: "",
     };
   },
-
   created() {
     axios
       .get(`${this.store.api_url}/restaurant/${this.$route.params.slug}`)
@@ -37,6 +46,18 @@ export default {
           c1.type > c2.type ? 1 : c1.type < c2.type ? -1 : 0
         );
       });
+  },
+  computed: {
+    productList() {
+      if (this.searchProductName.length > 0) {
+        console.log(this.products);
+        return this.products.filter((product) =>
+          product.name.toLowerCase().includes(this.searchProductName)
+        );
+      } else {
+        return this.products;
+      }
+    },
   },
 };
 </script>
