@@ -60,7 +60,7 @@ export default {
   <div class="container mt-5">
     <div class="header">
       <h1 class="pt-5 text-center">MENU</h1>
-      <div class="input d-flex justify-content-center">
+      <div class="input d-flex justify-content-center mt-4">
         <input
           type="text"
           placeholder="Inserisci il nome"
@@ -73,7 +73,7 @@ export default {
         </select>
       </div>
     </div>
-    <div class="menu-container">
+    <div class="menu-container justify-content-center">
       <div
         v-for="(product, index) in productList"
         :key="index"
@@ -107,10 +107,11 @@ export default {
   flex-wrap: wrap;
   padding: 70px;
 }
+
 .product-card {
   border: 1px solid;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 0 1.25rem 0.625rem 0;
   border-radius: 5%;
   border: 1px solid;
   padding: 10px;
