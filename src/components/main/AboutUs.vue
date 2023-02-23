@@ -67,6 +67,7 @@ export default {};
 
   @media only screen and (max-width: 768px) {
     height: auto;
+    opacity: 100%;
   }
 }
 
