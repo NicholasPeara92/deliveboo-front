@@ -1,5 +1,6 @@
 <template>
-  <section class="about py-4">
+  <section id="about-us" class="about py-4">
+    <h3 class="text-center">IL NOSTRO TEAM</h3>
     <div class="container-titleCards">
       <h3 class="titleCard mb-4 text-white">Il Nostro Team</h3>
     </div>
@@ -62,6 +63,12 @@ export default {};
   flex-direction: column;
   text-align: center;
   align-items: center;
+  transition: all 0.3s;
+
+  h3 {
+    font-size: 32px;
+    font-weight: bold;
+  }
 
   @media only screen and (max-width: 768px) {
     height: auto;

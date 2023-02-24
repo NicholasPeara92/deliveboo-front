@@ -1,5 +1,5 @@
 <template>
-  <div class="container d-flex flex-column align-items-center">
+  <div id="restaurants" class="container d-flex flex-column align-items-center">
     <h1 class="text-center pt-sm-5"><strong>RISTORANTI</strong></h1>
     <div class="d-flex justify-content-center my-5">
       <input

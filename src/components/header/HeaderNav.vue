@@ -6,19 +6,19 @@ export default {
       links: [
         {
           name: "HOME",
-          link: "homepage",
+          link: "#top",
         },
         {
           name: "ABOUT",
-          link: "about-us",
+          link: "#about-us",
         },
         {
           name: "CONTATTI",
-          link: "contact-us",
+          link: "#contact-us",
         },
         {
           name: "RISTORANTI",
-          link: "restaurants",
+          link: "#restaurants",
         },
       ],
     };
@@ -30,9 +30,7 @@ export default {
   <nav class="main-nav">
     <ul>
       <li v-for="link in links">
-        <router-link style="font-weight: 600" :to="{ name: link.link }">
-          {{ link.name }}
-        </router-link>
+        <a :href="link.link">{{ link.name }}</a>
       </li>
     </ul>
   </nav>
