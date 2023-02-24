@@ -7,40 +7,53 @@ export default {
   data() {
     return {
       store,
-      restaurant: [],
-      products: [],
       searchProductName: "",
       searchProductType: "",
     };
   },
   methods: {
-    addToCart(product) {
-      if (localStorage.products) {
-        window.localStorage.setItem;
-        console.log(localStorage.products);
-        localStorage.products.push(product);
-        console.log(localStorage.products);
-      } else {
-        localStorage.products.push(product);
-        console.log(localStorage.products);
-      }
+    addToCart(id) {
+      this.store.products.find((element) => {
+        if (element.id === id) {
+          element.quantity++;
+        }
+      });
+
+      console.log(this.store.products);
+
+      // if (localStorage.products) {
+      //   window.localStorage.setItem;
+      //   console.log(localStorage.products);
+      //   localStorage.products.push(product);
+      //   console.log(localStorage.products);
+      // } else {
+      //   localStorage.products.push(product);
+      //   console.log(localStorage.products);
+      // }
+    },
+
+    dropToCart(id) {
+      this.store.products.find((element) => {
+        if (element.id === id) {
+          if (element.quantity === 0) {
+            element.quantity = 0;
+          } else {
+            element.quantity--;
+          }
+        }
+      });
+      console.log(this.store.products);
     },
   },
+
   created() {
-    axios
-      .get(`${this.store.api_url}/restaurant/${this.$route.params.slug}`)
-      .then((response) => {
-        this.restaurant = response.data;
-        this.products = this.restaurant.products.sort((c1, c2) =>
-          c1.type > c2.type ? 1 : c1.type < c2.type ? -1 : 0
-        );
-      });
+    store.getProducts(this.$route.params.slug);
   },
 
   computed: {
     typeList() {
       this.types = [];
-      this.products.forEach((element) => {
+      this.store.products.forEach((element) => {
         if (!this.types.includes(element.type)) {
           this.types.push(element.type);
         }
@@ -52,7 +65,7 @@ export default {
         this.searchProductName.length > 0 ||
         this.searchProductType.length > 0
       ) {
-        this.filteredProducts = this.products.filter((product) =>
+        this.filteredProducts = this.store.products.filter((product) =>
           product.name.toLowerCase().includes(this.searchProductName)
         );
         this.filteredProducts = this.filteredProducts.filter((product) =>
@@ -62,7 +75,7 @@ export default {
         );
         return this.filteredProducts;
       } else {
-        return this.products;
+        return this.store.products;
       }
     },
   },
@@ -90,7 +103,7 @@ export default {
     <div class="menu-container justify-content-center">
       <div
         v-for="(product, index) in productList"
-        :key="index"
+        :key="product.id"
         class="product-card d-flex flex-column align-items-center"
       >
         <h5 class="py-2" style="text-transform: uppercase">
@@ -106,12 +119,13 @@ export default {
         </div>
         <strong class="d-block">{{ product.price }}€</strong>
         <div>
-          <button @click="addToCart(product)" class="ms-btn-primary mt-3">
+          <button @click="addToCart(product.id)" class="ms-btn-primary mt-3">
             +
           </button>
+          <span>{{ product.quantity }}</span>
           <button
-            @click="addToCart(product)"
-            class="ms-btn-primary bg-danger mt-3 my-3"
+            @click="dropToCart(product.id)"
+            class="ms-btn-primary bg-danger mt-3 my-3 ms-2"
           >
             -
           </button>
