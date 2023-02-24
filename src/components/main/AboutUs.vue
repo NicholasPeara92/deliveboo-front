@@ -55,8 +55,6 @@ export default {};
 <style lang="scss" scoped>
 .about {
   height: 500px;
-  background-color: #2e3333;
-  opacity: 90%;
   position: relative;
   z-index: 2;
   width: 100%;
