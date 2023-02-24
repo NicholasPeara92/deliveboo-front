@@ -1,12 +1,19 @@
 <template>
   <section class="partner">
-    <div class="section">
-      <h3>Diventa nostro partner!</h3>
+    <div class="left">
+      <h3>Diventa Nostro Partner!</h3>
       <p>
         Raggiungi più clienti con DeliveBoo! Gestiamo noi la consegna <br />
         così tu puoi dedicarti a offrire i migliori piatti e prodotti
       </p>
-      <button><a href="http://127.0.0.1:8000/register">inizia ora!</a></button>
+      <button>
+        <a href="http://127.0.0.1:8000/register"
+          >inizia ora! <i class="fa-solid fa-arrow-right"></i
+        ></a>
+      </button>
+    </div>
+    <div class="right">
+      <div class="angular"></div>
     </div>
   </section>
 </template>
@@ -21,28 +28,24 @@ $secondary-color: #6c757d; // grigio scuro
 $font-color: #fff; // bianco
 .partner {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: white;
   position: relative;
-  height: 900px;
+  height: 850px;
   width: 100%;
-
-  .section {
-    background-image: url(../../assets/partner.PNG);
-    background-repeat: no-repeat;
-    width: 1400px;
-    height: 700px;
+  .left {
+    width: 45%;
+    height: 550px;
+    background-color: $primary-color;
+    padding: 40px;
     text-align: center;
-    position: absolute;
-    border-radius: 25px;
-    box-shadow: 0px 0px 20px rgba(1, 1, 1, 0.75);
-    background-position: center;
-
+    padding-left: 100px;
     @media only screen and (max-width: 768px) {
-      height: 800px;
-      width: 500px;
-      padding: 50px;
+      height: 550px;
+      width: 55%;
+      padding: 0px;
+      text-align: left;
     }
     h3 {
       margin-top: 100px;
@@ -50,14 +53,21 @@ $font-color: #fff; // bianco
       font-weight: bold;
     }
     p {
-      font-size: 30px;
+      font-size: 19px;
       font-weight: bold;
+      color: $font-color;
+      margin-top: 40px;
+      @media only screen and (max-width: 768px) {
+        font-size: 15px;
+        padding-right: 30px;
+      }
     }
 
     button {
       margin-right: 10px;
-      background-color: $primary-color;
-      color: $font-color;
+      margin-top: 40px;
+      background-color: #fff;
+      color: $primary-color;
       border: none;
       border-radius: 50px;
       padding: 8px 16px;
@@ -65,17 +75,37 @@ $font-color: #fff; // bianco
       cursor: pointer;
       transition: background-color 0.2s ease-in-out;
       a {
-        font-size: 28px;
-        color: white;
+        font-size: 18px;
+        color: $primary-color;
         text-decoration: none;
         font-weight: bold;
+        i {
+          color: $primary-color;
+        }
       }
-      &:hover {
-        background-color: darken($primary-color, 10%);
-      }
+    }
+  }
 
-      &:active {
-        background-color: darken($primary-color, 20%);
+  .right {
+    background-image: url(../../assets/partner.PNG);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 55%;
+    height: 550px;
+    position: relative;
+    @media only screen and (max-width: 768px) {
+      width: 45%;
+    }
+    .angular {
+      width: 100px;
+      background-color: #00ccbc;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      transform: skewX(-8deg);
+      left: -50px;
+      @media only screen and (max-width: 768px) {
+        left: -35px;
       }
     }
   }
