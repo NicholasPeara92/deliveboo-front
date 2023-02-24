@@ -99,10 +99,12 @@ export default {
           <img :src="product.image_url" alt="{{ product.name }}" />
         </div>
         <div class="body">
-          <h6 style="text-transform: uppercase">{{ product.type }}</h6>
+          <h6 class="pt-3" style="text-transform: uppercase">
+            {{ product.type }}
+          </h6>
         </div>
         <strong class="d-block">{{ product.price }}€</strong>
-        <button @click="addToCart(product)" class="ms-btn-primary">
+        <button @click="addToCart(product)" class="ms-btn-primary mt-3">
           <i class="fas fa-shopping-cart"></i>
         </button>
       </div>
