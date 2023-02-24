@@ -63,7 +63,6 @@ export default {};
   flex-direction: column;
   text-align: center;
   align-items: center;
-  transition: all 0.3s;
 
   h3 {
     font-size: 32px;
@@ -95,6 +94,7 @@ export default {};
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 20px;
+  transition: all 0.3s;
 
   &:hover {
     transform: translateY(-5px);
