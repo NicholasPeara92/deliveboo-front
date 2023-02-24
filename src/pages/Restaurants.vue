@@ -34,7 +34,7 @@
     <div class="d-flex justify-content-around flex-wrap m-3">
       <!-- CARD -->
       <div
-        class="card mb-3 mx-1 py-1"
+        class="card mb-5 mx-1 py-1"
         style="max-width: 540px"
         v-for="(restaurant, index) in getRestaurants"
         :key="index"
@@ -50,10 +50,11 @@
           <div class="col-md-8 position-relative">
             <div class="card-body">
               <h5 class="ms-card-title card-title">{{ restaurant.name }}</h5>
+              <p class="card-text mb-0">
+                <b>Telefono:</b> {{ restaurant.telephone }}
+              </p>
               <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+                <b>Indirizzo:</b> {{ restaurant.address }}
               </p>
               <!-- Bottone guarda il menu -->
               <button class="ms-btn-primary">
@@ -65,7 +66,7 @@
               <!-- Fine bottone -->
             </div>
             <!-- Badge categorie -->
-            <div class="d-flex position-absolute top-0 end-0">
+            <div class="d-flex position-absolute top-0 end-0 m-2">
               <span
                 v-for="category in restaurant.categories"
                 class="badge bg-warning text-dark me-1"
@@ -184,6 +185,21 @@ h1 {
   @media only screen and (max-width: 576px) {
     margin-top: 200px;
   }
+}
+
+.card {
+  width: 600px;
+  background-color: aliceblue;
+  border-radius: 20px;
+  transition: all 0.3s;
+  img {
+    max-width: 150px;
+  }
+}
+.card:hover {
+  position: relative;
+  scale: (1.2);
+  z-index: 3;
 }
 
 .restaurants-card {
