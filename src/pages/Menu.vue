@@ -122,7 +122,7 @@ export default {
 }
 .product-image-box img {
   width: 100%;
-  height: 100px;
+  height: 200px;
   display: block;
 }
 </style>
