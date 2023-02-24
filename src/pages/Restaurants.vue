@@ -79,6 +79,7 @@
       <!-- FINE CARD -->
     </div>
     <button
+      class="ms-btn-primary"
       @click="totRestaurants += 4"
       v-if="totRestaurants < restaurants.length"
     >
