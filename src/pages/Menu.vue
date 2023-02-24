@@ -13,6 +13,19 @@ export default {
       searchProductType: "",
     };
   },
+  methods: {
+    addToCart(product) {
+      if (localStorage.products) {
+        window.localStorage.setItem;
+        console.log(localStorage.products);
+        localStorage.products.push(product);
+        console.log(localStorage.products);
+      } else {
+        localStorage.products.push(product);
+        console.log(localStorage.products);
+      }
+    },
+  },
   created() {
     axios
       .get(`${this.store.api_url}/restaurant/${this.$route.params.slug}`)
@@ -78,16 +91,23 @@ export default {
       <div
         v-for="(product, index) in productList"
         :key="index"
-        class="product-card"
+        class="product-card d-flex flex-column align-items-center"
       >
+        <h5 class="py-2" style="text-transform: uppercase">
+          {{ product.name }}
+        </h5>
         <div class="product-image-box">
           <img :src="product.image_url" alt="{{ product.name }}" />
         </div>
         <div class="body">
-          <h5>{{ product.name }}</h5>
-          <h6>{{ product.type }}</h6>
+          <h6 class="pt-3" style="text-transform: uppercase">
+            {{ product.type }}
+          </h6>
         </div>
-        <strong>{{ product.price }}€</strong>
+        <strong class="d-block">{{ product.price }}€</strong>
+        <button @click="addToCart(product)" class="ms-btn-primary mt-3">
+          <i class="fas fa-shopping-cart"></i>
+        </button>
       </div>
     </div>
   </div>
@@ -133,5 +153,9 @@ export default {
   height: 200px;
   display: block;
   border-radius: 20px;
+}
+
+h5 {
+  color: $primary_color;
 }
 </style>
