@@ -106,7 +106,13 @@ export default {
         </div>
         <strong class="d-block">{{ product.price }}€</strong>
         <button @click="addToCart(product)" class="ms-btn-primary mt-3">
-          <i class="fas fa-shopping-cart"></i>
+          +
+        </button>
+        <button
+          @click="addToCart(product)"
+          class="ms-btn-primary bg-danger mt-3"
+        >
+          -
         </button>
       </div>
     </div>
