@@ -1,6 +1,7 @@
 <template>
   <div class="container-fluid px-0">
     <Hero />
+    <Restaurants />
     <Partner />
     <FollowUs />
     <AboutUs />
@@ -14,6 +15,8 @@ import Partner from "../components/main/Partner.vue";
 import FollowUs from "../components/main/FollowUs.vue";
 import AboutUs from "../components/main/AboutUs.vue";
 import ContactUs from "../components/main/ContactUs.vue";
+import Restaurants from "./Restaurants.vue";
+
 export default {
   name: "HomePage",
   components: {
@@ -22,6 +25,7 @@ export default {
     FollowUs,
     AboutUs,
     ContactUs,
+    Restaurants,
   },
 };
 </script>
