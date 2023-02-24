@@ -17,7 +17,7 @@
         <option v-for="category in categories">{{ category.name }}</option>
       </select>
     </div>
-    <div>
+    <div class="mb-4">
       <div v-for="category in categories" class="form-check form-check-inline">
         <input
           class="form-check-input"
