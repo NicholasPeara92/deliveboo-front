@@ -157,9 +157,7 @@ h1 {
     margin-top: 200px;
   }
 }
-.container {
-  margin-top: 120px;
-}
+
 .restaurants-card {
   min-width: 250px;
   padding: 10px;
