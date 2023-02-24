@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1 class="text-center py-sm-5"><strong>RISTORANTI</strong></h1>
+    <h1 class="text-center pt-sm-5"><strong>RISTORANTI</strong></h1>
     <div class="d-flex justify-content-center my-5">
       <input
         type="text"
