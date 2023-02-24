@@ -94,11 +94,22 @@ export default {
       categories: [],
       searchRestaurantName: "",
       searchRestaurantCategory: "",
+      checkedCategories: [],
     };
   },
   methods: {
     restaurantFilter(id) {
-      console.log(id);
+      this.checkedCategories.forEach((element) => {
+        if (element.id === id) {
+          if (element.checked) {
+            element.checked = false;
+          } else {
+            element.checked = true;
+          }
+        }
+      });
+
+      console.log(this.checkedCategories);
     },
   },
 
@@ -108,6 +119,10 @@ export default {
     });
     axios.get(`${this.store.api_url}/categories`).then((response) => {
       this.categories = response.data;
+      this.checkedCategories = response.data;
+      this.checkedCategories.forEach((element) => {
+        element.checked = false;
+      });
     });
   },
   computed: {
