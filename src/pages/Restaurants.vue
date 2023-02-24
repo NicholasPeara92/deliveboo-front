@@ -36,7 +36,7 @@
       <div
         class="card mb-3 mx-1 py-1"
         style="max-width: 540px"
-        v-for="(restaurant, index) in restaurantList"
+        v-for="(restaurant, index) in getRestaurants"
         :key="index"
       >
         <div class="row g-0">
@@ -78,6 +78,12 @@
       </div>
       <!-- FINE CARD -->
     </div>
+    <button
+      @click="totRestaurants += 4"
+      v-if="totRestaurants < restaurants.length"
+    >
+      Mostra altri
+    </button>
   </div>
 </template>
 
@@ -95,6 +101,7 @@ export default {
       searchRestaurantName: "",
       searchRestaurantCategory: "",
       checkedCategories: [],
+      totRestaurants: 4,
     };
   },
   methods: {
@@ -126,38 +133,43 @@ export default {
     });
   },
   computed: {
-    restaurantList() {
-      this.restaurantsId = [];
-      this.finalArray = [];
+    // restaurantList() {
+    //   this.restaurantsId = [];
+    //   this.finalArray = [];
 
-      if (this.searchRestaurantCategory.length > 0) {
-        this.restaurants.forEach((element) => {
-          element.categories.forEach((element) => {
-            if (element.name === this.searchRestaurantCategory) {
-              this.restaurantsId.push(element.pivot.restaurant_id);
-            }
-          });
-        });
-      }
+    //   if (this.searchRestaurantCategory.length > 0) {
+    //     this.restaurants.forEach((element) => {
+    //       element.categories.forEach((element) => {
+    //         if (element.name === this.searchRestaurantCategory) {
+    //           this.restaurantsId.push(element.pivot.restaurant_id);
+    //         }
+    //       });
+    //     });
+    //   }
 
-      this.restaurantsId.forEach((element) => {
-        this.finalArray.push(
-          this.restaurants.find((restaurant) => restaurant.id === element)
-        );
-      });
+    //   this.restaurantsId.forEach((element) => {
+    //     this.finalArray.push(
+    //       this.restaurants.find((restaurant) => restaurant.id === element)
+    //     );
+    //   });
 
-      if (this.finalArray.length === 0) {
-        this.finalArray = this.restaurants.filter((restaurant) =>
-          restaurant.name.toLowerCase().includes(this.searchRestaurantName)
-        );
+    //   if (this.finalArray.length === 0) {
+    //     this.finalArray = this.restaurants.filter((restaurant) =>
+    //       restaurant.name.toLowerCase().includes(this.searchRestaurantName)
+    //     );
 
-        return this.finalArray;
-      } else {
-        this.finalArray = this.finalArray.filter((restaurant) =>
-          restaurant.name.toLowerCase().includes(this.searchRestaurantName)
-        );
-        return this.finalArray;
-      }
+    //     return this.finalArray;
+    //   } else {
+    //     this.finalArray = this.finalArray.filter((restaurant) =>
+    //       restaurant.name.toLowerCase().includes(this.searchRestaurantName)
+    //     );
+    //     return this.finalArray;
+    //   }
+    // },
+    getRestaurants() {
+      return this.restaurants.filter(
+        (elm, index) => index < this.totRestaurants
+      );
     },
   },
 };
