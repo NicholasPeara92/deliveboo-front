@@ -41,11 +41,11 @@ $font-color: #fff; // bianco
     padding: 40px;
     text-align: center;
     padding-left: 100px;
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 576px) {
       height: 550px;
-      width: 55%;
+      width: 100%;
       padding: 0px;
-      text-align: left;
+      text-align: center;
     }
     h3 {
       margin-top: 100px;
@@ -57,7 +57,8 @@ $font-color: #fff; // bianco
       font-weight: bold;
       color: $font-color;
       margin-top: 40px;
-      @media only screen and (max-width: 768px) {
+      line-height: 35px;
+      @media only screen and (max-width: 576px) {
         font-size: 15px;
         padding-right: 30px;
       }
@@ -93,8 +94,9 @@ $font-color: #fff; // bianco
     width: 55%;
     height: 550px;
     position: relative;
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 576px) {
       width: 45%;
+      width: 0;
     }
     .angular {
       width: 100px;
@@ -104,8 +106,8 @@ $font-color: #fff; // bianco
       top: 0;
       transform: skewX(-8deg);
       left: -50px;
-      @media only screen and (max-width: 768px) {
-        left: -35px;
+      @media only screen and (max-width: 576px) {
+        width: 0;
       }
     }
   }
