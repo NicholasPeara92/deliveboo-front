@@ -3,7 +3,24 @@ export default {
   name: "HeaderNav",
   data() {
     return {
-      links: ["HOME", "ABOUT", "CONTATTI", "RISTORANTI"],
+      links: [
+        {
+          name: "HOME",
+          link: "homepage",
+        },
+        {
+          name: "ABOUT",
+          link: "about-us",
+        },
+        {
+          name: "CONTATTI",
+          link: "contact-us",
+        },
+        {
+          name: "RISTORANTI",
+          link: "restaurants",
+        },
+      ],
     };
   },
 };
@@ -13,7 +30,9 @@ export default {
   <nav class="main-nav">
     <ul>
       <li v-for="link in links">
-        <a href="#">{{ link }}</a>
+        <router-link :to="{ name: link.link }">
+          {{ link.name }}
+        </router-link>
       </li>
     </ul>
   </nav>
