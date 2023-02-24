@@ -94,40 +94,34 @@ export default {
   computed: {
     restaurantList() {
       this.restaurantsId = [];
-      if (
-        this.searchRestaurantName.length > 0 ||
-        this.searchRestaurantCategory.length > 0
-      ) {
-        this.filteredRestaurants = this.restaurants.filter((restaurant) =>
-          restaurant.name.toLowerCase().includes(this.searchRestaurantName)
-        );
+      this.finalArray = [];
 
-        this.filteredRestaurants.forEach((element) => {
+      if (this.searchRestaurantCategory.length > 0) {
+        this.restaurants.forEach((element) => {
           element.categories.forEach((element) => {
             if (element.name === this.searchRestaurantCategory) {
               this.restaurantsId.push(element.pivot.restaurant_id);
             }
           });
         });
+      }
 
-        console.log(this.restaurantsId);
-        this.finalArray = [];
-        this.restaurantsId.forEach((element) => {
-          this.finalArray.push(
-            this.filteredRestaurants.find(
-              (restaurant) => restaurant.id === element
-            )
-          );
-        });
+      this.restaurantsId.forEach((element) => {
+        this.finalArray.push(
+          this.restaurants.find((restaurant) => restaurant.id === element)
+        );
+      });
 
-        console.log(this.restaurantsId);
-        if (this.restaurantsId.lenght) console.log(this.lenght);
-        console.log(this.finalArray);
-        console.log(this.filteredRestaurants);
+      if (this.finalArray.length === 0) {
+        this.finalArray = this.restaurants.filter((restaurant) =>
+          restaurant.name.toLowerCase().includes(this.searchRestaurantName)
+        );
+
         return this.finalArray;
       } else {
-        this.finalArray = this.restaurants;
-        console.log(this.finalArray);
+        this.finalArray = this.finalArray.filter((restaurant) =>
+          restaurant.name.toLowerCase().includes(this.searchRestaurantName)
+        );
         return this.finalArray;
       }
     },
