@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container d-flex flex-column align-items-center">
     <h1 class="text-center pt-sm-5"><strong>RISTORANTI</strong></h1>
     <div class="d-flex justify-content-center my-5">
       <input
@@ -16,6 +16,20 @@
         <option value="">Nessuna Tipologia</option>
         <option v-for="category in categories">{{ category.name }}</option>
       </select>
+    </div>
+    <div>
+      <div v-for="category in categories" class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          :value="category.id"
+          :id="category.slug"
+          type="checkbox"
+          @click="restaurantFilter(category.id)"
+        />
+        <label class="form-check-label" :for="category.slug">{{
+          category.name
+        }}</label>
+      </div>
     </div>
     <div class="d-flex justify-content-around flex-wrap m-3">
       <!-- CARD -->
@@ -81,6 +95,11 @@ export default {
       searchRestaurantName: "",
       searchRestaurantCategory: "",
     };
+  },
+  methods: {
+    restaurantFilter(id) {
+      console.log(id);
+    },
   },
 
   created() {
