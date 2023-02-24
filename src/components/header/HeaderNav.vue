@@ -9,16 +9,16 @@ export default {
           link: "#top",
         },
         {
+          name: "RISTORANTI",
+          link: "#restaurants",
+        },
+        {
           name: "ABOUT",
           link: "#about-us",
         },
         {
           name: "CONTATTI",
           link: "#contact-us",
-        },
-        {
-          name: "RISTORANTI",
-          link: "#restaurants",
         },
       ],
     };
