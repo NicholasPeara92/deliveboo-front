@@ -73,6 +73,7 @@ export default {
         </select>
       </div>
     </div>
+
     <div class="menu-container justify-content-center">
       <div
         v-for="(product, index) in productList"
@@ -92,7 +93,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped lang="scss">
 .input {
   padding-bottom: 5px;
 }
@@ -116,6 +117,13 @@ export default {
   border: 1px solid;
   padding: 10px;
   box-shadow: 5px 10px 8px #888888;
+  background-color: aliceblue;
+  transition: all 0.3s;
+}
+.product-card:hover {
+  position: relative;
+  scale: (1.2);
+  z-index: 3;
 }
 .product-image-box {
   width: 250px;
@@ -124,5 +132,6 @@ export default {
   width: 100%;
   height: 200px;
   display: block;
+  border-radius: 20px;
 }
 </style>
