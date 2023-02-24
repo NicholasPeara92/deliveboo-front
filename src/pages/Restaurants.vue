@@ -34,7 +34,7 @@
     <div class="d-flex justify-content-around flex-wrap m-3">
       <!-- CARD -->
       <div
-        class="card mb-3 mx-1 py-1"
+        class="card mb-3 mx-1 py-1 my-4"
         style="max-width: 480px"
         v-for="(restaurant, index) in getRestaurants"
         :key="index"
@@ -43,17 +43,18 @@
           <div class="col-md-4 d-flex justify-content-center">
             <img
               :src="restaurant.image_url"
-              class="img-fluid rounded-start my-class"
+              class="img-fluid rounded-start ms-img"
               alt="..."
             />
           </div>
           <div class="col-md-8 position-relative">
             <div class="card-body">
               <h5 class="ms-card-title card-title">{{ restaurant.name }}</h5>
+              <p class="card-text mb-0">
+                <b>Telefono:</b> {{ restaurant.telephone }}
+              </p>
               <p class="card-text">
-                This is a wider card with supporting text below as a natural
-                lead-in to additional content. This content is a little bit
-                longer.
+                <b>Indirizzo: </b> {{ restaurant.address }}
               </p>
               <!-- Bottone guarda il menu -->
               <button class="ms-btn-primary">
@@ -65,7 +66,7 @@
               <!-- Fine bottone -->
             </div>
             <!-- Badge categorie -->
-            <div class="d-flex position-absolute top-0 end-0">
+            <div class="d-flex position-absolute top-0 end-0 m-2">
               <span
                 v-for="category in restaurant.categories"
                 class="badge bg-warning text-dark me-1"
@@ -177,6 +178,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.card {
+  background-color: aliceblue;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+.card:hover {
+  scale: 1.2;
+  z-index: 3;
+}
 h1 {
   @media only screen and (max-width: 768px) {
     margin-top: 150px;
@@ -186,21 +196,9 @@ h1 {
   }
 }
 
-.restaurants-card {
-  min-width: 250px;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid black;
-}
-.restaurants_card {
-  min-width: 250px;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid black;
-}
-
-.my-class {
+.ms-img {
   object-fit: contain;
+  padding: 20px;
 }
 
 .ms-card-title {
