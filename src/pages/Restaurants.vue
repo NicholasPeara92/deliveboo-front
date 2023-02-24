@@ -34,8 +34,7 @@
     <div class="d-flex justify-content-around flex-wrap m-3">
       <!-- CARD -->
       <div
-        class="card mb-3 mx-1 py-1 my-4"
-        style="max-width: 480px"
+        class="card mb-4 mx-1 py-1 my-5"
         v-for="(restaurant, index) in getRestaurants"
         :key="index"
       >
@@ -179,9 +178,13 @@ export default {
 
 <style scoped lang="scss">
 .card {
+  max-width: 480px;
   background-color: aliceblue;
   border-radius: 20px;
   transition: all 0.3s;
+  @media only screen and (max-width: 576px) {
+    max-width: 400px;
+  }
 }
 .card:hover {
   scale: 1.2;
