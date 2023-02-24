@@ -30,7 +30,7 @@ export default {
   <nav class="main-nav">
     <ul>
       <li v-for="link in links">
-        <router-link :to="{ name: link.link }">
+        <router-link style="font-weight: 600" :to="{ name: link.link }">
           {{ link.name }}
         </router-link>
       </li>
