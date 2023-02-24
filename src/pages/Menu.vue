@@ -16,6 +16,7 @@ export default {
       this.store.products.find((element) => {
         if (element.id === id) {
           element.quantity++;
+          element.totalPrice += parseFloat(element.price);
         }
       });
 
@@ -39,6 +40,7 @@ export default {
             element.quantity = 0;
           } else {
             element.quantity--;
+            element.totalPrice -= parseFloat(element.price);
           }
         }
       });
@@ -118,6 +120,7 @@ export default {
           </h6>
         </div>
         <strong class="d-block">{{ product.price }}€</strong>
+        <strong class="d-block">{{ product.totalPrice }}€</strong>
         <div>
           <button @click="addToCart(product.id)" class="ms-btn-primary mt-3">
             +

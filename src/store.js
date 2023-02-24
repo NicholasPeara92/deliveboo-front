@@ -13,6 +13,7 @@ export const store = reactive({
       );
       this.products.forEach((element) => {
         element.quantity = 0;
+        element.totalPrice = 0;
       });
       console.log(this.products);
     });
