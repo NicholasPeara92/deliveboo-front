@@ -9,40 +9,48 @@
         <img src="../../assets/person 2.png" alt="" />
         <h5>Pino</h5>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
-          dolor dolorem! Doloremque quisquam facilis debitis architecto?
+          <i class="fa-solid fa-quote-left"></i> Oggi Deliveboo è presente in 11
+          mercati in tutto il mondo, collabora con migliaia di ristoranti e
+          rider e arriva nelle case di milioni di clienti.
+          <i class="fa-solid fa-quote-right"></i>
         </p>
       </div>
       <div class="card">
         <img src="../../assets/person 1.png" alt="" />
         <h5>Giulia</h5>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
-          dolor dolorem! Doloremque quisquam facilis debitis architecto?
+          <i class="fa-solid fa-quote-left"></i> Da anni lavoriamo sodo per
+          capire cosa vogliono i clienti e per offrire una proposta adatta a
+          loro sia a livello geografico, sia individuale.
+          <i class="fa-solid fa-quote-right"></i>
         </p>
       </div>
       <div class="card">
         <img src="../../assets/person 3.png" alt="" />
         <h5>Antonino</h5>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
-          dolor dolorem! Doloremque quisquam facilis debitis architecto?
+          <i class="fa-solid fa-quote-left"></i> Il nostro modello ha fatto
+          aumentare esponenzialmente il numero di ristoranti che offrono le
+          consegne a domicilio. <i class="fa-solid fa-quote-right"></i>
         </p>
       </div>
       <div class="card">
         <img src="../../assets/person 4.png" alt="" />
         <h5>Andrea</h5>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
-          dolor dolorem! Doloremque quisquam facilis debitis architecto?
+          <i class="fa-solid fa-quote-left"></i> La tecnologia sviluppata da
+          Deliveboo permette di portare a termine contemporaneamente migliaia di
+          ordini in tutto il mondo. <i class="fa-solid fa-quote-right"></i>
         </p>
       </div>
       <div class="card">
         <img src="../../assets/person 5.png" alt="" />
         <h5>Camilla</h5>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias a id
-          dolor dolorem! Doloremque quisquam facilis debitis architecto?
+          <i class="fa-solid fa-quote-left"></i> La passione di Deliveroo è il
+          cibo, con l'obiettivo di fornire alle persone una scelta sempre più
+          ampia di ristoranti e di attività legate al cibo.
+          <i class="fa-solid fa-quote-right"></i>
         </p>
       </div>
     </div>
@@ -69,7 +77,7 @@ export default {};
     font-weight: bold;
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 576px) {
     height: auto;
     opacity: 100%;
   }
@@ -78,14 +86,14 @@ export default {};
 .container-cards {
   display: flex;
   flex-direction: row;
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 576px) {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 }
 .card {
-  width: auto;
+  width: calc(100% / 5);
   height: 350px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
@@ -95,20 +103,12 @@ export default {};
   margin-right: 10px;
   margin-top: 20px;
   transition: all 0.3s;
+  @media only screen and (max-width: 576px) {
+    width: auto;
+  }
 
   &:hover {
     transform: translateY(-5px);
-  }
-
-  .card-title {
-    font-size: 18px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  .card-description {
-    font-size: 14px;
-    color: #666;
   }
 }
 
