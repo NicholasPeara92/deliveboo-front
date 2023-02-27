@@ -33,50 +33,48 @@
     </div>
     <div class="d-flex justify-content-around flex-wrap m-3">
       <!-- CARD -->
-      <div
-        class="card mb-4 mx-1 py-1 my-5"
-        v-for="(restaurant, index) in restaurants"
-        :key="index"
-      >
-        <div v-if="restaurant.selected" class="row g-0">
-          <div class="col-md-4 d-flex justify-content-center">
-            <img
-              :src="restaurant.image_url"
-              class="img-fluid rounded-start ms-img"
-              alt="..."
-            />
-          </div>
-          <div class="col-md-8 position-relative">
-            <div class="card-body">
-              <h5 class="ms-card-title card-title">{{ restaurant.name }}</h5>
-              <p class="card-text mb-0">
-                <b>Telefono:</b> {{ restaurant.telephone }}
-              </p>
-              <p class="card-text">
-                <b>Indirizzo: </b> {{ restaurant.address }}
-              </p>
-              <!-- Bottone guarda il menu -->
-              <button class="ms-btn-primary">
-                <router-link
-                  :to="{ name: 'menu', params: { slug: restaurant.slug } }"
-                  >Guarda il menu</router-link
-                >
-              </button>
-              <!-- Fine bottone -->
+      <div v-for="(restaurant, index) in restaurants" :key="index">
+        <div class="card mb-4 mx-1 py-1 my-5" v-if="restaurant.selected">
+          <div class="row g-0">
+            <div class="col-md-4 d-flex justify-content-center">
+              <img
+                :src="restaurant.image_url"
+                class="img-fluid rounded-start ms-img"
+                alt="..."
+              />
             </div>
-            <!-- Badge categorie -->
-            <div class="d-flex position-absolute top-0 end-0 m-2">
-              <span
-                v-for="category in restaurant.categories"
-                class="badge bg-warning text-dark me-1"
-                >{{ category.name }}
-              </span>
+            <div class="col-md-8 position-relative">
+              <div class="card-body">
+                <h5 class="ms-card-title card-title">{{ restaurant.name }}</h5>
+                <p class="card-text mb-0">
+                  <b>Telefono:</b> {{ restaurant.telephone }}
+                </p>
+                <p class="card-text">
+                  <b>Indirizzo: </b> {{ restaurant.address }}
+                </p>
+                <!-- Bottone guarda il menu -->
+                <button class="ms-btn-primary">
+                  <router-link
+                    :to="{ name: 'menu', params: { slug: restaurant.slug } }"
+                    >Guarda il menu</router-link
+                  >
+                </button>
+                <!-- Fine bottone -->
+              </div>
+              <!-- Badge categorie -->
+              <div class="d-flex position-absolute top-0 end-0 m-2">
+                <span
+                  v-for="category in restaurant.categories"
+                  class="badge bg-warning text-dark me-1"
+                  >{{ category.name }}
+                </span>
+              </div>
+              <!-- Fine badge categorie -->
             </div>
-            <!-- Fine badge categorie -->
           </div>
         </div>
+        <!-- FINE CARD -->
       </div>
-      <!-- FINE CARD -->
     </div>
     <button
       class="ms-btn-primary"
