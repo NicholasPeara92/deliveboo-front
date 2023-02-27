@@ -9,16 +9,16 @@ import { ref } from "vue";
         <div class="col-sm-4 col-md-3 item">
           <h5>Scopri DeliveBoo</h5>
           <ul>
-            <li><a href="*">Chi siamo</a></li>
-            <li><a href="*">Ristoranti</a></li>
-            <li><a href="*">Diventa Nostro partner</a></li>
+            <li><a href="#about-us">Chi siamo</a></li>
+            <li><a href="#restaurants">Ristoranti</a></li>
+            <li><a href="#partner">Diventa Nostro partner</a></li>
           </ul>
         </div>
         <div class="col-sm-4 col-md-3 item">
           <h5>Aiuto</h5>
           <ul>
-            <li><a href="*">Contatti</a></li>
-            <li><a href="*">FAQ</a></li>
+            <li><a href="#contact-us">Contatti</a></li>
+            <li><a href="https://deliveroo.it/it/faq">FAQ</a></li>
           </ul>
         </div>
         <div class="col-sm-4 col-md-3 item">
@@ -42,15 +42,15 @@ import { ref } from "vue";
           </ul>
         </div>
         <div class="col-lg-3 item social">
-          <a class="ms-0" href="#"><i class="fa-brands fa-facebook-f"></i></a
-          ><a href="#"><i class="fa-brands fa-twitter"></i></a
-          ><a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a  href="https://www.facebook.com/DeliverooIT/?locale=it_IT"><i class="fa-brands fa-facebook-f"></i></a
+          ><a href="https://twitter.com/Deliveroo_Italy"><i class="fa-brands fa-twitter"></i></a
+          ><a href="https://www.instagram.com/deliveroo_italy/"><i class="fa-brands fa-instagram"></i></a>
           <p class="copyright">DeliveBoo © classe 76 - 2023</p>
         </div>
       </div>
     </div>
     <div>
-      <button onclick="topFunction()" class="top-btn">
+      <button class="top-btn">
         <a href="#top"
           ><svg
             xmlns="http://www.w3.org/2000/svg"

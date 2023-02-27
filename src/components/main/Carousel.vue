@@ -20,32 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
     currentImage = (currentImage === carousel.children.length - 1) ? 0 : currentImage + 1;
     carousel.children[currentImage].classList.add('active');
   });
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('#carousel img');
-    const intervalTime = 5000; // Cambiare qui l'intervallo in millisecondi
-    let slideInterval;
 
-    // Funzione per passare alla prossima immagine
-    function nextSlide() {
-    slides[currentSlide].className = 'next';
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].className = 'active';
-    }
-
-    // Avvia lo slideshow
-    function startSlide() {
-    slideInterval = setInterval(nextSlide, intervalTime);
-    }
-
-    // Ferma lo slideshow
-    function stopSlide() {
-    clearInterval(slideInterval);
-    }
-
-    // Avvia lo slideshow quando la pagina è caricata
-    window.onload = startSlide;
+  const restartBtn = document.getElementById('restartBtn');
+  restartBtn.addEventListener('click', () => {
+    carousel.children[currentImage].classList.remove('active');
+    currentImage = 0;
+    carousel.children[currentImage].classList.add('active');
+  });
 });
-
 
 </script>
 
@@ -63,6 +45,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <style lang="scss" scoped>
 
+h1{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
 .carousel {
   position: relative;
   display: flex;
@@ -118,14 +107,21 @@ document.addEventListener('DOMContentLoaded', () => {
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
+    color: white;
+    background-color: #66cccc;
     }
 
     #prevBtn {
-    left: 10px;
+    left: 5px;
     }
 
     #nextBtn {
-    right: 10px;
+    right: 5px;
+    }
+
+    #prevBtn:hover, #nextBtn:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
     @media (max-width: 767px) {
