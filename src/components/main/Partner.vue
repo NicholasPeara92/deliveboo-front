@@ -1,5 +1,5 @@
 <template>
-  <section class="partner">
+  <section id="partner" class="partner">
     <div class="left">
       <h3>Diventa Nostro Partner!</h3>
       <p>
