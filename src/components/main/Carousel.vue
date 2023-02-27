@@ -19,40 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
     carousel.children[currentImage].classList.remove('active');
     currentImage = (currentImage === carousel.children.length - 1) ? 0 : currentImage + 1;
     carousel.children[currentImage].classList.add('active');
-
-    function restartCarousel() {
-  currentImage = 0;
-  carousel.children[currentImage].classList.add('active');
-}
   });
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('#carousel img');
-    const intervalTime = 5000; // Cambiare qui l'intervallo in millisecondi
-    let slideInterval;
 
-    // Funzione per passare alla prossima immagine
-    function nextSlide() {
-    slides[currentSlide].className = 'next';
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].className = 'active';
-    }
-
-    // Avvia lo slideshow
-    function startSlide() {
-    slideInterval = setInterval(nextSlide, intervalTime);
-    }
-
-    // Ferma lo slideshow
-    function stopSlide() {
-    clearInterval(slideInterval);
-    }
-
-    // Avvia lo slideshow quando la pagina è caricata
-    window.onload = startSlide;
+  const restartBtn = document.getElementById('restartBtn');
+  restartBtn.addEventListener('click', () => {
+    carousel.children[currentImage].classList.remove('active');
+    currentImage = 0;
+    carousel.children[currentImage].classList.add('active');
+  });
 });
-
-
-
 
 </script>
 
