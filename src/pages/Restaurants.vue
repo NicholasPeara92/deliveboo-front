@@ -17,7 +17,7 @@
     </div>
     <div class="d-flex justify-content-around flex-wrap m-3">
       <!-- CARD -->
-      <div v-for="(restaurant, index) in getRestaurants" :key="index">
+      <div v-for="(restaurant, index) in filteredArray" :key="index">
         <div class="card mb-4 mx-1 py-1 my-5" v-if="restaurant.selected">
           <div class="row g-0">
             <div class="col-md-4 d-flex justify-content-center">
@@ -86,16 +86,20 @@ export default {
       checkedCategories: [],
       totRestaurants: 4,
       checkedIdCategories: [],
+      filteredArray: [],
     };
   },
   methods: {
     restaurantFilter(id) {
+      this.filteredArray = [];
+
       if (!this.checkedIdCategories.includes(id)) {
         this.checkedIdCategories.push(id);
       } else {
         this.index = this.checkedIdCategories.indexOf(id);
         this.checkedIdCategories.splice(this.index, 1);
       }
+
       this.checkedCategories.forEach((element) => {
         if (element.id === id) {
           if (element.checked) {
@@ -122,6 +126,17 @@ export default {
           element.selected = false;
         }
       });
+
+      if (this.checkedIdCategories.length !== 0) {
+        this.restaurants.forEach((element, index) => {
+          if (element.selected) {
+            this.filteredArray.push(element);
+          }
+        });
+        this.filteredArray = this.filteredArray.filter(
+          (elm, index) => index < this.totRestaurants
+        );
+      }
     },
   },
 
@@ -140,11 +155,7 @@ export default {
     });
   },
   computed: {
-    getRestaurants() {
-      return this.restaurants.filter(
-        (elm, index) => index < this.totRestaurants
-      );
-    },
+    getRestaurants() {},
   },
 };
 </script>
