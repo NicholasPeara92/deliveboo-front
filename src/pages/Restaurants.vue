@@ -1,22 +1,6 @@
 <template>
   <div id="restaurants" class="container d-flex flex-column align-items-center">
-    <h1 class="text-center pt-sm-5"><strong>RISTORANTI</strong></h1>
-    <div class="d-flex justify-content-center my-5">
-      <input
-        type="text"
-        placeholder="Inserisci il nome"
-        v-model="searchRestaurantName"
-      />
-      <select
-        class="ms-2"
-        v-model="searchRestaurantCategory"
-        name="type"
-        id="type"
-      >
-        <option value="">Nessuna Tipologia</option>
-        <option v-for="category in categories">{{ category.name }}</option>
-      </select>
-    </div>
+    <h1 class="text-center py-sm-5"><strong>RISTORANTI</strong></h1>
     <div class="mb-4">
       <div v-for="category in categories" class="form-check form-check-inline">
         <input
@@ -156,39 +140,6 @@ export default {
     });
   },
   computed: {
-    // restaurantList() {
-    //   this.restaurantsId = [];
-    //   this.finalArray = [];
-
-    //   if (this.searchRestaurantCategory.length > 0) {
-    //     this.restaurants.forEach((element) => {
-    //       element.categories.forEach((element) => {
-    //         if (element.name === this.searchRestaurantCategory) {
-    //           this.restaurantsId.push(element.pivot.restaurant_id);
-    //         }
-    //       });
-    //     });
-    //   }
-
-    //   this.restaurantsId.forEach((element) => {
-    //     this.finalArray.push(
-    //       this.restaurants.find((restaurant) => restaurant.id === element)
-    //     );
-    //   });
-
-    //   if (this.finalArray.length === 0) {
-    //     this.finalArray = this.restaurants.filter((restaurant) =>
-    //       restaurant.name.toLowerCase().includes(this.searchRestaurantName)
-    //     );
-
-    //     return this.finalArray;
-    //   } else {
-    //     this.finalArray = this.finalArray.filter((restaurant) =>
-    //       restaurant.name.toLowerCase().includes(this.searchRestaurantName)
-    //     );
-    //     return this.finalArray;
-    //   }
-    // },
     getRestaurants() {
       return this.restaurants.filter(
         (elm, index) => index < this.totRestaurants
