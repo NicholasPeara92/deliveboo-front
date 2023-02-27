@@ -5,6 +5,7 @@ export const store = reactive({
   api_url: import.meta.env.VITE_BACKEND_URL,
   restaurant: [],
   products: [],
+  cartProducts: [],
   getProducts: function (param) {
     if (!localStorage.products) {
       axios.get(`${this.api_url}/restaurant/` + "" + param).then((response) => {
@@ -18,16 +19,43 @@ export const store = reactive({
         });
         console.log(this.products);
       });
-      localStorage.products = JSON.stringify(this.products);
+      // localStorage.products = JSON.stringify(this.products);
+    } else {
     }
   },
   addToCart(id) {
+    this.found = false;
     this.products.find((element) => {
       if (element.id === id) {
         element.quantity++;
         element.totalPrice += parseFloat(element.price);
+
+        if (this.cartProducts.length === 0) {
+          this.cartProducts.push(element);
+        } else {
+          this.cartProducts.forEach((cartElement) => {
+            if (cartElement.id === id) {
+              console.log(element);
+              element.found = true;
+            }
+          });
+        }
+
+        console.log(element);
+        if (element.found) {
+          this.cartProducts.push(element);
+        }
+
+        localStorage.products = JSON.stringify(this.cartProducts);
+
+        // if (localStorage.products) {
+        //   localStorage.products.setItem("product", element);
+        // } else {
+        //   localStorage.products = [];
+        //   localStorage.products.setItem("product", element);
+        // }
       }
-      localStorage.products = JSON.stringify(this.products);
+      // localStorage.products = JSON.stringify(this.products);
     });
 
     console.log(this.products);
