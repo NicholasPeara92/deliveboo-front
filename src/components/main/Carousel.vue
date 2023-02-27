@@ -63,6 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <style lang="scss" scoped>
 
+h1{
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
 .carousel {
   position: relative;
   display: flex;
@@ -118,14 +125,21 @@ document.addEventListener('DOMContentLoaded', () => {
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
+    color: white;
+    background-color: #66cccc;
     }
 
     #prevBtn {
-    left: 10px;
+    left: 5px;
     }
 
     #nextBtn {
-    right: 10px;
+    right: 5px;
+    }
+
+    #prevBtn:hover, #nextBtn:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     }
 
     @media (max-width: 767px) {
