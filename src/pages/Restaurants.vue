@@ -1,5 +1,8 @@
 <template>
-  <div id="restaurants" class="container d-flex flex-column align-items-center">
+  <div
+    id="restaurants"
+    class="container-fluid d-flex flex-column align-items-center"
+  >
     <h1 class="text-center py-sm-5"><strong>RISTORANTI</strong></h1>
     <div class="mb-4">
       <div v-for="category in categories" class="form-check form-check-inline">
@@ -10,9 +13,11 @@
           type="checkbox"
           @click="restaurantFilter(category.id)"
         />
-        <label class="form-check-label" :for="category.slug">{{
-          category.name
-        }}</label>
+        <label class="form-check-label" :for="category.slug"
+          ><b>
+            {{ category.name }}
+          </b>
+        </label>
       </div>
     </div>
     <div class="d-flex justify-content-around flex-wrap my-3 col-12">
@@ -165,6 +170,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+#restaurants {
+  background-color: #00ccbc;
+  width: 100%;
+}
 .card {
   max-width: 480px;
   background-color: aliceblue;
