@@ -19,6 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
     carousel.children[currentImage].classList.remove('active');
     currentImage = (currentImage === carousel.children.length - 1) ? 0 : currentImage + 1;
     carousel.children[currentImage].classList.add('active');
+
+    function restartCarousel() {
+  currentImage = 0;
+  carousel.children[currentImage].classList.add('active');
+}
   });
     let currentSlide = 0;
     const slides = document.querySelectorAll('#carousel img');
@@ -45,6 +50,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Avvia lo slideshow quando la pagina è caricata
     window.onload = startSlide;
 });
+
+
 
 
 </script>
