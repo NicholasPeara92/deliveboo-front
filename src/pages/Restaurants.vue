@@ -32,7 +32,7 @@
               />
             </div>
             <div class="col-md-8 position-relative">
-              <div class="card-body">
+              <div class="card-body mt-4">
                 <h5 class="ms-card-title card-title">{{ restaurant.name }}</h5>
                 <p class="card-text mb-0">
                   <b>Telefono:</b> {{ restaurant.telephone }}
@@ -50,10 +50,10 @@
                 <!-- Fine bottone -->
               </div>
               <!-- Badge categorie -->
-              <div class="d-flex position-absolute top-0 end-0 m-2">
+              <div class="ms-badge d-flex position-absolute m-2">
                 <span
                   v-for="category in restaurant.categories"
-                  class="badge bg-warning text-dark me-1"
+                  class="badge bg-warning text-dark me-1 mb-2"
                   >{{ category.name }}
                 </span>
               </div>
@@ -171,7 +171,12 @@ export default {
   border-radius: 20px;
   transition: all 0.3s;
   @media only screen and (max-width: 576px) {
-    max-width: 400px;
+    width: 240px;
+    height: 360px;
+    .ms-badge {
+      flex-wrap: nowrap;
+      left: 0;
+    }
   }
 }
 .card:hover {
@@ -190,10 +195,18 @@ h1 {
 .ms-img {
   object-fit: contain;
   padding: 20px;
+  height: 150px;
 }
 
 .ms-card-title {
   text-transform: uppercase;
   font-weight: bold;
+}
+
+.ms-badge {
+  max-width: 75px;
+  flex-wrap: wrap;
+  top: 0;
+  right: 0;
 }
 </style>
