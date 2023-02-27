@@ -1,8 +1,10 @@
 <template>
   <header class="d-flex justify-content-between py-3 px-4">
-    <router-link :to="{ name: 'homepage' }">
-      <img src="../assets/deliverboo.png" alt="" />
-    </router-link>
+    <div style="width: 250px">
+      <router-link :to="{ name: 'homepage' }">
+        <img src="../assets/deliverboo.png" alt="" />
+      </router-link>
+    </div>
     <HeaderNav />
     <div class="header-buttons">
       <button class="ms-btn-primary">
@@ -22,27 +24,27 @@
       >
         <i class="fa-solid fa-cart-shopping"></i>
       </button>
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrello</h5>
+          <button
+            type="button"
+            @click="hide_cart"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body">...</div>
+      </div>
     </div>
   </header>
   <!-- Carrello -->
-  <div
-    class="offcanvas offcanvas-end"
-    tabindex="-1"
-    id="offcanvasRight"
-    aria-labelledby="offcanvasRightLabel"
-  >
-    <div class="offcanvas-header">
-      <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrello</h5>
-      <button
-        type="button"
-        @click="hide_cart"
-        class="btn-close"
-        data-bs-dismiss="offcanvas"
-        aria-label="Close"
-      ></button>
-    </div>
-    <div class="offcanvas-body">...</div>
-  </div>
   <!-- Fine carrello -->
 </template>
 
