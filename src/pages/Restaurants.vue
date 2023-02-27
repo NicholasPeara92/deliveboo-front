@@ -102,18 +102,15 @@ export default {
       checkedCategories: [],
       totRestaurants: 4,
       checkedIdCategories: [],
-      selectedRestaurants: [],
     };
   },
   methods: {
     restaurantFilter(id) {
       if (!this.checkedIdCategories.includes(id)) {
         this.checkedIdCategories.push(id);
-        console.log(this.checkedIdCategories);
       } else {
         this.index = this.checkedIdCategories.indexOf(id);
         this.checkedIdCategories.splice(this.index, 1);
-        console.log(this.checkedIdCategories);
       }
       this.checkedCategories.forEach((element) => {
         if (element.id === id) {
@@ -124,7 +121,6 @@ export default {
           }
         }
       });
-      console.log(this.checkedCategories);
 
       this.selectedCategoriesLenght = this.checkedIdCategories.length;
 
@@ -133,8 +129,6 @@ export default {
         element.categories.forEach((subElement) => {
           if (this.checkedIdCategories.includes(subElement.id)) {
             element.rightCategories++;
-
-            console.log(element.name);
           }
         });
         if (element.rightCategories === this.selectedCategoriesLenght) {
