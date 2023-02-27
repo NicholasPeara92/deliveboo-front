@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid px-0">
     <Hero />
-    <Carousel />
+    <MainCarousel />
     <Restaurants />
     <Partner />
     <FollowUs />
@@ -12,7 +12,7 @@
 
 <script>
 import Hero from "../components/main/Hero.vue";
-import Carousel from "../components/main/Carousel.vue";
+import MainCarousel from "../components/main/MainCarousel.vue";
 import Partner from "../components/main/Partner.vue";
 import FollowUs from "../components/main/FollowUs.vue";
 import AboutUs from "../components/main/AboutUs.vue";
@@ -23,7 +23,7 @@ export default {
   name: "HomePage",
   components: {
     Hero,
-    Carousel,
+    MainCarousel,
     Partner,
     FollowUs,
     AboutUs,
