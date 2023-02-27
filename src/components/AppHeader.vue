@@ -61,6 +61,7 @@
             </div>
           </div>
         </div>
+        <button><a href="../components/payment/Payment.vue"></a>Paga ora</button>
       </div>
     </div>
   </header>
