@@ -73,8 +73,38 @@ $font-color: #fff; // bianco
       border-radius: 50px;
       padding: 8px 16px;
       font-size: 16px;
+      transition: all 0.9s;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
       cursor: pointer;
-      transition: background-color 0.2s ease-in-out;
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $font-color;
+        z-index: -2;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background-color: darken($primary-color, 30%);
+        transition: all 0.3s;
+        z-index: -1;
+      }
+      &:hover {
+        color: $font-color;
+        &:before {
+          width: 100%;
+        }
+      }
       a {
         font-size: 18px;
         color: $primary-color;
