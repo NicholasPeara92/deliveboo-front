@@ -33,7 +33,7 @@
     </div>
     <div class="d-flex justify-content-around flex-wrap m-3">
       <!-- CARD -->
-      <div v-for="(restaurant, index) in restaurants" :key="index">
+      <div v-for="(restaurant, index) in getRestaurants" :key="index">
         <div class="card mb-4 mx-1 py-1 my-5" v-if="restaurant.selected">
           <div class="row g-0">
             <div class="col-md-4 d-flex justify-content-center">
