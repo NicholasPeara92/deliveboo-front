@@ -19,7 +19,7 @@ export const store = reactive({
         });
         console.log(this.products);
       });
-      // localStorage.products = JSON.stringify(this.products);
+      localStorage.products = JSON.stringify(this.products);
     } else {
     }
   },
@@ -29,24 +29,23 @@ export const store = reactive({
       if (element.id === id) {
         element.quantity++;
         element.totalPrice += parseFloat(element.price);
+        // if (this.cartProducts.length === 0) {
+        //   this.cartProducts.push(element);
+        // } else {
+        //   this.cartProducts.forEach((cartElement) => {
+        //     if (cartElement.id === id) {
+        //       console.log(element);
+        //       element.found = true;
+        //     }
+        //   });
+        // }
 
-        if (this.cartProducts.length === 0) {
-          this.cartProducts.push(element);
-        } else {
-          this.cartProducts.forEach((cartElement) => {
-            if (cartElement.id === id) {
-              console.log(element);
-              element.found = true;
-            }
-          });
-        }
+        // console.log(element);
+        // if (element.found) {
+        //   this.cartProducts.push(element);
+        // }
 
-        console.log(element);
-        if (element.found) {
-          this.cartProducts.push(element);
-        }
-
-        localStorage.products = JSON.stringify(this.cartProducts);
+        // localStorage.products = JSON.stringify(this.cartProducts);
 
         // if (localStorage.products) {
         //   localStorage.products.setItem("product", element);
@@ -55,7 +54,7 @@ export const store = reactive({
         //   localStorage.products.setItem("product", element);
         // }
       }
-      // localStorage.products = JSON.stringify(this.products);
+      localStorage.products = JSON.stringify(this.products);
     });
 
     console.log(this.products);
