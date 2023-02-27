@@ -18,20 +18,20 @@
     <div class="d-flex justify-content-around flex-wrap my-3 col-12">
       <!-- CARD -->
       <div
-        class="col-6"
+        class="col-12 col-md-6"
         v-for="(restaurant, index) in filteredArray"
         :key="index"
       >
         <div class="card mb-4 mx-auto my-5" v-if="restaurant.selected">
-          <div class="row g-0">
-            <div class="col-md-4 d-flex justify-content-center">
+          <div class="d-flex g-0">
+            <div class="col-md-4 d-flex">
               <img
                 :src="restaurant.image_url"
                 class="img-fluid rounded-start ms-img"
                 alt="..."
               />
             </div>
-            <div class="col-md-8 position-relative">
+            <div class="position-relative col-md-8">
               <div class="card-body mt-4">
                 <h5 class="ms-card-title card-title">{{ restaurant.name }}</h5>
                 <p class="card-text mb-0">
@@ -171,8 +171,9 @@ export default {
   border-radius: 20px;
   transition: all 0.3s;
   @media only screen and (max-width: 576px) {
-    width: 240px;
-    height: 360px;
+    width: 100%;
+    height: 240px;
+    padding-top: 20px;
     .ms-badge {
       flex-wrap: nowrap;
       left: 0;
