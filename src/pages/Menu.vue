@@ -11,40 +11,16 @@ export default {
       searchProductType: "",
     };
   },
-  methods: {
-    addToCart(id) {
-      this.store.products.find((element) => {
-        if (element.id === id) {
-          element.quantity++;
-          element.totalPrice += parseFloat(element.price);
-        }
-      });
+  methods: {},
+  mounted() {
+    if (localStorage.products) {
+      this.store.products = JSON.parse(localStorage.products);
+    }
+  },
 
-      console.log(this.store.products);
-
-      // if (localStorage.products) {
-      //   window.localStorage.setItem;
-      //   console.log(localStorage.products);
-      //   localStorage.products.push(product);
-      //   console.log(localStorage.products);
-      // } else {
-      //   localStorage.products.push(product);
-      //   console.log(localStorage.products);
-      // }
-    },
-
-    dropToCart(id) {
-      this.store.products.find((element) => {
-        if (element.id === id) {
-          if (element.quantity === 0) {
-            element.quantity = 0;
-          } else {
-            element.quantity--;
-            element.totalPrice -= parseFloat(element.price);
-          }
-        }
-      });
-      console.log(this.store.products);
+  watch: {
+    products(newProducts) {
+      localStorage.products = JSON.stringify(newProducts);
     },
   },
 
@@ -75,6 +51,7 @@ export default {
             .toLowerCase()
             .includes(this.searchProductType.toLowerCase())
         );
+        console.log(this.filteredProducts);
         return this.filteredProducts;
       } else {
         return this.store.products;
@@ -122,12 +99,15 @@ export default {
         <strong class="d-block">{{ product.price }}€</strong>
         <strong class="d-block">{{ product.totalPrice }}€</strong>
         <div>
-          <button @click="addToCart(product.id)" class="ms-btn-primary mt-3">
+          <button
+            @click="store.addToCart(product.id)"
+            class="ms-btn-primary mt-3"
+          >
             +
           </button>
           <span>{{ product.quantity }}</span>
           <button
-            @click="dropToCart(product.id)"
+            @click="store.dropToCart(product.id)"
             class="ms-btn-primary bg-danger mt-3 my-3 ms-2"
           >
             -
