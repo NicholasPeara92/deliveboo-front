@@ -35,10 +35,10 @@
       <!-- CARD -->
       <div
         class="card mb-4 mx-1 py-1 my-5"
-        v-for="(restaurant, index) in getRestaurants"
+        v-for="(restaurant, index) in restaurants"
         :key="index"
       >
-        <div class="row g-0">
+        <div v-if="restaurant.selected" class="row g-0">
           <div class="col-md-4 d-flex justify-content-center">
             <img
               :src="restaurant.image_url"
@@ -103,10 +103,20 @@ export default {
       searchRestaurantCategory: "",
       checkedCategories: [],
       totRestaurants: 4,
+      checkedIdCategories: [],
+      selectedRestaurants: [],
     };
   },
   methods: {
     restaurantFilter(id) {
+      if (!this.checkedIdCategories.includes(id)) {
+        this.checkedIdCategories.push(id);
+        console.log(this.checkedIdCategories);
+      } else {
+        this.index = this.checkedIdCategories.indexOf(id);
+        this.checkedIdCategories.splice(this.index, 1);
+        console.log(this.checkedIdCategories);
+      }
       this.checkedCategories.forEach((element) => {
         if (element.id === id) {
           if (element.checked) {
@@ -116,14 +126,34 @@ export default {
           }
         }
       });
-
       console.log(this.checkedCategories);
+
+      this.selectedCategoriesLenght = this.checkedIdCategories.length;
+
+      this.restaurants.forEach((element) => {
+        element.rightCategories = 0;
+        element.categories.forEach((subElement) => {
+          if (this.checkedIdCategories.includes(subElement.id)) {
+            element.rightCategories++;
+
+            console.log(element.name);
+          }
+        });
+        if (element.rightCategories === this.selectedCategoriesLenght) {
+          element.selected = true;
+          console.log(this.restaurants);
+        } else {
+          element.selected = false;
+        }
+      });
     },
   },
 
   created() {
     axios.get(`${this.store.api_url}/restaurants`).then((response) => {
       this.restaurants = response.data;
+      this.restaurants.forEach((element) => (element.selected = true));
+      console.log(this.restaurants);
     });
     axios.get(`${this.store.api_url}/categories`).then((response) => {
       this.categories = response.data;
