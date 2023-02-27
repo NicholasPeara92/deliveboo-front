@@ -17,15 +17,7 @@
     </div>
     <div class="d-flex row justify-content-around flex-wrap m-3">
       <!-- CARD -->
-<<<<<<< HEAD
       <div v-for="(restaurant, index) in filteredArray" :key="index">
-=======
-      <div
-        class="col-6 d-flex justify-content-center"
-        v-for="(restaurant, index) in getRestaurants"
-        :key="index"
-      >
->>>>>>> d582f743836163840f73e585b19bd13dc1ddf713
         <div class="card mb-4 mx-1 py-1 my-5" v-if="restaurant.selected">
           <div class="row g-0">
             <div class="col-md-4 d-flex justify-content-center">
