@@ -11,8 +11,23 @@
       <button class="ms-btn-primary">
         <a href="http://127.0.0.1:8000/login">Log in</a>
       </button>
+      <!-- Bottone carrello -->
+      <button class="btn btn-primary" type="button" @click="show_cart" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        Toggle right offcanvas
+      </button>
     </div>
   </header>
+  <!-- Carrello -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+      <button type="button" @click="hide_cart" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      ...
+    </div>
+  </div>
+  <!-- Fine carrello -->
 </template>
 
 <script>
@@ -22,7 +37,24 @@ export default {
   components: {
     HeaderNav,
   },
-};
+
+  methods:{
+    show_cart(){
+      const myOffcanvas = document.getElementById('offcanvasRight')
+      myOffcanvas.classList.add("show");
+    },
+    hide_cart(){
+      const myOffcanvas = document.getElementById('offcanvasRight')
+      myOffcanvas.classList.remove("show");
+    }
+  }
+}
+
+// show_cart("click", function() {
+//   const myOffcanvas = document.getElementById('offcanvasRight')
+//   myOffcanvas.classList.add("newClass");
+// }) 
+
 window.addEventListener("scroll", function () {
   let navbar = document.querySelector("header");
   if (window.scrollY > 50) {
