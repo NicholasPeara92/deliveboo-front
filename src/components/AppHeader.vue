@@ -40,7 +40,27 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="offcanvas-body">...</div>
+        <div class="offcanvas-body">
+          <div v-for="product in this.store.products">
+            <div class="d-flex align-items-center" v-if="product.quantity > 0">
+              <div>{{ product.name }}: {{ product.quantity }}</div>
+              <div class="ms-3">
+                <button
+                  @click="store.addToCart(product.id)"
+                  class="ms-btn-primary mt-3"
+                >
+                  +
+                </button>
+                <button
+                  @click="store.dropToCart(product.id)"
+                  class="ms-btn-primary bg-danger mt-3 my-3"
+                >
+                  -
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -50,10 +70,17 @@
 
 <script>
 import HeaderNav from "./header/HeaderNav.vue";
+import { store } from "../store";
+
 export default {
   name: "AppHeader",
   components: {
     HeaderNav,
+  },
+  data() {
+    return {
+      store,
+    };
   },
 
   methods: {
