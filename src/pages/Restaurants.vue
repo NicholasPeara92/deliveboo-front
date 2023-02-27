@@ -15,10 +15,14 @@
         }}</label>
       </div>
     </div>
-    <div class="d-flex row justify-content-around flex-wrap m-3">
+    <div class="d-flex justify-content-around flex-wrap my-3 col-12">
       <!-- CARD -->
-      <div v-for="(restaurant, index) in filteredArray" :key="index">
-        <div class="card mb-4 mx-1 py-1 my-5" v-if="restaurant.selected">
+      <div
+        class="col-6"
+        v-for="(restaurant, index) in filteredArray"
+        :key="index"
+      >
+        <div class="card mb-4 mx-auto my-5" v-if="restaurant.selected">
           <div class="row g-0">
             <div class="col-md-4 d-flex justify-content-center">
               <img
@@ -60,13 +64,13 @@
         <!-- FINE CARD -->
       </div>
     </div>
-    <button
+    <!-- <button
       class="ms-btn-primary"
       @click="totRestaurants += 4"
       v-if="totRestaurants < restaurants.length"
     >
       Mostra altri
-    </button>
+    </button> -->
   </div>
 </template>
 
