@@ -5,7 +5,10 @@
   >
     <h1 class="text-center py-sm-5"><strong>RISTORANTI</strong></h1>
     <div class="mb-4">
-      <div v-for="category in categories" class="form-check form-check-inline">
+      <div
+        v-for="category in store.categories"
+        class="form-check form-check-inline"
+      >
         <input
           class="form-check-input"
           :value="category.id"
@@ -88,8 +91,6 @@ export default {
   data() {
     return {
       store,
-      restaurants: [],
-      categories: [],
       searchRestaurantName: "",
       searchRestaurantCategory: "",
       checkedCategories: [],
@@ -121,7 +122,7 @@ export default {
 
       this.selectedCategoriesLenght = this.checkedIdCategories.length;
 
-      this.restaurants.forEach((element) => {
+      this.store.restaurants.forEach((element) => {
         element.rightCategories = 0;
         element.categories.forEach((subElement) => {
           if (this.checkedIdCategories.includes(subElement.id)) {
@@ -130,14 +131,14 @@ export default {
         });
         if (element.rightCategories === this.selectedCategoriesLenght) {
           element.selected = true;
-          console.log(this.restaurants);
+          console.log(this.store.restaurants);
         } else {
           element.selected = false;
         }
       });
 
       if (this.checkedIdCategories.length !== 0) {
-        this.restaurants.forEach((element, index) => {
+        this.store.restaurants.forEach((element, index) => {
           if (element.selected) {
             this.filteredArray.push(element);
           }
@@ -150,21 +151,7 @@ export default {
   },
 
   created() {
-    axios.get(`${this.store.api_url}/restaurants`).then((response) => {
-      this.restaurants = response.data;
-      this.restaurants.forEach((element) => (element.selected = true));
-      console.log(this.restaurants);
-    });
-    axios.get(`${this.store.api_url}/categories`).then((response) => {
-      this.categories = response.data;
-      this.checkedCategories = response.data;
-      this.checkedCategories.forEach((element) => {
-        element.checked = false;
-      });
-    });
-  },
-  computed: {
-    getRestaurants() {},
+    this.store.getRestaurantsAndCategories();
   },
 };
 </script>
