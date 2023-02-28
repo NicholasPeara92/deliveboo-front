@@ -39,7 +39,7 @@ $font-color: #fff; // bianco
   #login {
     text-decoration: none;
     color: $primary-color;
-    margin-top: 40px;
+
     display: inline-block;
   }
   #login:hover {
