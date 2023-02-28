@@ -4,6 +4,7 @@
     <Hero />
     <MainCarousel />
     <Restaurants />
+    <Experience />
     <Partner />
     <FollowUs />
     <AboutUs />
@@ -20,6 +21,7 @@ import FollowUs from "../components/main/FollowUs.vue";
 import AboutUs from "../components/main/AboutUs.vue";
 import ContactUs from "../components/main/ContactUs.vue";
 import Restaurants from "./Restaurants.vue";
+import Experience from "../components/main/Experience.vue";
 
 export default {
   name: "HomePage",
@@ -32,6 +34,7 @@ export default {
     AboutUs,
     ContactUs,
     Restaurants,
+    Experience,
   },
 };
 </script>

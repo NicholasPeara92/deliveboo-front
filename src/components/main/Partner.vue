@@ -32,7 +32,6 @@ $font-color: #fff; // bianco
   align-items: center;
   background-color: white;
   position: relative;
-  height: 850px;
   width: 100%;
   .left {
     width: 45%;
