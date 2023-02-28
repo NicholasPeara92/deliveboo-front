@@ -113,19 +113,27 @@ export const store = reactive({
             this.cartArray = JSON.parse(localStorage.cartProducts);
           }
 
+          // VERIFICARE QUESTE FUNZIONI
+
           this.cartArray.find((arrayElement, index) => {
             if (arrayElement.id === product.id) {
               if (element.quantity === 0) {
-                this.productIndex = index;
+                this.cartArray.splice(index, 1);
               } else {
                 arrayElement.quantity = element.quantity;
                 arrayElement.totalPrice = element.totalPrice;
               }
             }
           });
-          localStorage.cartProducts = JSON.stringify(this.cartArray);
+          console.log(this.cartArray);
+          if (this.cartArray.length === 0) {
+            localStorage.clear();
+          } else {
+            localStorage.cartProducts = JSON.stringify(this.cartArray);
+          }
+          // VERIFICARE QUESTE FUNZIONI
+          // localStorage.cartProducts = JSON.stringify(this.cartArray);
         } else {
-          this.cartProducts.push(product);
           localStorage.cartProducts = JSON.stringify(this.cartProducts);
         }
       }
