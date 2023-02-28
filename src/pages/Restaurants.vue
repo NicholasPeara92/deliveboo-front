@@ -196,7 +196,7 @@ export default {
   transition: all 0.3s;
   @media only screen and (max-width: 576px) {
     width: 100%;
-    height: 240px;
+    height: 200px;
     padding-top: 20px;
     .ms-badge {
       flex-wrap: nowrap;
@@ -213,7 +213,7 @@ h1 {
     margin-top: 150px;
   }
   @media only screen and (max-width: 576px) {
-    margin-top: 200px;
+    margin-top: 30px;
   }
 }
 

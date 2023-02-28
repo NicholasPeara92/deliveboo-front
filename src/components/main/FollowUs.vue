@@ -43,9 +43,15 @@ export default {
   justify-content: space-between;
   border-radius: 10px;
   margin-top: 60px;
+  @media (max-width: 576px) {
+    margin-top: 30px;
+  }
 
   .left {
     width: 35%;
+    @media (max-width: 576px) {
+      margin-bottom: 20px;
+    }
     p {
       font-size: 20px;
       margin-top: 20px;
@@ -72,7 +78,7 @@ export default {
     }
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 576px) {
   .follow {
     display: flex;
     flex-direction: column;

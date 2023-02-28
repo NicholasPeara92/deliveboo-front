@@ -33,6 +33,7 @@ $font-color: #fff; // bianco
   background-color: white;
   position: relative;
   width: 100%;
+  height: auto;
   .left {
     width: 45%;
     height: 550px;
@@ -41,8 +42,8 @@ $font-color: #fff; // bianco
     text-align: center;
     padding-left: 100px;
     @media only screen and (max-width: 576px) {
-      height: 550px;
       width: 100%;
+      height: auto;
       padding: 0px;
       text-align: center;
     }
@@ -50,6 +51,9 @@ $font-color: #fff; // bianco
       margin-top: 100px;
       font-size: 48px;
       font-weight: bold;
+      @media only screen and (max-width: 576px) {
+        margin-top: 30px;
+      }
     }
     p {
       font-size: 19px;
@@ -77,6 +81,9 @@ $font-color: #fff; // bianco
       overflow: hidden;
       z-index: 1;
       cursor: pointer;
+      @media only screen and (max-width: 576px) {
+        margin-bottom: 30px;
+      }
       &:after {
         content: "";
         position: absolute;
@@ -126,6 +133,7 @@ $font-color: #fff; // bianco
     @media only screen and (max-width: 576px) {
       width: 45%;
       width: 0;
+      height: 0;
     }
     .angular {
       width: 100px;
