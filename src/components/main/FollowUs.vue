@@ -42,6 +42,7 @@ export default {
   display: flex;
   justify-content: space-between;
   border-radius: 10px;
+  margin-top: 60px;
 
   .left {
     width: 35%;
