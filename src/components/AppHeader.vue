@@ -41,7 +41,7 @@
           ></button>
         </div>
         <div class="offcanvas-body">
-          <div v-for="product in this.store.products">
+          <div v-for="product in this.store.cartProducts">
             <div class="d-flex align-items-center" v-if="product.quantity > 0">
               <div>{{ product.name }}: {{ product.quantity }}</div>
               <div class="ms-3">
@@ -61,7 +61,9 @@
             </div>
           </div>
         </div>
-        <button><a href="../components/payment/Payment.vue"></a>Paga ora</button>
+        <button>
+          <a href="../components/payment/Payment.vue"></a>Paga ora
+        </button>
       </div>
     </div>
   </header>
@@ -82,6 +84,11 @@ export default {
     return {
       store,
     };
+  },
+  mounted() {
+    if (localStorage.cartProducts) {
+      this.store.cartProducts = JSON.parse(localStorage.cartProducts);
+    }
   },
 
   methods: {
