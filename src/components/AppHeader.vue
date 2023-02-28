@@ -41,7 +41,7 @@
           ></button>
         </div>
         <div class="offcanvas-body">
-          <div v-for="product in this.store.products">
+          <div v-for="product in this.store.cartProducts">
             <div class="d-flex align-items-center" v-if="product.quantity > 0">
               <div>{{ product.name }}: {{ product.quantity }}</div>
               <div class="ms-3">
@@ -81,6 +81,11 @@ export default {
     return {
       store,
     };
+  },
+  mounted() {
+    if (localStorage.cartProducts) {
+      this.store.cartProducts = JSON.parse(localStorage.cartProducts);
+    }
   },
 
   methods: {

@@ -26,7 +26,7 @@
       <!-- CARD -->
       <div
         class="col-12 col-md-6"
-        v-for="(restaurant, index) in filteredArray"
+        v-for="(restaurant, index) in store.filteredArray"
         :key="index"
       >
         <div class="card mb-4 mx-auto my-5" v-if="restaurant.selected">
@@ -95,13 +95,10 @@ export default {
       checkedCategories: [],
       totRestaurants: 4,
       checkedIdCategories: [],
-      filteredArray: [],
     };
   },
   methods: {
     restaurantFilter(id) {
-      this.filteredArray = [];
-
       if (!this.checkedIdCategories.includes(id)) {
         this.checkedIdCategories.push(id);
       } else {
@@ -109,46 +106,51 @@ export default {
         this.checkedIdCategories.splice(this.index, 1);
       }
 
-      this.checkedCategories.forEach((element) => {
-        if (element.id === id) {
-          if (element.checked) {
-            element.checked = false;
-          } else {
-            element.checked = true;
-          }
-        }
-      });
-
-      this.selectedCategoriesLenght = this.checkedIdCategories.length;
-
-      this.store.restaurants.forEach((element) => {
-        element.rightCategories = 0;
-        element.categories.forEach((subElement) => {
-          if (this.checkedIdCategories.includes(subElement.id)) {
-            element.rightCategories++;
-          }
-        });
-        if (element.rightCategories === this.selectedCategoriesLenght) {
+      if (this.checkedIdCategories.length === 0) {
+        this.store.filteredArray = this.store.restaurants;
+        this.store.filteredArray.forEach((element) => {
           element.selected = true;
-          console.log(this.store.restaurants);
-        } else {
-          element.selected = false;
-        }
-      });
+        });
+      } else {
+        this.store.filteredArray = [];
 
-      if (this.checkedIdCategories.length !== 0) {
-        this.store.restaurants.forEach((element, index) => {
-          if (element.selected) {
-            this.filteredArray.push(element);
+        this.checkedCategories.forEach((element) => {
+          if (element.id === id) {
+            if (element.checked) {
+              element.checked = false;
+            } else {
+              element.checked = true;
+            }
           }
         });
-        this.filteredArray = this.filteredArray.filter(
-          (elm, index) => index < this.totRestaurants
-        );
+
+        this.selectedCategoriesLenght = this.checkedIdCategories.length;
+
+        this.store.restaurants.forEach((element) => {
+          element.rightCategories = 0;
+          element.categories.forEach((subElement) => {
+            if (this.checkedIdCategories.includes(subElement.id)) {
+              element.rightCategories++;
+            }
+          });
+          if (element.rightCategories === this.selectedCategoriesLenght) {
+            element.selected = true;
+          } else {
+            element.selected = false;
+          }
+        });
+
+        if (this.selectedCategoriesLenght !== 0) {
+          this.store.restaurants.forEach((element, index) => {
+            if (element.selected) {
+              this.store.filteredArray.push(element);
+            }
+          });
+        }
+        console.log(this.filteredArray);
       }
     },
   },
-
   created() {
     this.store.getRestaurantsAndCategories();
   },
