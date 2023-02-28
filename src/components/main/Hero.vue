@@ -2,10 +2,11 @@
   <section class="hero">
     <div class="hero-content">
       <h1>I piatti dei ristoranti che ami, a domicilio</h1>
-      <router-link :to="{ name: 'restaurants' }">
-        <button class="my-5">VAI AI RISTORANTI</button>
-      </router-link>
       <b>
+        <p id="slogan">
+          Ordina i piatti più amati da tutta la famiglia e fare una pausa dai
+          fornelli.
+        </p>
         <p>
           <a id="login" href="http://127.0.0.1:8000/login">Accedi</a> per
           visualizzare il tuo profilo.
@@ -29,9 +30,17 @@ $font-color: #fff; // bianco
   justify-content: center;
   position: relative;
   height: 600px;
+  #slogan {
+    color: white;
+    font-size: 32px;
+    margin-top: 40px;
+    display: block;
+  }
   #login {
     text-decoration: none;
     color: $primary-color;
+    margin-top: 40px;
+    display: inline-block;
   }
   #login:hover {
     color: darken($primary-color, 10%);

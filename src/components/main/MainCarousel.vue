@@ -1,6 +1,14 @@
 <template>
   <div>
-    <vueper-slides>
+    <vueper-slides
+      :slide-ratio="1 / 2"
+      fixed-height="350px"
+      ref="myVueperSlides"
+      autoplay
+      :pause-on-hover="pauseOnHover"
+      @autoplay-pause="internalAutoPlaying = false"
+      @autoplay-resume="internalAutoPlaying = true"
+      >>
       <vueper-slide
         v-for="(slide, i) in slides"
         :key="i"
@@ -17,6 +25,9 @@ import "vueperslides/dist/vueperslides.css";
 export default {
   components: { VueperSlides, VueperSlide },
   data: () => ({
+    pauseOnHover: true,
+    autoPlaying: true,
+    internalAutoPlaying: true,
     slides: [
       {
         title: "Slide #1",
