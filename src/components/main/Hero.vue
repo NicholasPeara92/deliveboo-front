@@ -35,11 +35,14 @@ $font-color: #fff; // bianco
     font-size: 32px;
     margin-top: 40px;
     display: block;
+    @media only screen and (max-width: 576px) {
+      font-size: 24px;
+    }
   }
   #login {
     text-decoration: none;
     color: $primary-color;
-
+    margin-top: 20px;
     display: inline-block;
   }
   #login:hover {
@@ -49,6 +52,9 @@ $font-color: #fff; // bianco
     font-size: 42px;
     font-weight: bold;
     color: $primary-color;
+    @media only screen and (max-width: 576px) {
+      font-size: 32px;
+    }
   }
 
   img {
