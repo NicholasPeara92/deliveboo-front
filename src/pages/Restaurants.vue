@@ -6,18 +6,16 @@
     <h1 class="text-center py-sm-5"><strong>RISTORANTI</strong></h1>
     <div class="mb-4">
       <div v-for="category in categories" class="form-check form-check-inline">
-        <input
-          class="form-check-input"
+        <div
+          class="category-box"
           :value="category.id"
           :id="category.slug"
-          type="checkbox"
           @click="restaurantFilter(category.id)"
-        />
-        <label class="form-check-label" :for="category.slug"
-          ><b>
+        >
+          <b>
             {{ category.name }}
           </b>
-        </label>
+        </div>
       </div>
     </div>
     <div class="d-flex justify-content-around flex-wrap my-3 col-12">
@@ -173,6 +171,20 @@ export default {
 #restaurants {
   background-color: #00ccbc;
   width: 100%;
+  color: darken($color: #00ccbc, $amount: 30%);
+}
+.category-box {
+  background-color: aliceblue;
+  cursor: pointer;
+  padding: 10px 5px;
+  width: 100px;
+  text-align: center;
+  color: #00ccbc;
+  transition: all 0.5s;
+  &:hover {
+    background-color: darken($color: #00ccbc, $amount: 30%);
+    border-radius: 5px;
+  }
 }
 .card {
   max-width: 480px;
@@ -190,7 +202,7 @@ export default {
   }
 }
 .card:hover {
-  scale: 1.2;
+  scale: 1.03;
   z-index: 3;
 }
 h1 {
