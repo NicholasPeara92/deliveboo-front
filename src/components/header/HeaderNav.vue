@@ -38,6 +38,19 @@ export default {
 
 <style lang="scss" scoped>
 .main-nav {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 101;
+  align-items: center;
+  height: 75px;
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+
   ul {
     display: flex;
     list-style: none;
