@@ -5,7 +5,6 @@
         <img src="../assets/deliverboo.png" alt="" />
       </router-link>
     </div>
-    <HeaderNav />
     <div class="header-buttons">
       <button class="ms-btn-primary">
         <a href="http://127.0.0.1:8000/register">Registrati</a>
@@ -61,7 +60,9 @@
             </div>
           </div>
         </div>
-        <button><a href="../components/payment/Payment.vue"></a>Paga ora</button>
+        <button>
+          <a href="../components/payment/Payment.vue"></a>Paga ora
+        </button>
       </div>
     </div>
   </header>
@@ -70,14 +71,11 @@
 </template>
 
 <script>
-import HeaderNav from "./header/HeaderNav.vue";
 import { store } from "../store";
 
 export default {
   name: "AppHeader",
-  components: {
-    HeaderNav,
-  },
+
   data() {
     return {
       store,
@@ -123,7 +121,7 @@ header {
   align-items: center;
   @media only screen and (max-width: 768px) {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
     justify-content: flex-end;
     background-color: opacify($color: #000000, $amount: 1);
   }

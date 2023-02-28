@@ -1,5 +1,6 @@
 <template>
   <div class="container-fluid px-0">
+    <HeaderNav />
     <Hero />
     <MainCarousel />
     <Restaurants />
@@ -11,6 +12,7 @@
 </template>
 
 <script>
+import HeaderNav from "../components/header/HeaderNav.vue";
 import Hero from "../components/main/Hero.vue";
 import MainCarousel from "../components/main/MainCarousel.vue";
 import Partner from "../components/main/Partner.vue";
@@ -22,6 +24,7 @@ import Restaurants from "./Restaurants.vue";
 export default {
   name: "HomePage",
   components: {
+    HeaderNav,
     Hero,
     MainCarousel,
     Partner,
