@@ -2,6 +2,7 @@
   <header class="d-flex justify-content-between py-3 px-4">
     <div style="width: 250px">
       <router-link :to="{ name: 'homepage' }">
+        <!-- da inserire logo per mobile -->
         <img src="../assets/deliverboo.png" alt="" />
       </router-link>
     </div>
