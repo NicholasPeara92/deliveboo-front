@@ -9,45 +9,77 @@ export const store = reactive({
   products: [],
   cartProducts: [],
   getProducts: function (param) {
-    if (!localStorage.products) {
-      axios.get(`${this.api_url}/restaurant/` + "" + param).then((response) => {
-        this.restaurant = response.data;
-        this.products = this.restaurant.products.sort((c1, c2) =>
-          c1.type > c2.type ? 1 : c1.type < c2.type ? -1 : 0
-        );
-        this.products.forEach((element) => {
-          element.quantity = 0;
-          element.totalPrice = 0;
-        });
-        console.log(this.products);
+    axios.get(`${this.api_url}/restaurant/` + "" + param).then((response) => {
+      this.restaurant = response.data;
+      this.products = this.restaurant.products.sort((c1, c2) =>
+        c1.type > c2.type ? 1 : c1.type < c2.type ? -1 : 0
+      );
+      this.products.forEach((element) => {
+        element.quantity = 0;
+        element.totalPrice = 0;
       });
-      localStorage.products = JSON.stringify(this.products);
-    } else {
-      axios.get(`${this.api_url}/restaurant/` + "" + param).then((response) => {
-        this.restaurant = response.data;
-        this.products = this.restaurant.products.sort((c1, c2) =>
-          c1.type > c2.type ? 1 : c1.type < c2.type ? -1 : 0
-        );
-        this.products.forEach((element) => {
-          element.quantity = 0;
-          element.totalPrice = 0;
-        });
-        console.log(this.products);
-      });
-      localStorage.products = JSON.stringify(this.products);
-    }
-  },
-  addToCart(id) {
-    this.found = false;
-    this.products.find((element) => {
-      if (element.id === id) {
-        element.quantity++;
-        element.totalPrice += parseFloat(element.price);
-      }
-      localStorage.products = JSON.stringify(this.products);
     });
+  },
+  addToCart(product) {
+    if (!localStorage.activeRestaurant) {
+      localStorage.activeRestaurant = JSON.stringify(product.restaurant_id);
+      this.products.find((element) => {
+        if (element.id === product.id) {
+          element.quantity++;
+          element.totalPrice += parseFloat(element.price);
 
-    console.log(this.products);
+          this.result = this.cartProducts.find((resultElement) => {
+            if (resultElement.id === product.id) {
+              return true;
+            }
+            return false;
+          });
+
+          if (this.result !== undefined) {
+            this.result.quantity = element.quantity;
+            this.result.totalPrice = element.totalPrice;
+          } else {
+            this.cartProducts.push(product);
+          }
+        }
+        console.log(this.cartProducts);
+      });
+    } else {
+      if (product.restaurant_id === localStorage.activeRestaurant) {
+        this.products.find((element) => {
+          if (element.id === product.id) {
+            element.quantity++;
+            element.totalPrice += parseFloat(element.price);
+
+            this.result = this.cartProducts.find((resultElement) => {
+              if (resultElement.id === product.id) {
+                return true;
+              }
+              return false;
+            });
+
+            if (this.result !== undefined) {
+              this.result.quantity = element.quantity;
+              this.result.totalPrice = element.totalPrice;
+            } else {
+              this.cartProducts.push(product);
+            }
+          }
+          console.log(this.cartProducts);
+        });
+      }
+    }
+
+    // this.found = false;
+    // this.products.find((element) => {
+    //   if (element.id === id) {
+    //     element.quantity++;
+    //     element.totalPrice += parseFloat(element.price);
+    //   }
+    //   localStorage.products = JSON.stringify(this.products);
+    // });
+
+    // console.log(this.products);
   },
 
   dropToCart(id) {

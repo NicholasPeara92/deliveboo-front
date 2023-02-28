@@ -1,3 +1,57 @@
+<template>
+  <div class="container mt-5">
+    <div class="header">
+      <h1 class="pt-5 text-center">MENU</h1>
+      <div class="input d-flex justify-content-center mt-4">
+        <input
+          type="text"
+          placeholder="Inserisci il nome"
+          v-model="searchProductName"
+          class="me-2"
+        />
+        <select v-model="searchProductType" name="type" id="type">
+          <option value="">Nessuna Tipologia</option>
+          <option v-for="type in typeList">{{ type }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="menu-container justify-content-center">
+      <div
+        v-for="(product, index) in productList"
+        :key="product.id"
+        class="product-card d-flex flex-column align-items-center"
+      >
+        <h5 class="py-2" style="text-transform: uppercase">
+          {{ product.name }}
+        </h5>
+        <div class="product-image-box">
+          <img :src="product.image_url" alt="{{ product.name }}" />
+        </div>
+        <div class="body">
+          <h6 class="pt-3" style="text-transform: uppercase">
+            {{ product.type }}
+          </h6>
+        </div>
+        <strong class="d-block">{{ product.price }}€</strong>
+        <strong class="d-block">{{ product.totalPrice }}€</strong>
+        <div>
+          <button @click="store.addToCart(product)" class="ms-btn-primary mt-3">
+            +
+          </button>
+          <span>{{ product.quantity }}</span>
+          <button
+            @click="store.dropToCart(product)"
+            class="ms-btn-primary bg-danger mt-3 my-3 ms-2"
+          >
+            -
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
 <script>
 import axios from "axios";
 import { store } from "../store";
@@ -60,63 +114,6 @@ export default {
   },
 };
 </script>
-
-<template>
-  <div class="container mt-5">
-    <div class="header">
-      <h1 class="pt-5 text-center">MENU</h1>
-      <div class="input d-flex justify-content-center mt-4">
-        <input
-          type="text"
-          placeholder="Inserisci il nome"
-          v-model="searchProductName"
-          class="me-2"
-        />
-        <select v-model="searchProductType" name="type" id="type">
-          <option value="">Nessuna Tipologia</option>
-          <option v-for="type in typeList">{{ type }}</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="menu-container justify-content-center">
-      <div
-        v-for="(product, index) in productList"
-        :key="product.id"
-        class="product-card d-flex flex-column align-items-center"
-      >
-        <h5 class="py-2" style="text-transform: uppercase">
-          {{ product.name }}
-        </h5>
-        <div class="product-image-box">
-          <img :src="product.image_url" alt="{{ product.name }}" />
-        </div>
-        <div class="body">
-          <h6 class="pt-3" style="text-transform: uppercase">
-            {{ product.type }}
-          </h6>
-        </div>
-        <strong class="d-block">{{ product.price }}€</strong>
-        <strong class="d-block">{{ product.totalPrice }}€</strong>
-        <div>
-          <button
-            @click="store.addToCart(product.id)"
-            class="ms-btn-primary mt-3"
-          >
-            +
-          </button>
-          <span>{{ product.quantity }}</span>
-          <button
-            @click="store.dropToCart(product.id)"
-            class="ms-btn-primary bg-danger mt-3 my-3 ms-2"
-          >
-            -
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
 
 <style scoped lang="scss">
 .input {
