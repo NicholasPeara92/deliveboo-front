@@ -147,7 +147,7 @@ export default {
 }
 .product-card:hover {
   position: relative;
-  scale: (1.2);
+  scale: (1.02);
   z-index: 3;
 }
 .product-image-box {
