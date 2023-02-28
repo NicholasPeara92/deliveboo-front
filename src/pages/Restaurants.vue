@@ -6,15 +6,19 @@
     <h1 class="text-center py-sm-5"><strong>RISTORANTI</strong></h1>
     <div class="mb-4 d-flex flex-wrap justify-content-around">
       <div v-for="category in store.categories" class="m-2">
-        <div
-          class="category-box"
-          :value="category.id"
-          :id="category.slug"
-          @click="restaurantFilter(category.id)"
-        >
-          <b>
-            {{ category.name }}
-          </b>
+        <div class="category-box">
+          <input
+            class="form-check-input ms-checkbox"
+            type="checkbox"
+            :value="category.id"
+            :id="category.slug"
+            @click="restaurantFilter(category.id)"
+          />
+          <label class="form-check-label" :for="category.slug">
+            <b>
+              {{ category.name }}
+            </b>
+          </label>
         </div>
       </div>
     </div>
@@ -158,15 +162,30 @@ export default {
   color: darken($color: #00ccbc, $amount: 30%);
 }
 .category-box {
-  background-color: aliceblue;
+  position: relative;
+  label {
+    position: absolute;
+    top: 10px;
+    text-align: center;
+    z-index: 3;
+    display: block;
+    width: 100px;
+    height: 40px;
+    b {
+      color: #00ccbc;
+    }
+  }
+}
+.ms-checkbox {
   cursor: pointer;
-  padding: 10px 5px;
   width: 100px;
+  height: 40px;
   text-align: center;
   color: #00ccbc;
   transition: all 0.5s;
+  background-color: darken($color: #00ccbc, $amount: 20%);
   &:hover {
-    background-color: darken($color: #00ccbc, $amount: 30%);
+    background-color: aliceblue;
     border-radius: 5px;
   }
 }
