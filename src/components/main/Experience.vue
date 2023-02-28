@@ -63,6 +63,7 @@ export default {};
       @media only screen and (max-width: 576px) {
         flex-direction: column;
         padding: 0 17px;
+        margin: 0 17px;
       }
       .rider-left,
       .chef-right {
