@@ -5,7 +5,10 @@
   >
     <h1 class="text-center py-sm-5"><strong>RISTORANTI</strong></h1>
     <div class="mb-4">
-      <div v-for="category in categories" class="form-check form-check-inline">
+      <div
+        v-for="category in store.categories"
+        class="form-check form-check-inline"
+      >
         <div
           class="category-box"
           :value="category.id"
