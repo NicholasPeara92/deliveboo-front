@@ -4,11 +4,8 @@
     class="container-fluid d-flex flex-column align-items-center"
   >
     <h1 class="text-center py-sm-5"><strong>RISTORANTI</strong></h1>
-    <div class="mb-4">
-      <div
-        v-for="category in store.categories"
-        class="form-check form-check-inline"
-      >
+    <div class="mb-4 d-flex flex-wrap justify-content-around">
+      <div v-for="category in store.categories" class="m-2">
         <div
           class="category-box"
           :value="category.id"
@@ -21,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="d-flex justify-content-around flex-wrap my-3 col-12">
+    <div class="container d-flex justify-content-around flex-wrap my-3 col-12">
       <!-- CARD -->
       <div
         class="col-12 col-md-6"
