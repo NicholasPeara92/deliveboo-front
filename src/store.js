@@ -8,6 +8,7 @@ export const store = reactive({
   restaurant: [],
   products: [],
   cartProducts: [],
+  filteredArray: [],
   getProducts: function (param) {
     axios.get(`${this.api_url}/restaurant/` + "" + param).then((response) => {
       this.restaurant = response.data;
@@ -148,6 +149,7 @@ export const store = reactive({
     axios.get(`${this.api_url}/restaurants`).then((response) => {
       this.restaurants = response.data;
       this.restaurants.forEach((element) => (element.selected = true));
+      this.filteredArray = this.restaurants;
     });
     axios.get(`${this.api_url}/categories`).then((response) => {
       this.categories = response.data;
