@@ -41,6 +41,9 @@ export default {
   display: flex;
   justify-content: center;
   position: fixed;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
   top: 0;
   right: 0;
   left: 0;
