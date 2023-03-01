@@ -72,15 +72,20 @@ export const store = reactive({
         });
 
         if (this.result !== undefined) {
-          this.cartArray = JSON.parse(localStorage.cartProducts);
+          if (localStorage.cartProducts) {
+            this.cartArray = JSON.parse(localStorage.cartProducts);
+            console.log(this.cartArray);
+          }
 
           this.cartArray.find((arrayElement) => {
-            if (arrayElement.id === product.id) {
+            if (arrayElement.id === element.id) {
               arrayElement.quantity = element.quantity;
               arrayElement.totalPrice = element.totalPrice;
             }
           });
+
           localStorage.cartProducts = JSON.stringify(this.cartArray);
+          this.cartProducts = this.cartArray;
         } else {
           this.cartProducts.push(product);
           localStorage.cartProducts = JSON.stringify(this.cartProducts);
@@ -91,54 +96,94 @@ export const store = reactive({
   },
 
   dropToCart(product) {
-    this.products.find((element) => {
-      if (element.id === product.id) {
-        if (element.quantity <= 1) {
-          element.quantity = 0;
-          element.totalPrice = 0;
-        } else {
+    if (localStorage.cartProducts) {
+      this.products.find((element) => {
+        if (element.id === product.id) {
           element.quantity--;
-          element.totalPrice -= parseFloat(element.price);
-        }
-
-        this.result = this.cartProducts.find((resultElement) => {
-          if (resultElement.id === product.id) {
-            return true;
-          }
-          return false;
-        });
-
-        if (this.result !== undefined) {
-          if (localStorage.cartProducts) {
-            this.cartArray = JSON.parse(localStorage.cartProducts);
-          }
-
-          // VERIFICARE QUESTE FUNZIONI
-
-          this.cartArray.find((arrayElement, index) => {
-            if (arrayElement.id === product.id) {
-              if (element.quantity === 0) {
-                this.cartArray.splice(index, 1);
-              } else {
-                arrayElement.quantity = element.quantity;
-                arrayElement.totalPrice = element.totalPrice;
-              }
-            }
-          });
-          console.log(this.cartArray);
-          if (this.cartArray.length === 0) {
-            localStorage.clear();
+          if (element.quantity <= 0) {
+            element.quantity = 0;
+            element.totalPrice = 0;
           } else {
-            localStorage.cartProducts = JSON.stringify(this.cartArray);
+            element.totalPrice -= parseFloat(element.price);
           }
-          // VERIFICARE QUESTE FUNZIONI
-          // localStorage.cartProducts = JSON.stringify(this.cartArray);
-        } else {
-          localStorage.cartProducts = JSON.stringify(this.cartProducts);
         }
-      }
-    });
+      });
 
+      this.result = this.cartProducts.find((cartElement, index) => {
+        if (cartElement.id === product.id) {
+          cartElement.quantity--;
+          if (cartElement.quantity <= 0) {
+            cartElement.quantity = 0;
+            cartElement.totalPrice = 0;
+            this.cartProducts.splice(index, 1);
+          } else {
+            cartElement.totalPrice -= parseFloat(cartElement.price);
+          }
+          return this.cartProducts;
+        } else {
+          return undefined;
+        }
+      });
+
+      if (this.result !== undefined) {
+        localStorage.cartProducts = JSON.stringify(this.cartProducts);
+        console.log(this.cartProducts);
+      }
+
+      if (this.cartProducts.length === 0) {
+        localStorage.clear();
+      }
+    }
+    // this.products.find((element) => {
+    //   if (element.id === product.id) {
+    //     if (element.quantity <= 1) {
+    //       element.quantity = 0;
+    //       element.totalPrice = 0;
+    //     } else {
+    //       element.quantity--;
+    //       element.totalPrice -= parseFloat(element.price);
+    //     }
+    //     this.result = this.cartProducts.find((resultElement) => {
+    //       if (resultElement.id === product.id) {
+    //         return true;
+    //       }
+    //       return false;
+    //     });
+    //     if (this.result !== undefined) {
+    //       if (localStorage.cartProducts) {
+    //         this.cartArray = JSON.parse(localStorage.cartProducts);
+    //         console.log(this.cartArray);
+    //       }
+    //       // VERIFICARE QUESTE FUNZIONI
+    //       this.cartArray.find((arrayElement, index) => {
+    //         if (arrayElement.id === undefined) {
+    //           this.cartArray.splice(index, 1);
+    //         } else {
+    //           if (arrayElement.id === product.id) {
+    //             if (element.quantity === 0) {
+    //               console.log;
+    //               this.cartArray.splice(index, 1);
+    //             } else {
+    //               arrayElement.quantity = element.quantity;
+    //               arrayElement.totalPrice = element.totalPrice;
+    //             }
+    //           }
+    //         }
+    //       });
+    //       if (this.cartArray.length === 0) {
+    //         localStorage.cartProducts = JSON.stringify(this.cartArray);
+    //         localStorage.clear();
+    //       } else {
+    //         localStorage.cartProducts = JSON.stringify(this.cartArray);
+    //       }
+    //       // VERIFICARE QUESTE FUNZIONI
+    //       // localStorage.cartProducts = JSON.stringify(this.cartArray);
+    //     } else {
+    //       console.log(this.cartArray);
+    //       localStorage.cartProducts = JSON.stringify(this.cartProducts);
+    //     }
+    //   }
+    // });
     // this.products.find((element) => {
     //   if (element.id === id) {
     //     if (element.quantity === 0) {

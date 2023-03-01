@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="container">
-      <div class="follow p-4">
+      <div class="follow p-4 animate">
         <div class="left">
           <h2><strong>Segui Gli Ordini Passo Passo</strong></h2>
           <p>
@@ -30,12 +30,31 @@
 </template>
 
 <script>
+import inView from "in-view";
 export default {
   name: "FollowUs",
+  methods: {
+    handleInView() {
+      inView.threshold(0.5);
+      inView(".animate").on("enter", (el) => {
+        el.classList.add("visible");
+      });
+    },
+  },
+  mounted() {
+    this.handleInView();
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+.animate {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.visible {
+  opacity: 1;
+}
 .follow {
   margin-bottom: 60px;
   box-shadow: 0 6px 20px 0 #00000014;
