@@ -66,18 +66,20 @@
                 </button>
               </div>
             </div>
-            <div>
-              <span
-                >Quantità totale dei prodotti:
-                {{ store.getTotalQuantity() }}</span
-              >
-            </div>
-            <div>
-              <span>Totale: {{ store.getTotalQuantity() }} €</span>
-            </div>
+          </div>
+          <div>
+            <span
+              >Quantità totale dei prodotti:
+              {{ store.getTotalQuantity() }}</span
+            >
+          </div>
+          <div>
+            <span>Totale: {{ store.getTotalPrice() }} €</span>
           </div>
         </div>
-          <router-link :to="{ name: 'order' }"><button>Paga ora</button></router-link>
+        <router-link :to="{ name: 'order' }"
+          ><button>Paga ora</button></router-link
+        >
       </div>
     </div>
   </header>

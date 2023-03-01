@@ -1,29 +1,93 @@
 <script>
 import { store } from "../store";
+import axios from "axios";
+
 export default {
   name: "Order",
   data() {
     return {
       store,
+      totQuantity: 0,
+      formData: {
+        name: "",
+        surname: "",
+        address: "",
+        telephone: "",
+        email: "",
+        total: 0,
+      },
     };
+  },
+  methods: {
+    addOrder() {
+      axios
+        .post(`${this.store.api_url}/orders`, {
+          name: this.formData.name,
+          surname: this.formData.surname,
+          address: this.formData.address,
+          telephone: this.formData.telephone,
+          email: this.formData.mail,
+          total: this.formData.total.toFixed(2),
+          products: this.store.cartProducts,
+        })
+        .then((res) => {
+          console.log(res);
+        });
+    },
+  },
+  mounted() {
+    this.formData.total = this.store.getTotalPrice();
   },
 };
 </script>
 
 <template>
-  <form>
+  <form @submit.prevent="addOrder()">
     <div class="segment mt-5">
       <h1>Inserisci i tuoi dati</h1>
     </div>
 
-    <input class="my-2" type="text" placeholder="Email Address" />
-    <input class="my-2" type="text" placeholder="Nome" />
-    <input class="my-2" type="text" placeholder="Cognome" />
-    <input class="my-2" type="text" placeholder="Indirizzo di consegna" />
-    <input class="my-2" type="text" placeholder="Telefono" />
-    <h3 class="my-2">Totale: {{ store.getTotalPrice() }} €</h3>
+    <input
+      class="my-2"
+      type="text"
+      id="email"
+      placeholder="Email Address"
+      v-model="formData.mail"
+    />
+    <input
+      class="my-2"
+      type="text"
+      id="name"
+      placeholder="Nome"
+      v-model="formData.name"
+    />
+    <input
+      class="my-2"
+      type="text"
+      id="surname"
+      placeholder="Cognome"
+      v-model="formData.surname"
+    />
+    <input
+      class="my-2"
+      type="text"
+      id="address"
+      placeholder="Indirizzo di consegna"
+      v-model="formData.address"
+    />
+    <input
+      class="my-2"
+      type="text"
+      id="telephone"
+      placeholder="Telefono"
+      v-model="formData.telephone"
+    />
+    <h3 class="my-2">
+      Totale:
+      {{ formData.total }} €
+    </h3>
 
-    <button class="red my-3" type="button"><a href=""></a>Acquista</button>
+    <button class="red my-3" type="submit"><a href=""></a>Acquista</button>
     <router-link :to="{ name: 'homepage' }"
       ><button class="red my-3" type="button">
         Torna alla HomePage
