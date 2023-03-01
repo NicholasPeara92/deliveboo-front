@@ -72,7 +72,9 @@ export const store = reactive({
         });
 
         if (this.result !== undefined) {
-          this.cartArray = JSON.parse(localStorage.cartProducts);
+          if (localStorage.cartProducts) {
+            this.cartArray = JSON.parse(localStorage.cartProducts);
+          }
 
           this.cartArray.find((arrayElement) => {
             if (arrayElement.id === product.id) {
@@ -81,6 +83,7 @@ export const store = reactive({
             }
           });
           localStorage.cartProducts = JSON.stringify(this.cartArray);
+          this.cartProducts = this.cartArray;
         } else {
           this.cartProducts.push(product);
           localStorage.cartProducts = JSON.stringify(this.cartProducts);
@@ -117,7 +120,7 @@ export const store = reactive({
 
           this.cartArray.find((arrayElement, index) => {
             if (arrayElement.id === product.id) {
-              if (element.quantity === 0) {
+              if (product.quantity === 0) {
                 this.cartArray.splice(index, 1);
               } else {
                 arrayElement.quantity = element.quantity;
@@ -125,8 +128,9 @@ export const store = reactive({
               }
             }
           });
-          console.log(this.cartArray);
+
           if (this.cartArray.length === 0) {
+            localStorage.cartProducts = JSON.stringify(this.cartArray);
             localStorage.clear();
           } else {
             localStorage.cartProducts = JSON.stringify(this.cartArray);
@@ -134,6 +138,7 @@ export const store = reactive({
           // VERIFICARE QUESTE FUNZIONI
           // localStorage.cartProducts = JSON.stringify(this.cartArray);
         } else {
+          console.log(this.cartArray);
           localStorage.cartProducts = JSON.stringify(this.cartProducts);
         }
       }
