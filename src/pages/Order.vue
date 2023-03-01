@@ -5,7 +5,28 @@ export default {
   data() {
     return {
       store,
+      name: "",
+      email: "",
+      telephone: "",
+      address: "",
     };
+  },
+  mounted() {
+    let button = document.querySelector("#submit-button");
+
+    braintree.dropin.create(
+      {
+        authorization: "sandbox_g42y39zw_348pk9cgf3bgyw2b",
+        selector: "#dropin-container",
+      },
+      function (err, instance) {
+        button.addEventListener("click", function () {
+          instance.requestPaymentMethod(function (err, payload) {
+            // Submit payload.nonce to your server
+          });
+        });
+      }
+    );
   },
 };
 </script>
@@ -21,9 +42,12 @@ export default {
     <input class="my-2" type="text" placeholder="Cognome" />
     <input class="my-2" type="text" placeholder="Indirizzo di consegna" />
     <input class="my-2" type="text" placeholder="Telefono" />
+    <div id="dropin-container"></div>
     <h3 class="my-2">Totale: {{ store.getTotalPrice() }} €</h3>
 
-    <button class="red my-3" type="button"><a href=""></a>Acquista</button>
+    <button id="submit-button" class="red my-3" type="button">
+      <a href=""></a>Acquista
+    </button>
     <router-link :to="{ name: 'homepage' }"
       ><button class="red my-3" type="button">
         Torna alla HomePage
