@@ -37,13 +37,17 @@
         <strong class="d-block">{{ product.price }}€</strong>
         <strong class="d-block">{{ product.totalPrice }}€</strong>
         <div>
-          <button @click="store.addToCart(product)" class="unit mt-3">+</button>
-          <span>{{ product.quantity }}</span>
+          <button @click="store.addToCart(product)" class="unit mt-3">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <span
+            ><b>{{ product.quantity }}</b></span
+          >
           <button
             @click="store.dropToCart(product)"
             class="unit mt-3 my-3 ms-2"
           >
-            -
+            <i class="fa-solid fa-minus"></i>
           </button>
         </div>
       </div>
