@@ -1,11 +1,14 @@
 <template>
   <section class="hero">
     <div class="hero-content">
-      <h1>I piatti dei ristoranti che ami, a domicilio</h1>
+      <h1>
+        I Piatti dei Ristoranti che Ami <br />
+        a Domicilio
+      </h1>
       <b>
         <p id="slogan">
-          Ordina i piatti più amati da tutta la famiglia e fare una pausa dai
-          fornelli.
+          Ordina i piatti più amati da tutta la famiglia <br />
+          e fai una pausa dai fornelli.
         </p>
         <p>
           <a id="login" href="http://127.0.0.1:8000/login">Accedi</a> per
@@ -29,7 +32,19 @@ $font-color: #fff; // bianco
   display: flex;
   justify-content: center;
   position: relative;
-  height: 600px;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1;
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+  }
   #slogan {
     color: white;
     font-size: 32px;
@@ -49,7 +64,7 @@ $font-color: #fff; // bianco
     color: darken($primary-color, 10%);
   }
   h1 {
-    font-size: 42px;
+    font-size: 70px;
     font-weight: bold;
     color: $primary-color;
     @media only screen and (max-width: 576px) {
@@ -70,6 +85,14 @@ $font-color: #fff; // bianco
     margin-top: 250px;
     flex-direction: column;
     color: white;
+    z-index: 1;
+    & a {
+      font-size: 20px;
+    }
+    @media only screen and (max-width: 576px) {
+      margin-top: 0;
+      top: 120px;
+    }
 
     button {
       margin-right: 10px;
@@ -82,7 +105,7 @@ $font-color: #fff; // bianco
       cursor: pointer;
       transition: background-color 0.2s ease-in-out;
       a {
-        font-size: 28px;
+        font-size: 45px;
         color: white;
         text-decoration: none;
       }

@@ -1,6 +1,6 @@
 <template>
   <div class="experience">
-    <div class="first-section">
+    <div class="first-section animate">
       <div class="riders">
         <div class="rider-left">
           <div class="image-rider"></div>
@@ -18,7 +18,7 @@
         </div>
       </div>
     </div>
-    <div class="second-section">
+    <div class="second-section animate">
       <div class="chef">
         <div class="second-description">
           <h3>Collaborazione con migliaia di ristoranti</h3>
@@ -40,10 +40,30 @@
 </template>
 
 <script>
-export default {};
+import inView from "in-view";
+export default {
+  methods: {
+    handleInView() {
+      inView.threshold(0.5);
+      inView(".animate").on("enter", (el) => {
+        el.classList.add("visible");
+      });
+    },
+  },
+  mounted() {
+    this.handleInView();
+  },
+};
 </script>
 
 <style lang="scss" scoped>
+.animate {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+.visible {
+  opacity: 1;
+}
 .experience {
   position: relative;
   z-index: 1;
