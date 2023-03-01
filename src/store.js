@@ -7,6 +7,8 @@ export const store = reactive({
   products: [],
   cartProducts: [],
   filteredArray: [],
+  messageError: "",
+  showError: false,
   getProducts: function (param) {
     axios.get(`${this.api_url}/restaurant/` + "" + param).then((response) => {
       this.restaurant = response.data;
@@ -47,6 +49,7 @@ export const store = reactive({
     });
   },
   addToCart(product) {
+    let messageError = "";
     if (!localStorage.activeRestaurant) {
       localStorage.activeRestaurant = JSON.stringify(product.restaurant_id);
       this.searchObject(product);
@@ -54,9 +57,11 @@ export const store = reactive({
       if (product.restaurant_id === JSON.parse(localStorage.activeRestaurant)) {
         this.searchObject(product);
       } else {
-        console.log("non puoi aggiungere elementi di un altro ristorante");
+        messageError = "Non puoi aggiungere elementi di un altro ristorante.";
+        this.showError = true;
       }
     }
+    this.messageError = messageError;
   },
   searchObject(product) {
     this.products.find((element) => {

@@ -1,7 +1,10 @@
 <template>
   <div class="container-fluid">
     <div class="header">
-      <h1 style="text-transform: uppercase" class="pt-5 text-center">
+      <div class="error-toast" v-show="store.showError">
+        <p>{{ store.messageError }}</p>
+      </div>
+      <h1 style="text-transform: uppercase" class="pt-3 text-center">
         {{ store.restaurant.name }}
       </h1>
       <div class="input d-flex justify-content-center mt-4">
@@ -124,6 +127,19 @@ $color-white: #fff;
 
 .container-fluid {
   background-color: $color-bg;
+}
+.error-toast {
+  background-color: transparent;
+  width: 500px;
+  text-align: center;
+  padding: 20px 10px 40px 10px;
+  color: $color-red;
+  margin: auto;
+  border-radius: 10px;
+  font-weight: bold;
+  p {
+    margin-bottom: 0;
+  }
 }
 input,
 select {
