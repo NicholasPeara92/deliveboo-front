@@ -8,7 +8,6 @@ import Page404 from "./pages/Page404.vue";
 import AboutUs from "./components/main/AboutUs.vue";
 import ContactUs from "./components/main/ContactUs.vue";
 import Order from "./pages/Order.vue";
-import Payments from "./pages/Payments.vue"
 
 const router = createRouter({
   history: createWebHistory(),
@@ -47,11 +46,6 @@ const router = createRouter({
       path: "/order",
       name: "order",
       component: Order,
-    },
-    {
-      path: "/payments",
-      name: "payments",
-      component: Payments,
     },
   ],
 });
