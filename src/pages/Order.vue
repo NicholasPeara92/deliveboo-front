@@ -126,7 +126,7 @@ button {
   }
 
   &.unit {
-    border-radius: $ruler/2;
+    border-radius: 8px;
     line-height: 0;
     width: $ruler * 3;
     height: $ruler * 3;
