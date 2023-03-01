@@ -1,8 +1,9 @@
 <template>
   <div class="container-fluid">
     <div class="header">
-      <h1>{{ store.restaurant.name }}</h1>
-      <h1 class="pt-5 text-center">MENU</h1>
+      <h1 style="text-transform: uppercase" class="pt-5 text-center">
+        {{ store.restaurant.name }}
+      </h1>
       <div class="input d-flex justify-content-center mt-4">
         <input
           type="text"
@@ -193,9 +194,15 @@ select {
   height: 200px;
   display: block;
   border-radius: 20px;
+  object-fit: cover;
 }
 
-h5 {
+h1,
+h5,
+input,
+select,
+.product-card,
+i {
   color: $primary_color;
 }
 button {
