@@ -7,6 +7,7 @@ import Menu from "./pages/Menu.vue";
 import Page404 from "./pages/Page404.vue";
 import AboutUs from "./components/main/AboutUs.vue";
 import ContactUs from "./components/main/ContactUs.vue";
+import Order from "./pages/Order.vue";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -40,6 +41,11 @@ const router = createRouter({
       path: "/contattaci",
       name: "contact-us",
       component: ContactUs,
+    },
+    {
+      path: "/order",
+      name: "order",
+      component: Order,
     },
   ],
 });
