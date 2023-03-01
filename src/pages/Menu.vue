@@ -1,6 +1,7 @@
 <template>
-  <div class="container mt-5">
+  <div class="container-fluid">
     <div class="header">
+      <h1>{{ store.restaurant.name }}</h1>
       <h1 class="pt-5 text-center">MENU</h1>
       <div class="input d-flex justify-content-center mt-4">
         <input
@@ -116,6 +117,38 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$ruler: 16px;
+$color-red: #ae1100;
+$color-bg: #ebecf0;
+$color-shadow: #babecc;
+$color-white: #fff;
+
+.container-fluid {
+  background-color: $color-bg;
+}
+input,
+select {
+  letter-spacing: -0.2px;
+  border: 0;
+  outline: 0;
+  font-size: $ruler;
+  border-radius: $ruler * 20;
+  padding: $ruler;
+  background-color: $color-bg;
+  text-shadow: 1px 1px 0 $color-white;
+  margin-right: 32px;
+  box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  width: 350px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  &:focus {
+    box-shadow: inset 1px 1px 2px $color-shadow,
+      inset -1px -1px 2px $color-white;
+  }
+}
+
 .input {
   padding-bottom: 5px;
 }
