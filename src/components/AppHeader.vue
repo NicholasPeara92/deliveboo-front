@@ -77,7 +77,11 @@
             >
           </div>
           <div>
+<<<<<<< HEAD
             <span>Totale: {{ store.getTotalQuantity() }} €</span>
+=======
+            <span>Totale: {{ store.getTotalPrice() }} €</span>
+>>>>>>> order-creation
           </div>
         </div>
         <router-link :to="{ name: 'order' }"

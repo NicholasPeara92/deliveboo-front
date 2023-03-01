@@ -1,17 +1,25 @@
 <script>
 import { store } from "../store";
+import axios from "axios";
+
 export default {
   name: "Order",
   data() {
     return {
       store,
-      name: "",
-      email: "",
-      telephone: "",
-      address: "",
+      totQuantity: 0,
+      formData: {
+        name: "",
+        surname: "",
+        address: "",
+        telephone: "",
+        email: "",
+        total: 0,
+      },
     };
   },
   mounted() {
+    this.formData.total = this.store.getTotalPrice();
     let button = document.querySelector("#submit-button");
 
     braintree.dropin.create(
@@ -28,45 +36,82 @@ export default {
       }
     );
   },
+  methods: {
+    addOrder() {
+      axios
+        .post(`${this.store.api_url}/orders`, {
+          name: this.formData.name,
+          surname: this.formData.surname,
+          address: this.formData.address,
+          telephone: this.formData.telephone,
+          email: this.formData.mail,
+          total: this.formData.total.toFixed(2),
+          products: this.store.cartProducts,
+        })
+        .then((res) => {
+          console.log(res);
+        });
+    },
+  },
 };
 </script>
 
 <template>
-  <form>
+  <form @submit.prevent="addOrder()">
     <div class="segment mt-5">
       <h1>Inserisci i tuoi dati</h1>
     </div>
-    <form @submit.prevent>
-      <label for="name" class="form-label my-2 ms-3">Inserisci il nome*</label>
-      <input type="text" id="name" required placeholder="Nome" />
-      <label for="Email" class="form-label my-2 ms-3">Inserisci l'email*</label>
-      <input type="text" id="Email" required placeholder="Email Address" />
-      <label for="address" class="form-label my-2 ms-3"
-        >Inserisci l'indirizzo*</label
-      >
-      <input
-        type="text"
-        id="address"
-        required
-        placeholder="Indirizzo di consegna"
-      />
-      <label for="telephone" class="form-label my-2 ms-3"
-        >Inserisci il numero di telefono*</label
-      >
-      <input type="text" id="telephone" required placeholder="Telefono" />
-      <h3 class="my-2">Totale: {{ store.getTotalPrice() }} €</h3>
 
-      <div id="dropin-container"></div>
-      <button id="submit-button" class="red my-3" type="submit">
-        <a href=""></a>Acquista
-      </button>
-    </form>
-    <router-link :to="{ name: 'homepage' }"
-      ><button class="red my-3 ms-3" type="button">
-        Torna alla HomePage
-      </button></router-link
-    >
+    <input
+      class="my-2"
+      type="text"
+      id="email"
+      placeholder="Email Address"
+      v-model="formData.mail"
+    />
+    <input
+      class="my-2"
+      type="text"
+      id="name"
+      placeholder="Nome"
+      v-model="formData.name"
+    />
+    <input
+      class="my-2"
+      type="text"
+      id="surname"
+      placeholder="Cognome"
+      v-model="formData.surname"
+    />
+    <input
+      class="my-2"
+      type="text"
+      id="address"
+      placeholder="Indirizzo di consegna"
+      v-model="formData.address"
+    />
+    <input
+      class="my-2"
+      type="text"
+      id="telephone"
+      placeholder="Telefono"
+      v-model="formData.telephone"
+    />
+    <h3 class="my-2">
+      Totale:
+      {{ formData.total }} €
+    </h3>
+
+    <div id="dropin-container"></div>
+    <button id="submit-button" class="red my-3" type="submit">
+      <a href=""></a>Acquista
+    </button>
   </form>
+  <router-link :to="{ name: 'homepage' }"
+    ><button class="red my-3 ms-3" type="button">
+      Torna alla HomePage
+    </button></router-link
+  >
 </template>
 
 <style scoped lang="scss">

@@ -139,66 +139,6 @@ export const store = reactive({
         localStorage.clear();
       }
     }
-    // this.products.find((element) => {
-    //   if (element.id === product.id) {
-    //     if (element.quantity <= 1) {
-    //       element.quantity = 0;
-    //       element.totalPrice = 0;
-    //     } else {
-    //       element.quantity--;
-    //       element.totalPrice -= parseFloat(element.price);
-    //     }
-    //     this.result = this.cartProducts.find((resultElement) => {
-    //       if (resultElement.id === product.id) {
-    //         return true;
-    //       }
-    //       return false;
-    //     });
-    //     if (this.result !== undefined) {
-    //       if (localStorage.cartProducts) {
-    //         this.cartArray = JSON.parse(localStorage.cartProducts);
-    //         console.log(this.cartArray);
-    //       }
-    //       // VERIFICARE QUESTE FUNZIONI
-    //       this.cartArray.find((arrayElement, index) => {
-    //         if (arrayElement.id === undefined) {
-    //           this.cartArray.splice(index, 1);
-    //         } else {
-    //           if (arrayElement.id === product.id) {
-    //             if (element.quantity === 0) {
-    //               console.log;
-    //               this.cartArray.splice(index, 1);
-    //             } else {
-    //               arrayElement.quantity = element.quantity;
-    //               arrayElement.totalPrice = element.totalPrice;
-    //             }
-    //           }
-    //         }
-    //       });
-    //       if (this.cartArray.length === 0) {
-    //         localStorage.cartProducts = JSON.stringify(this.cartArray);
-    //         localStorage.clear();
-    //       } else {
-    //         localStorage.cartProducts = JSON.stringify(this.cartArray);
-    //       }
-    //       // VERIFICARE QUESTE FUNZIONI
-    //       // localStorage.cartProducts = JSON.stringify(this.cartArray);
-    //     } else {
-    //       console.log(this.cartArray);
-    //       localStorage.cartProducts = JSON.stringify(this.cartProducts);
-    //     }
-    //   }
-    // });
-    // this.products.find((element) => {
-    //   if (element.id === id) {
-    //     if (element.quantity === 0) {
-    //       element.quantity = 0;
-    //     } else {
-    //       element.quantity--;
-    //       element.totalPrice -= parseFloat(element.price);
-    //     }
-    //   }
-    // });
   },
   getRestaurantsAndCategories() {
     axios.get(`${this.api_url}/restaurants`).then((response) => {
