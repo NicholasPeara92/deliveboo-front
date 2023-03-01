@@ -1,8 +1,9 @@
 <template>
   <div class="container-fluid">
     <div class="header">
-      <h1>{{ store.restaurant.name }}</h1>
-      <h1 class="pt-5 text-center">MENU</h1>
+      <h1 style="text-transform: uppercase" class="pt-5 text-center">
+        {{ store.restaurant.name }}
+      </h1>
       <div class="input d-flex justify-content-center mt-4">
         <input
           type="text"
@@ -37,13 +38,17 @@
         <strong class="d-block">{{ product.price }}€</strong>
         <strong class="d-block">{{ product.totalPrice }}€</strong>
         <div>
-          <button @click="store.addToCart(product)" class="unit mt-3">+</button>
-          <span>{{ product.quantity }}</span>
+          <button @click="store.addToCart(product)" class="unit mt-3">
+            <i class="fa-solid fa-plus"></i>
+          </button>
+          <span
+            ><b>{{ product.quantity }}</b></span
+          >
           <button
             @click="store.dropToCart(product)"
             class="unit mt-3 my-3 ms-2"
           >
-            -
+            <i class="fa-solid fa-minus"></i>
           </button>
         </div>
       </div>
@@ -189,9 +194,15 @@ select {
   height: 200px;
   display: block;
   border-radius: 20px;
+  object-fit: cover;
 }
 
-h5 {
+h1,
+h5,
+input,
+select,
+.product-card,
+i {
   color: $primary_color;
 }
 button {
