@@ -31,7 +31,7 @@
       >
         <div class="card mb-4 mx-auto my-5" v-if="restaurant.selected">
           <div class="d-flex g-0">
-            <div class="col-md-4 d-flex">
+            <div class="col-md-4 d-flex left">
               <img
                 :src="restaurant.image_url"
                 class="img-fluid rounded-start ms-img"
@@ -205,6 +205,10 @@ export default {
     .ms-badge {
       flex-wrap: nowrap;
       left: 0;
+    }
+    .left {
+      width: 50%;
+      justify-content: center;
     }
   }
 }
