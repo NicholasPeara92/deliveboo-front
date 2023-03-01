@@ -1,9 +1,7 @@
 <script>
-import axios from "axios";
 
 export default {
   name: "Order",
-
   data() {
     return {
     };
@@ -17,7 +15,6 @@ export default {
   <div class="segment">
     <h1>Inserisci i tuoi dati</h1>
   </div>
-  
 
     <input type="text" placeholder="Email Address"/>
     <input type="text" placeholder="Nome"/>
@@ -32,21 +29,6 @@ export default {
   
 </form>
 
-
-<!-- <div class="container mt-5">
-    <div class="header">
-      <h1 class="pt-5 text-center">Resoconto dell'ordine:</h1>
-      <div class="input d-flex justify-content-center mt-4">
-        <h3>Dettagli dell'ordine:</h3>
-        <strong class="d-block">Nome: {{ order.name }}</strong>
-        <strong class="d-block">Cognome: {{ order.surname }}</strong>
-        <strong class="d-block">Email: {{ order.email }}</strong>
-        <strong class="d-block">Indirizzo di consegna: {{ order.address }}</strong>
-        <strong class="d-block">Recapito telefonico: {{ order.number }}</strong>
-        <strong class="d-block">Totale dell'ordine: {{ order.total }}€</strong>
-      </div>
-    </div>
-  </div> -->
 </template>
 
 <style scoped lang="scss">
@@ -130,7 +112,7 @@ button {
   }
   
   .icon {
-    margin-right: $ruler/2;
+    margin-right: 8px;
   }
   
   &.unit {
@@ -141,7 +123,7 @@ button {
     display:inline-flex;
     justify-content: center;
     align-items:center;
-    margin: 0 $ruler/2;
+    margin: 0 8px;
     font-size: $ruler*1.2;
     
     .icon {
