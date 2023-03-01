@@ -100,7 +100,7 @@ label {
 }
 
 input {
-  margin-right: $ruler/2;
+  margin-right: 8px;
   box-shadow:  inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
   width: 100%;
   box-sizing: border-box;
