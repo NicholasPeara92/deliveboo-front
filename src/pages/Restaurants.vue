@@ -42,10 +42,12 @@
               <div class="card-body mt-4">
                 <h5 class="ms-card-title card-title">{{ restaurant.name }}</h5>
                 <p class="card-text mb-0">
-                  <b>Telefono:</b> {{ restaurant.telephone }}
+                  <b><i class="fa-solid fa-phone"></i></b>
+                  {{ restaurant.telephone }}
                 </p>
                 <p class="card-text">
-                  <b>Indirizzo: </b> {{ restaurant.address }}
+                  <b><i class="fa-solid fa-location-dot"></i></b>
+                  {{ restaurant.address }}
                 </p>
                 <!-- Bottone guarda il menu -->
                 <button class="ms-btn-primary">
