@@ -209,4 +209,32 @@ export const store = reactive({
       });
     });
   },
+  getTotalQuantity() {
+    if (localStorage.cartProducts) {
+      this.cartProducts = JSON.parse(localStorage.cartProducts);
+      this.totQuantity = 0;
+
+      this.cartProducts.forEach((element) => {
+        this.totQuantity += element.quantity;
+      });
+
+      return this.totQuantity;
+    } else {
+      return 0;
+    }
+  },
+  getTotalPrice() {
+    if (localStorage.cartProducts) {
+      this.cartProducts = JSON.parse(localStorage.cartProducts);
+      this.totPrice = 0;
+
+      this.cartProducts.forEach((element) => {
+        this.totPrice += element.totalPrice;
+      });
+
+      return this.totQuantity;
+    } else {
+      return 0;
+    }
+  },
 });

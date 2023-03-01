@@ -135,7 +135,7 @@ select {
   padding: $ruler;
   background-color: $color-bg;
   text-shadow: 1px 1px 0 $color-white;
-  margin-right: 32px;
+  margin-right: 8px;
   box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
   width: 350px;
   box-sizing: border-box;
