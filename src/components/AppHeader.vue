@@ -66,9 +66,7 @@
             </div>
           </div>
         </div>
-        <button>
-          <a href="../components/payment/Payment.vue"></a>Paga ora
-        </button>
+          <router-link :to="{ name: 'order' }"><button>Paga ora</button></router-link>
       </div>
     </div>
   </header>

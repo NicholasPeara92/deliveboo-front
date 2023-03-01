@@ -25,7 +25,7 @@ export default {
   
 
   <button class="red" type="button"><a href=""></a>Acquista</button>
-  <button class="red" type="button"><a href="http://localhost:5173">Torna alla HomePage</a></button>
+  <router-link :to="{ name: 'homepage' }"><button class="red" type="button">Torna alla HomePage</button></router-link>
   
 </form>
 
