@@ -1,6 +1,7 @@
 <template>
-  <div class="container mt-5">
+  <div class="container-fluid">
     <div class="header">
+      <h1>{{ store.restaurant.name }}</h1>
       <h1 class="pt-5 text-center">MENU</h1>
       <div class="input d-flex justify-content-center mt-4">
         <input
@@ -36,13 +37,11 @@
         <strong class="d-block">{{ product.price }}€</strong>
         <strong class="d-block">{{ product.totalPrice }}€</strong>
         <div>
-          <button @click="store.addToCart(product)" class="ms-btn-primary mt-3">
-            +
-          </button>
+          <button @click="store.addToCart(product)" class="unit mt-3">+</button>
           <span>{{ product.quantity }}</span>
           <button
             @click="store.dropToCart(product)"
-            class="ms-btn-primary bg-danger mt-3 my-3 ms-2"
+            class="unit mt-3 my-3 ms-2"
           >
             -
           </button>
@@ -116,6 +115,38 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$ruler: 16px;
+$color-red: #ae1100;
+$color-bg: #ebecf0;
+$color-shadow: #babecc;
+$color-white: #fff;
+
+.container-fluid {
+  background-color: $color-bg;
+}
+input,
+select {
+  letter-spacing: -0.2px;
+  border: 0;
+  outline: 0;
+  font-size: $ruler;
+  border-radius: $ruler * 20;
+  padding: $ruler;
+  background-color: $color-bg;
+  text-shadow: 1px 1px 0 $color-white;
+  margin-right: 32px;
+  box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  width: 350px;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+  -webkit-appearance: none;
+  &:focus {
+    box-shadow: inset 1px 1px 2px $color-shadow,
+      inset -1px -1px 2px $color-white;
+  }
+}
+
 .input {
   padding-bottom: 5px;
 }
@@ -136,15 +167,18 @@ export default {
   padding: 10px;
   margin: 0 1.25rem 0.625rem 0;
   border-radius: 5%;
-  border: 1px solid;
+  border: 0;
+  outline: 0;
   padding: 10px;
-  box-shadow: 5px 10px 8px #888888;
-  background-color: aliceblue;
+  box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  background-color: $color-bg;
+  text-shadow: 1px 1px 0 $color-white;
   transition: all 0.3s;
 }
 .product-card:hover {
+  box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
   position: relative;
-  scale: (1.02);
+  // scale: (1.02);
   z-index: 3;
 }
 .product-image-box {
@@ -159,5 +193,39 @@ export default {
 
 h5 {
   color: $primary_color;
+}
+button {
+  border: 0;
+  outline: 0;
+  font-size: $ruler;
+  border-radius: $ruler * 20;
+  padding: $ruler;
+  background-color: $color-bg;
+  text-shadow: 1px 1px 0 $color-white;
+  color: #61677c;
+  font-weight: bold;
+  box-shadow: -5px -5px 20px $color-white, 5px 5px 20px $color-shadow;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  font-weight: 600;
+
+  &:hover {
+    box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
+  }
+
+  &:active {
+    box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px;
+  }
+  &.unit {
+    border-radius: 8px;
+    line-height: 0;
+    width: $ruler * 3;
+    height: $ruler * 3;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+    font-size: $ruler * 1.2;
+  }
 }
 </style>

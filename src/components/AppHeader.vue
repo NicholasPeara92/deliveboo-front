@@ -15,7 +15,7 @@
       </button>
       <!-- Bottone carrello -->
       <button
-        class="ms-btn-primary"
+        class="ms-btn-primary position-relative"
         type="button"
         @click="show_cart"
         data-bs-toggle="offcanvas"
@@ -23,6 +23,9 @@
         aria-controls="offcanvasRight"
       >
         <i class="fa-solid fa-cart-shopping"></i>
+        <div class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2">
+          1
+        </div>
       </button>
       <div
         class="offcanvas offcanvas-end"
