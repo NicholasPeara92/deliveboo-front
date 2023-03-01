@@ -12,7 +12,7 @@ export default {
 
 <template>
   <form>
-    <div class="segment">
+    <div class="segment mt-5">
       <h1>Inserisci i tuoi dati</h1>
     </div>
 
