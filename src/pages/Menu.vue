@@ -70,11 +70,7 @@ export default {
     };
   },
   methods: {},
-  mounted() {
-    if (localStorage.products) {
-      this.store.products = JSON.parse(localStorage.products);
-    }
-  },
+  mounted() {},
 
   watch: {
     products(newProducts) {

@@ -156,12 +156,6 @@ export default {
   created() {
     this.store.getRestaurantsAndCategories();
   },
-  mounted() {
-    if (localStorage.cartProducts) {
-      this.cartProducts = JSON.parse(localStorage.cartProducts);
-      console.log(this.cartProducts);
-    }
-  },
 };
 </script>
 

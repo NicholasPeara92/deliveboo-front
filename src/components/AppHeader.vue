@@ -23,7 +23,9 @@
         aria-controls="offcanvasRight"
       >
         <i class="fa-solid fa-cart-shopping"></i>
-        <div class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2">
+        <div
+          class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"
+        >
           1
         </div>
       </button>
@@ -49,13 +51,13 @@
               <div>{{ product.name }}: {{ product.quantity }}</div>
               <div class="ms-3">
                 <button
-                  @click="store.addToCart(product.id)"
+                  @click="store.addToCart(product)"
                   class="ms-btn-primary mt-3"
                 >
                   +
                 </button>
                 <button
-                  @click="store.dropToCart(product.id)"
+                  @click="store.dropToCart(product)"
                   class="ms-btn-primary bg-danger mt-3 my-3"
                 >
                   -
