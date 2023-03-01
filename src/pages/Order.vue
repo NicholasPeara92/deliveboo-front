@@ -36,20 +36,33 @@ export default {
     <div class="segment mt-5">
       <h1>Inserisci i tuoi dati</h1>
     </div>
+    <form @submit.prevent>
+      <label for="name" class="form-label my-2 ms-3">Inserisci il nome*</label>
+      <input type="text" id="name" required placeholder="Nome" />
+      <label for="Email" class="form-label my-2 ms-3">Inserisci l'email*</label>
+      <input type="text" id="Email" required placeholder="Email Address" />
+      <label for="address" class="form-label my-2 ms-3"
+        >Inserisci l'indirizzo*</label
+      >
+      <input
+        type="text"
+        id="address"
+        required
+        placeholder="Indirizzo di consegna"
+      />
+      <label for="telephone" class="form-label my-2 ms-3"
+        >Inserisci il numero di telefono*</label
+      >
+      <input type="text" id="telephone" required placeholder="Telefono" />
+      <h3 class="my-2">Totale: {{ store.getTotalPrice() }} €</h3>
 
-    <input class="my-2" type="text" placeholder="Email Address" />
-    <input class="my-2" type="text" placeholder="Nome" />
-    <input class="my-2" type="text" placeholder="Cognome" />
-    <input class="my-2" type="text" placeholder="Indirizzo di consegna" />
-    <input class="my-2" type="text" placeholder="Telefono" />
-    <div id="dropin-container"></div>
-    <h3 class="my-2">Totale: {{ store.getTotalPrice() }} €</h3>
-
-    <button id="submit-button" class="red my-3" type="button">
-      <a href=""></a>Acquista
-    </button>
+      <div id="dropin-container"></div>
+      <button id="submit-button" class="red my-3" type="submit">
+        <a href=""></a>Acquista
+      </button>
+    </form>
     <router-link :to="{ name: 'homepage' }"
-      ><button class="red my-3" type="button">
+      ><button class="red my-3 ms-3" type="button">
         Torna alla HomePage
       </button></router-link
     >
