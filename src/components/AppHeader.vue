@@ -23,10 +23,12 @@
         aria-controls="offcanvasRight"
       >
         <i class="fa-solid fa-cart-shopping"></i>
+
         <div
+          v-if="store.getTotalQuantity() > 0"
           class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"
         >
-          1
+          {{ store.getTotalQuantity() }}
         </div>
       </button>
       <div
@@ -63,6 +65,15 @@
                   -
                 </button>
               </div>
+            </div>
+            <div>
+              <span
+                >Quantità totale dei prodotti:
+                {{ store.getTotalQuantity() }}</span
+              >
+            </div>
+            <div>
+              <span>Totale: {{ store.getTotalQuantity() }} €</span>
             </div>
           </div>
         </div>
