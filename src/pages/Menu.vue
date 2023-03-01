@@ -69,8 +69,6 @@ export default {
       searchProductType: "",
     };
   },
-  methods: {},
-  mounted() {},
 
   watch: {
     products(newProducts) {
