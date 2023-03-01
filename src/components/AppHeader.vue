@@ -48,7 +48,10 @@
           ></button>
         </div>
         <div class="offcanvas-body">
-          <div v-for="product in this.store.cartProducts">
+          <div
+            v-for="product in this.store.cartProducts"
+            v-if="this.store.cartProducts.length > 0"
+          >
             <div class="d-flex align-items-center" v-if="product.quantity > 0">
               <div>{{ product.name }}: {{ product.quantity }}</div>
               <div class="ms-3">
@@ -66,18 +69,20 @@
                 </button>
               </div>
             </div>
-            <div>
-              <span
-                >Quantità totale dei prodotti:
-                {{ store.getTotalQuantity() }}</span
-              >
-            </div>
-            <div>
-              <span>Totale: {{ store.getTotalQuantity() }} €</span>
-            </div>
+          </div>
+          <div>
+            <span
+              >Quantità totale dei prodotti:
+              {{ store.getTotalQuantity() }}</span
+            >
+          </div>
+          <div>
+            <span>Totale: {{ store.getTotalQuantity() }} €</span>
           </div>
         </div>
-          <router-link :to="{ name: 'order' }"><button>Paga ora</button></router-link>
+        <router-link :to="{ name: 'order' }"
+          ><button>Paga ora</button></router-link
+        >
       </div>
     </div>
   </header>
