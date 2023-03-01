@@ -39,7 +39,7 @@
               />
             </div>
             <div class="position-relative col-md-8">
-              <div class="card-body mt-4">
+              <div class="card-body pt-4">
                 <h5 class="ms-card-title card-title">{{ restaurant.name }}</h5>
                 <p class="card-text mb-0">
                   <b><i class="fa-solid fa-phone"></i></b>
@@ -205,6 +205,7 @@ export default {
     .ms-badge {
       flex-wrap: nowrap;
       left: 0;
+      top: -13px;
     }
   }
 }
@@ -225,6 +226,7 @@ h1 {
   object-fit: contain;
   padding: 20px;
   height: 150px;
+  width: 200px;
 }
 
 .ms-card-title {
