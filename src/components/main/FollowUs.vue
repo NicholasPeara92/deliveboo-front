@@ -56,6 +56,7 @@ export default {
   opacity: 1;
 }
 .follow {
+  background-color: white;
   margin-bottom: 60px;
   box-shadow: 0 6px 20px 0 #00000014;
   display: flex;

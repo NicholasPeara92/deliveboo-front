@@ -48,7 +48,6 @@ export default {
 
 <style lang="scss" scoped>
 .background {
-  background-color: #f9fafa;
   display: flex;
   flex-direction: column;
   .hero {

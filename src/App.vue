@@ -23,4 +23,8 @@ export default {
 
 <style lang="scss">
 @import "./style/global.scss";
+$color-bg: #ebecf0;
+body {
+  background-color: $color-bg;
+}
 </style>
