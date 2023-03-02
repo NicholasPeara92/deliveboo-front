@@ -152,7 +152,6 @@ header {
   }
   &.scrolled {
     background-color: #2e3333;
-    opacity: 0.7;
   }
 }
 
