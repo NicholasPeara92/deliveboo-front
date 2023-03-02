@@ -40,18 +40,27 @@
         </div>
         <strong class="d-block">{{ product.price }}€</strong>
         <div>
-          <button @click="store.addToCart(product)" class="unit mt-3">
-            <i class="fa-solid fa-plus"></i>
-          </button>
-          <span
-            ><b>{{ product.quantity }}</b></span
-          >
           <button
-            @click="store.dropToCart(product)"
-            class="unit mt-3 my-3 ms-2"
+            @click="store.addToCart(product)"
+            class="unit mt-3"
+            v-if="product.quantity === 0"
           >
-            <i class="fa-solid fa-minus"></i>
+            Aggiungi al carrello
           </button>
+          <div v-else>
+            <button @click="store.addToCart(product)" class="mt-3 style-button">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <span
+              ><b>{{ product.quantity }}</b></span
+            >
+            <button
+              @click="store.dropToCart(product)"
+              class="unit mt-3 my-3 ms-2 style-button"
+            >
+              <i class="fa-solid fa-minus"></i>
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -214,7 +223,7 @@ select,
 i {
   color: $primary_color;
 }
-button {
+.style_button {
   border: 0;
   outline: 0;
   font-size: $ruler;
