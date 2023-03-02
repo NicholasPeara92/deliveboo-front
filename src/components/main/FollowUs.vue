@@ -3,7 +3,12 @@
     <div class="container">
       <div class="follow p-4 animate">
         <div class="left">
-          <h2><strong>Segui Gli Ordini Passo Passo</strong></h2>
+          <h2>
+            <strong
+              >Segui Gli Ordini <br />
+              Passo Passo</strong
+            >
+          </h2>
           <p>
             I piatti e i prodotti che ami, consegnati in pochissimo tempo.
             Vedrai quando il rider ha ritirato l'ordine, che potrai seguire
@@ -69,12 +74,13 @@ export default {
 
   .left {
     width: 35%;
+    padding: 20px 40px;
     @media (max-width: 576px) {
       margin-bottom: 20px;
     }
     p {
       font-size: 20px;
-      margin-top: 20px;
+      margin: 50px 0;
     }
     h2 {
       font-size: 40px;

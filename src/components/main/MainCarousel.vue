@@ -8,7 +8,7 @@
       :pause-on-hover="pauseOnHover"
       @autoplay-pause="internalAutoPlaying = false"
       @autoplay-resume="internalAutoPlaying = true"
-      >>
+    >
       <vueper-slide
         v-for="(slide, i) in slides"
         :key="i"
