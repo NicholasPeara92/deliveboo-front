@@ -61,7 +61,7 @@ export default {
     <div class="left"></div>
     <form @submit.prevent="addOrder()">
       <div class="segment mt-5">
-        <h1>Inserisci i tuoi dati</h1>
+        <h1>Inserisci i Tuoi Dati</h1>
       </div>
 
       <input
@@ -144,14 +144,24 @@ $color-white: #fff;
     background-image: url(../../src/assets/pexels-jonathan-borba-2983099.jpg);
     background-size: cover;
     width: calc(100% / 3);
+    @media only screen and (max-width: 576px) {
+      display: none;
+    }
   }
   .right {
     background-image: url(../../src/assets/pexels-william-choquette-2641886.jpg);
     background-size: cover;
     width: calc(100% / 3);
+    @media only screen and (max-width: 576px) {
+      display: none;
+    }
   }
   form {
     width: calc(100% / 3);
+    @media only screen and (max-width: 576px) {
+      width: 100%;
+      padding: 30px 100px;
+    }
   }
 }
 
@@ -188,6 +198,9 @@ form {
 .segment {
   padding: $ruler * 2 0;
   text-align: center;
+  h1 {
+    font-weight: 700px;
+  }
 }
 
 button,
