@@ -39,7 +39,6 @@
           </h6>
         </div>
         <strong class="d-block">{{ product.price }}€</strong>
-        <strong class="d-block">{{ product.totalPrice }}€</strong>
         <div>
           <button @click="store.addToCart(product)" class="unit mt-3">
             <i class="fa-solid fa-plus"></i>
