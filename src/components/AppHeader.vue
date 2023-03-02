@@ -38,7 +38,7 @@
         aria-labelledby="offcanvasRightLabel"
       >
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrello</h5>
+          <h3 class="offcanvas-title" id="offcanvasRightLabel">Carrello</h3>
           <button
             type="button"
             @click="hide_cart"
@@ -53,8 +53,8 @@
             v-if="this.store.cartProducts.length > 0"
           >
             <div class="d-flex align-items-center" v-if="product.quantity > 0">
-              <div>{{ product.name }}: {{ product.quantity }}</div>
-              <div class="ms-3">
+              <div class="x">{{ product.name }}: {{ product.quantity }}</div>
+              <div class="btn ms-3">
                 <button
                   @click="store.addToCart(product)"
                   class="ms-btn-primary mt-3"
@@ -72,12 +72,12 @@
           </div>
           <div>
             <span
-              >Quantità totale dei prodotti:
+              ><strong>Quantità totale dei prodotti:</strong>
               {{ store.getTotalQuantity() }}</span
             >
           </div>
           <div>
-            <span>Totale: {{ store.getTotalPrice() }} €</span>
+            <span><strong>Totale:</strong> {{ store.getTotalPrice() }} €</span>
           </div>
         </div>
         <router-link :to="{ name: 'order' }"
@@ -161,7 +161,9 @@ img {
   max-width: 150px;
   object-fit: contain;
 }
-
+.x {
+  width: 60%;
+}
 .paga {
   margin-right: 10px;
   background-color: $primary-color;
