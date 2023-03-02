@@ -58,7 +58,9 @@ export default {
 
 <template>
   <section class="order">
-    <div class="left"></div>
+    <div class="left">
+      <div class="gradient-left"></div>
+    </div>
     <form @submit.prevent="addOrder()">
       <div class="segment mt-5">
         <h1>Inserisci i Tuoi Dati</h1>
@@ -116,10 +118,18 @@ export default {
       </h3>
 
       <div id="dropin-container"></div>
-      <router-link :to="{ name: 'returnhp' }"><button class="red my-3" type="button">Acquista</button></router-link>
-      <router-link :to="{ name: 'homepage' }"><button class="red my-3" type="button">Torna alla HomePage</button></router-link>
+      <router-link :to="{ name: 'returnhp' }"
+        ><button class="red my-3" type="button">Acquista</button></router-link
+      >
+      <router-link :to="{ name: 'homepage' }"
+        ><button class="red my-3" type="button">
+          Torna alla HomePage
+        </button></router-link
+      >
     </form>
-    <div class="right"></div>
+    <div class="right">
+      <div class="gradient-right"></div>
+    </div>
   </section>
 </template>
 
@@ -138,6 +148,11 @@ $color-white: #fff;
     background-image: url(../../src/assets/pexels-jonathan-borba-2983099.jpg);
     background-size: cover;
     width: calc(100% / 3);
+    .gradient-left {
+      background: linear-gradient(275deg, #0a0a0a 0%, rgba(10, 10, 10, 0) 100%);
+      width: 100%;
+      height: 100%;
+    }
     @media only screen and (max-width: 576px) {
       display: none;
     }
@@ -146,6 +161,12 @@ $color-white: #fff;
     background-image: url(../../src/assets/pexels-william-choquette-2641886.jpg);
     background-size: cover;
     width: calc(100% / 3);
+    .gradient-right {
+      background: linear-gradient(90deg, #0a0a0a 0%, rgba(10, 10, 10, 0) 50%);
+      width: 100%;
+      height: 100%;
+    }
+
     @media only screen and (max-width: 576px) {
       display: none;
     }
@@ -190,10 +211,14 @@ form {
 }
 
 .segment {
-  padding: $ruler * 2 0;
+  padding-bottom: 20px;
   text-align: center;
   h1 {
-    font-weight: 700px;
+    font-weight: bold;
+    color: #00ccbc;
+  }
+  @media only screen and (max-width: 576px) {
+    padding: 40px 0;
   }
 }
 
