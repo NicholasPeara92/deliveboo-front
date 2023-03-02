@@ -104,6 +104,7 @@ export default {
       id="telephone"
       required
       maxlength="10"
+      minlength="10"
       placeholder="Telefono *"
       v-model="formData.telephone"
     />
