@@ -57,6 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$color-bg: #ebecf0;
 .animate {
   opacity: 0;
   transition: opacity 1s ease-out;
@@ -65,6 +66,7 @@ export default {
   opacity: 1;
 }
 .experience {
+  background-color: $color-bg;
   position: relative;
   z-index: 1;
   padding: 50px 0;
@@ -128,7 +130,7 @@ export default {
         margin: 0 0 0 -80px;
         padding: 50px;
         border-radius: 10px;
-        box-shadow: 0 7px 4px rgb(0 0 0 / 8%), 0 0 1px rgb(0 0 0 / 8%);
+        box-shadow: 0 7px 4px rgb(0 0 0 / 13%), 0 0 1px rgb(0 0 0 / 8%);
         @media only screen and (max-width: 576px) {
           width: 450px;
           margin: 0;

@@ -1,8 +1,7 @@
 <template>
   <section id="about-us" class="about py-4">
-    <h3 class="text-center">IL NOSTRO TEAM</h3>
     <div class="container-titleCards">
-      <h3 class="titleCard mb-4 text-white">Il Nostro Team</h3>
+      <h3 class="text-center">IL NOSTRO TEAM</h3>
     </div>
     <div class="container-cards">
       <div class="card">
@@ -75,6 +74,7 @@ export default {};
   h3 {
     font-size: 32px;
     font-weight: bold;
+    color: #00ccbc;
   }
 
   @media only screen and (max-width: 576px) {

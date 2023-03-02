@@ -50,12 +50,11 @@
                   {{ restaurant.address }}
                 </p>
                 <!-- Bottone guarda il menu -->
-                <button class="ms-btn-primary">
-                  <router-link
-                    :to="{ name: 'menu', params: { slug: restaurant.slug } }"
-                    >Guarda il menu</router-link
-                  >
-                </button>
+                <router-link
+                  :to="{ name: 'menu', params: { slug: restaurant.slug } }"
+                >
+                  <button class="ms-btn-primary">Guarda il menu</button>
+                </router-link>
                 <!-- Fine bottone -->
               </div>
               <!-- Badge categorie -->
@@ -160,8 +159,14 @@ export default {
 </script>
 
 <style scoped lang="scss">
+$ruler: 16px;
+$color-red: #ae1100;
+$color-bg: #ebecf0;
+$color-shadow: #babecc;
+$color-white: #fff;
+
 #restaurants {
-  background-color: #00ccbc;
+  background-color: $color-bg;
   width: 100%;
   color: darken($color: #00ccbc, $amount: 30%);
 }
@@ -188,16 +193,60 @@ export default {
   color: #00ccbc;
   transition: all 0.5s;
   background-color: darken($color: #00ccbc, $amount: 20%);
-  &:hover {
-    background-color: aliceblue;
-    border-radius: 5px;
-  }
+}
+
+.form-check-input:checked {
+  background-color: white;
+  border-radius: 5px;
 }
 .card {
   max-width: 480px;
   background-color: aliceblue;
-  border-radius: 20px;
+  box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
+  background-color: $color-bg;
+  text-shadow: 1px 1px 0 $color-white;
+  border-radius: 5%;
+  border: 0;
+  outline: 0;
   transition: all 0.3s;
+  .card-title {
+    color: #00ccbc;
+  }
+  button {
+    border: 0;
+    outline: 0;
+    font-size: $ruler;
+    border-radius: $ruler * 20;
+    padding: 12px;
+    background-color: $color-bg;
+    text-shadow: 1px 1px 0 $color-white;
+    color: #00ccbc;
+    font-weight: bold;
+    box-shadow: -5px -5px 20px $color-white, 5px 5px 20px $color-shadow;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+
+    &:hover {
+      box-shadow: -2px -2px 5px $color-white, 2px 2px 5px $color-shadow;
+    }
+
+    &:active {
+      box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px;
+    }
+    &.unit {
+      border-radius: 8px;
+      line-height: 0;
+      width: $ruler * 3;
+      height: $ruler * 3;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 8px;
+      font-size: $ruler * 1.2;
+    }
+  }
+
   @media only screen and (max-width: 576px) {
     width: 100%;
     height: 200px;
@@ -214,7 +263,8 @@ export default {
   }
 }
 .card:hover {
-  scale: 1.03;
+  box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
+  position: relative;
   z-index: 3;
 }
 h1 {
