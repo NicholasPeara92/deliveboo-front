@@ -64,37 +64,47 @@ export default {
 
     <input
       class="my-2"
-      type="text"
+      type="email"
       id="email"
-      placeholder="Email Address"
+      required
+      maxlength="30"
+      placeholder="Email Address *"
       v-model="formData.mail"
     />
     <input
       class="my-2"
       type="text"
       id="name"
-      placeholder="Nome"
+      required
+      maxlength="30"
+      placeholder="Nome *"
       v-model="formData.name"
     />
     <input
       class="my-2"
       type="text"
       id="surname"
-      placeholder="Cognome"
+      required
+      maxlength="30"
+      placeholder="Cognome *"
       v-model="formData.surname"
     />
     <input
       class="my-2"
       type="text"
       id="address"
-      placeholder="Indirizzo di consegna"
+      required
+      maxlength="50"
+      placeholder="Indirizzo di consegna *"
       v-model="formData.address"
     />
     <input
       class="my-2"
       type="text"
       id="telephone"
-      placeholder="Telefono"
+      required
+      maxlength="10"
+      placeholder="Telefono *"
       v-model="formData.telephone"
     />
     <h3 class="my-2">
