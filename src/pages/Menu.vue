@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="header">
-      <div class="error-toast" v-show="store.showError">
+      <div class="error-toast" v-if="store.showError">
         <p>{{ store.messageError }}</p>
       </div>
       <h1 style="text-transform: uppercase" class="pt-3 text-center">
