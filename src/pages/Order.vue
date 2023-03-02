@@ -116,14 +116,8 @@ export default {
       </h3>
 
       <div id="dropin-container"></div>
-      <button id="submit-button" class="red my-3" type="submit">
-        <a href=""></a>Acquista
-      </button>
-      <router-link :to="{ name: 'homepage' }"
-        ><button class="red my-3" type="button">
-          Torna alla HomePage
-        </button></router-link
-      >
+      <router-link :to="{ name: 'returnhp' }"><button class="red my-3" type="button">Acquista</button></router-link>
+      <router-link :to="{ name: 'homepage' }"><button class="red my-3" type="button">Torna alla HomePage</button></router-link>
     </form>
     <div class="right"></div>
   </section>
