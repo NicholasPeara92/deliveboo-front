@@ -48,24 +48,41 @@
           ></button>
         </div>
         <div class="offcanvas-body">
-          <div v-for="product in this.store.cartProducts" v-if="this.store.cartProducts.length > 0">
+          <div
+            v-for="product in this.store.cartProducts"
+            v-if="this.store.cartProducts.length > 0"
+          >
             <div class="d-flex align-items-center" v-if="product.quantity > 0">
-            <div class="x">{{ product.name }}: {{ product.quantity }}</div>
-            <div class="btn ms-3">
-              <button @click="store.addToCart(product)" class="ms-btn-primary mt-3"> + </button>
-              <button @click="store.dropToCart(product)" class="ms-btn-primary bg-danger mt-3 my-3"> -
+              <div class="x">{{ product.name }}: {{ product.quantity }}</div>
+              <div class="btn ms-3">
+                <button
+                  @click="store.addToCart(product)"
+                  class="ms-btn-primary mt-3"
+                >
+                  +
+                </button>
+                <button
+                  @click="store.dropToCart(product)"
+                  class="ms-btn-primary bg-danger mt-3 my-3"
+                >
+                  -
                 </button>
               </div>
             </div>
           </div>
           <div>
-            <span><strong>Quantità totale dei prodotti:</strong> {{ store.getTotalQuantity() }}</span>
+            <span
+              ><strong>Quantità totale dei prodotti:</strong>
+              {{ store.getTotalQuantity() }}</span
+            >
           </div>
           <div>
             <span><strong>Totale:</strong> {{ store.getTotalPrice() }} €</span>
           </div>
         </div>
-        <router-link :to="{ name: 'order' }"><button class="paga">Paga ora</button></router-link>
+        <router-link :to="{ name: 'order' }"
+          ><button class="paga">Paga ora</button></router-link
+        >
       </div>
     </div>
   </header>
@@ -118,6 +135,8 @@ window.addEventListener("scroll", function () {
 </script>
 
 <style lang="scss" scoped>
+$color-bg: #ebecf0;
+
 header {
   position: fixed;
   width: 100%;
@@ -131,10 +150,10 @@ header {
     display: flex;
     // flex-direction: column;
     justify-content: flex-end;
-    background-color: opacify($color: #000000, $amount: 1);
+    background-color: opacify($color: $color-bg, $amount: 1);
   }
   &.scrolled {
-    background-color: #2e3333;
+    background-color: $color-bg;
   }
 }
 
@@ -142,28 +161,28 @@ img {
   max-width: 150px;
   object-fit: contain;
 }
-.x{
+.x {
   width: 60%;
 }
-.paga{
-        margin-right: 10px;
-        background-color: $primary-color;
-        color: $font-color;
-        border: none;
-        border-radius: 50px;
-        width: 90%;
-        height: 40px;
-        font-size: 24px;
-        margin-bottom: 5px;
-        margin-left: 25px;
-        cursor: pointer;
-        transition: background-color 0.2s ease-in-out;
-        &:hover {
-        background-color: darken($primary-color, 10%);
-      }
+.paga {
+  margin-right: 10px;
+  background-color: $primary-color;
+  color: $font-color;
+  border: none;
+  border-radius: 50px;
+  width: 90%;
+  height: 40px;
+  font-size: 24px;
+  margin-bottom: 5px;
+  margin-left: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
 
-      &:active {
-        background-color: darken($primary-color, 20%);
-      }
-    }
+  &:active {
+    background-color: darken($primary-color, 20%);
+  }
+}
 </style>

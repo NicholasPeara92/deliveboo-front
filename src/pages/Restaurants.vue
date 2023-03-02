@@ -181,7 +181,7 @@ $color-white: #fff;
     width: 100px;
     height: 40px;
     b {
-      color: #00ccbc;
+      color: black;
     }
   }
 }
@@ -190,9 +190,9 @@ $color-white: #fff;
   width: 100px;
   height: 40px;
   text-align: center;
-  color: #00ccbc;
+  color: white;
   transition: all 0.5s;
-  background-color: darken($color: #00ccbc, $amount: 20%);
+  background-color: #00ccbc;
 }
 
 .form-check-input:checked {
