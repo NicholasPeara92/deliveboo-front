@@ -6,16 +6,16 @@
         <h1>Grazie per l'acquisto!</h1>
         <h3>Il tuo ordine è stato preso in carico</h3>
         <router-link :to="{ name: 'homepage' }"><button class="red my-3 ms-3" type="button">Torna alla HomePage</button></router-link>
-        <div style="width:100%;height:0;padding-top: 25px;">
-            <iframe src="https://giphy.com/embed/w4l7IdrSxZHHsryJ0W" width="300px" height="300px" ></iframe>
+        <div class="gif">
+            <img src="../assets/deliveroo.gif" alt="">
         </div>
     </div>
 </template>
 
 <style scoped lang="scss">
 .container{
-    padding-top: 300px;
-    padding-bottom: 278px;
+    background-image:url();
+    padding-top: 200px;
     display: flex;
     text-align: center;
     flex-direction: column;
