@@ -57,61 +57,65 @@ export default {
 </script>
 
 <template>
-  <form @submit.prevent="addOrder()">
-    <div class="segment mt-5">
-      <h1>Inserisci i tuoi dati</h1>
-    </div>
+  <section class="order">
+    <div class="left"></div>
+    <form @submit.prevent="addOrder()">
+      <div class="segment mt-5">
+        <h1>Inserisci i tuoi dati</h1>
+      </div>
 
-    <input
-      class="my-2"
-      type="text"
-      id="email"
-      placeholder="Email Address"
-      v-model="formData.mail"
-    />
-    <input
-      class="my-2"
-      type="text"
-      id="name"
-      placeholder="Nome"
-      v-model="formData.name"
-    />
-    <input
-      class="my-2"
-      type="text"
-      id="surname"
-      placeholder="Cognome"
-      v-model="formData.surname"
-    />
-    <input
-      class="my-2"
-      type="text"
-      id="address"
-      placeholder="Indirizzo di consegna"
-      v-model="formData.address"
-    />
-    <input
-      class="my-2"
-      type="text"
-      id="telephone"
-      placeholder="Telefono"
-      v-model="formData.telephone"
-    />
-    <h3 class="my-2">
-      Totale:
-      {{ formData.total }} €
-    </h3>
+      <input
+        class="my-2"
+        type="text"
+        id="email"
+        placeholder="Email Address"
+        v-model="formData.mail"
+      />
+      <input
+        class="my-2"
+        type="text"
+        id="name"
+        placeholder="Nome"
+        v-model="formData.name"
+      />
+      <input
+        class="my-2"
+        type="text"
+        id="surname"
+        placeholder="Cognome"
+        v-model="formData.surname"
+      />
+      <input
+        class="my-2"
+        type="text"
+        id="address"
+        placeholder="Indirizzo di consegna"
+        v-model="formData.address"
+      />
+      <input
+        class="my-2"
+        type="text"
+        id="telephone"
+        placeholder="Telefono"
+        v-model="formData.telephone"
+      />
+      <h3 class="my-2">
+        Totale:
+        {{ formData.total }} €
+      </h3>
 
-    <div id="dropin-container"></div>
-    <button id="submit-button" class="red my-3" type="submit">
-      <a href=""></a>Acquista
-    </button>
-  </form>
-  <router-link :to="{ name: 'homepage' }"
-    ><button class="red my-3 ms-3" type="button">
-      Torna alla HomePage
-    </button></router-link
-  >
+      <div id="dropin-container"></div>
+      <button id="submit-button" class="red my-3" type="submit">
+        <a href=""></a>Acquista
+      </button>
+      <router-link :to="{ name: 'homepage' }"
+        ><button class="red my-3" type="button">
+          Torna alla HomePage
+        </button></router-link
+      >
+    </form>
+    <div class="right"></div>
+  </section>
 </template>
 
 <style scoped lang="scss">
@@ -121,8 +125,28 @@ $color-bg: #ebecf0;
 $color-shadow: #babecc;
 $color-white: #fff;
 
+.order {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  .left {
+    background-image: url(../../src/assets/pexels-jonathan-borba-2983099.jpg);
+    background-size: cover;
+    width: calc(100% / 3);
+  }
+  .right {
+    background-image: url(../../src/assets/pexels-william-choquette-2641886.jpg);
+    background-size: cover;
+    width: calc(100% / 3);
+  }
+  form {
+    width: calc(100% / 3);
+  }
+}
+
 body,
-html {
+html,
+form {
   background-color: $color-bg;
 }
 
@@ -146,7 +170,8 @@ p {
 form {
   padding: $ruler;
   width: $ruler * 20;
-  margin: 0 auto;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .segment {
