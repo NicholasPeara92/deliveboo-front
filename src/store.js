@@ -192,7 +192,7 @@ export const store = reactive({
         this.totPrice += element.totalPrice;
       });
 
-      return this.totQuantity;
+      return this.totPrice;
     } else {
       return 0;
     }
