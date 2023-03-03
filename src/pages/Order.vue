@@ -16,6 +16,7 @@ export default {
         email: "",
         total: 0,
       },
+      showNewButton: false,
     };
   },
   mounted() {
@@ -119,7 +120,19 @@ export default {
 
       <div id="dropin-container"></div>
       <!-- <router-link :to="{ name: 'returnhp' }"> -->
-      <button class="red my-3" type="submit">Acquista</button>
+      <button
+        v-if="!showNewButton"
+        @click="showNewButton = true"
+        class="red my-3"
+        type="submit"
+      >
+        Acquista
+      </button>
+      <router-link :to="{ name: 'returnhp' }">
+        <button v-if="showNewButton" class="red my-3" type="button">
+          Conferma Pagamento
+        </button>
+      </router-link>
       <!-- </router-link> -->
       <router-link :to="{ name: 'homepage' }"
         ><button class="red my-3" type="button">
