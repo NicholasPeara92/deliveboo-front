@@ -31,7 +31,7 @@ export default {
       function (err, instance) {
         button.addEventListener("click", function () {
           instance.requestPaymentMethod(function (err, payload) {
-            // Submit payload.nonce to your server
+            this.showNewButton = true;
           });
         });
       }
@@ -122,7 +122,7 @@ export default {
       <!-- <router-link :to="{ name: 'returnhp' }"> -->
       <button
         v-if="!showNewButton"
-        @click="showNewButton = true"
+        id="submit-button"
         class="red my-3"
         type="submit"
       >
