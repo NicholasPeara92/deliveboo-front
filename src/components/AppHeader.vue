@@ -165,7 +165,7 @@ img {
   object-fit: contain;
 }
 .x {
-  width: 60%;
+  width: 55%;
 }
 .paga {
   margin-top: 20px;
