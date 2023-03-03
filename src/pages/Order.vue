@@ -16,7 +16,6 @@ export default {
         email: "",
         total: 0,
       },
-      showNewButton: false,
     };
   },
   mounted() {
@@ -30,9 +29,8 @@ export default {
       },
       function (err, instance) {
         button.addEventListener("click", function () {
-          instance.requestPaymentMethod(function (err, payload) {
-            this.showNewButton = true;
-          });
+          instance.requestPaymentMethod(function (err, payload) {});
+          this.showNewButton = true;
         });
       }
     );
@@ -50,6 +48,8 @@ export default {
           products: this.store.cartProducts,
         })
         .then((res) => {
+          this.$router.push({ path: "/returnhp" });
+
           console.log(res);
         });
     },
@@ -120,19 +120,10 @@ export default {
 
       <div id="dropin-container"></div>
       <!-- <router-link :to="{ name: 'returnhp' }"> -->
-      <button
-        v-if="!showNewButton"
-        id="submit-button"
-        class="red my-3"
-        type="submit"
-      >
+      <button id="submit-button" class="red my-3" type="submit">
         Acquista
       </button>
-      <router-link :to="{ name: 'returnhp' }">
-        <button v-if="showNewButton" class="final-order my-3" type="button">
-          Ordine Completato
-        </button>
-      </router-link>
+
       <!-- </router-link> -->
       <router-link :to="{ name: 'homepage' }"
         ><button class="red my-3" type="button">
