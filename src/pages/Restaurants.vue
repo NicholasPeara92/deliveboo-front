@@ -25,8 +25,9 @@
     <div class="container d-flex justify-content-around flex-wrap my-3 col-12">
       <!-- CARD -->
       <div
+        v-if="store.filteredArray.length > 4"
         class="col-12 col-md-6"
-        v-for="(restaurant, index) in store.filteredArray"
+        v-for="(restaurant, index) in store.slicedArray"
         :key="index"
       >
         <div class="card mb-4 mx-auto my-5" v-if="restaurant.selected">
@@ -71,6 +72,62 @@
         </div>
         <!-- FINE CARD -->
       </div>
+      <div
+        v-else
+        class="col-12 col-md-6"
+        v-for="(restaurant, index) in store.filteredArray"
+      >
+        <div class="card mb-4 mx-auto my-5" v-if="restaurant.selected">
+          <div class="d-flex g-0">
+            <div class="col-md-4 d-flex left">
+              <img
+                :src="restaurant.image_url"
+                class="img-fluid rounded-start ms-img"
+                alt="..."
+              />
+            </div>
+            <div class="position-relative col-md-8">
+              <div class="card-body pt-4">
+                <h5 class="ms-card-title card-title">{{ restaurant.name }}</h5>
+                <p class="card-text mb-0">
+                  <b><i class="fa-solid fa-phone"></i></b>
+                  {{ restaurant.telephone }}
+                </p>
+                <p class="card-text">
+                  <b><i class="fa-solid fa-location-dot"></i></b>
+                  {{ restaurant.address }}
+                </p>
+                <!-- Bottone guarda il menu -->
+                <router-link
+                  :to="{ name: 'menu', params: { slug: restaurant.slug } }"
+                >
+                  <button class="ms-btn-primary">Guarda il menu</button>
+                </router-link>
+                <!-- Fine bottone -->
+              </div>
+              <!-- Badge categorie -->
+              <div class="ms-badge d-flex position-absolute m-2">
+                <span
+                  v-for="category in restaurant.categories"
+                  class="badge bg-warning text-dark me-1 mb-2"
+                  >{{ category.name }}
+                </span>
+              </div>
+              <!-- Fine badge categorie -->
+            </div>
+          </div>
+        </div>
+        <!-- FINE CARD -->
+      </div>
+    </div>
+
+    <div class="d-flex">
+      <button class="ms-btn-primary" @click="restaurantSplice('prev')">
+        Prev
+      </button>
+      <button class="ms-btn-primary" @click="restaurantSplice('next')">
+        Next
+      </button>
     </div>
     <!-- <button
       class="ms-btn-primary"
@@ -96,6 +153,10 @@ export default {
       checkedCategories: [],
       totRestaurants: 4,
       checkedIdCategories: [],
+      currentPage: 1,
+      perPage: 4,
+      previewPage: 1,
+      create: false,
     };
   },
   methods: {
@@ -151,9 +212,56 @@ export default {
         console.log(this.filteredArray);
       }
     },
+    restaurantSplice(action) {
+      this.maxPage = Math.ceil(
+        (this.store.filteredArray.length + 1) / this.perPage
+      );
+
+      if (action === "prev" && this.currentPage === 1) {
+        this.store.slicedArray = this.store.filteredArray.slice(0, 4);
+        console.log(this.store.slicedArray);
+      } else {
+        this.store.slicedArray = [];
+        while (this.store.slicedArray.length === 0) {
+          if (action === "prev") {
+            if (this.currentPage > 1) {
+              this.previewPage = this.currentPage;
+              this.currentPage--;
+            } else {
+              this.store.slicedArray = this.store.filteredArray.slice(0, 4);
+            }
+
+            this.store.slicedArray = this.store.filteredArray.slice(
+              this.currentPage * 4 - 1,
+              this.previewPage * 4 - 1
+            );
+            console.log(this.previewPage, this.currentPage);
+            console.log(this.store.slicedArray);
+          } else {
+            if (this.currentPage < this.maxPage - 1) {
+              this.previewPage = this.currentPage;
+              this.currentPage++;
+            }
+
+            this.store.slicedArray = this.store.filteredArray.slice(
+              this.previewPage * 4,
+              this.currentPage * 4
+            );
+            console.log(this.previewPage, this.currentPage);
+            console.log(this.store.slicedArray);
+          }
+        }
+      }
+    },
   },
   created() {
     this.store.getRestaurantsAndCategories();
+  },
+  updated() {
+    if (this.create === false) {
+      this.store.sliceArray();
+      this.create = true;
+    }
   },
 };
 </script>
