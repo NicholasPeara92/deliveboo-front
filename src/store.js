@@ -147,8 +147,11 @@ export const store = reactive({
   clear_cart() {
     if (this.cartProducts.length >= 0) {
       this.cartProducts = [];
+      this.products.forEach((element) => {
+        element.quantity = 0;
+        element.totalPrice = 0;
+      });
       localStorage.clear();
-      window.location.reload();
       console.log(this.cartProducts);
     }
   },
