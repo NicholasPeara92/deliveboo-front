@@ -121,7 +121,7 @@
       </div>
     </div>
 
-    <div class="d-flex">
+    <div v-if="store.filteredArray.length > 4" class="d-flex">
       <button class="ms-btn-primary" @click="restaurantSplice('prev')">
         Prev
       </button>
