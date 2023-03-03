@@ -144,6 +144,14 @@ export const store = reactive({
       }
     }
   },
+  clear_cart() {
+    if (this.cartProducts.length >= 0) {
+      this.cartProducts = [];
+      localStorage.clear();
+      window.location.reload();
+      console.log(this.cartProducts);
+    }
+  },
   getRestaurantsAndCategories() {
     axios.get(`${this.api_url}/restaurants`).then((response) => {
       this.restaurants = response.data;

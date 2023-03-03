@@ -79,6 +79,7 @@
           <div>
             <span><strong>Totale:</strong> {{ store.getTotalPrice() }} €</span>
           </div>
+          <button @click="store.clear_cart()">SVUOTA</button>
         </div>
         <router-link :to="{ name: 'order' }"
           ><button class="paga">Paga ora</button></router-link
