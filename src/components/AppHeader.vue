@@ -81,9 +81,11 @@
           </div>
           <button @click="store.clear_cart()">SVUOTA</button>
         </div>
-        <router-link :to="{ name: 'order' }"
-          ><button class="paga">Paga ora</button></router-link
-        >
+        <div v-if="store.getTotalQuantity() > 0">
+          <router-link :to="{ name: 'order' }"
+            ><button class="paga">Paga ora</button></router-link
+          >
+        </div>
       </div>
     </div>
   </header>
