@@ -79,7 +79,7 @@
           <div>
             <span><strong>Totale:</strong> {{ store.getTotalPrice() }} €</span>
           </div>
-          <button @click="store.clear_cart()">SVUOTA</button>
+          <button class="paga" @click="store.clear_cart()">SVUOTA</button>
         </div>
         <div v-if="store.getTotalQuantity() > 0">
           <router-link :to="{ name: 'order' }"
@@ -168,6 +168,7 @@ img {
   width: 60%;
 }
 .paga {
+  margin-top: 20px;
   margin-right: 10px;
   background-color: $primary-color;
   color: $font-color;
