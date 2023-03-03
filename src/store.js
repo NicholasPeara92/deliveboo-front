@@ -7,6 +7,7 @@ export const store = reactive({
   products: [],
   cartProducts: [],
   filteredArray: [],
+  slicedArray: [],
   messageError: "",
   showError: false,
   getProducts: function (param) {
@@ -196,5 +197,10 @@ export const store = reactive({
     } else {
       return 0;
     }
+  },
+  sliceArray() {
+    console.log(this.filteredArray);
+    this.slicedArray = this.filteredArray.slice(0, 4);
+    console.log(this.slicedArray);
   },
 });
