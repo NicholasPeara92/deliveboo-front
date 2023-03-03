@@ -48,6 +48,14 @@ export default {
           products: this.store.cartProducts,
         })
         .then((res) => {
+          if (store.cartProducts.length >= 0) {
+            store.cartProducts = [];
+            store.products.forEach((element) => {
+              element.quantity = 0;
+              element.totalPrice = 0;
+            });
+          }
+          localStorage.clear();
           this.$router.push({ path: "/returnhp" });
 
           console.log(res);
