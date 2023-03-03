@@ -139,7 +139,7 @@ $color-white: #fff;
   background-color: $color-bg;
 }
 .error-toast {
-  background-color: transparent;
+  background-color: white;
   width: 500px;
   text-align: center;
   padding: 20px 10px 40px 10px;
@@ -147,6 +147,9 @@ $color-white: #fff;
   margin: auto;
   border-radius: 10px;
   font-weight: bold;
+  position: fixed;
+  bottom: 20px;
+  z-index: 10;
   p {
     margin-bottom: 0;
   }

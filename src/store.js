@@ -57,8 +57,12 @@ export const store = reactive({
       if (product.restaurant_id === JSON.parse(localStorage.activeRestaurant)) {
         this.searchObject(product);
       } else {
-        messageError = "Non puoi aggiungere elementi di un altro ristorante.";
+        messageError =
+          "Non puoi aggiungere elementi di un altro ristorante. Svuota il carrello se desideri ordinare presso questo ristorante.";
         this.showError = true;
+        setTimeout(() => {
+          this.showError = false;
+        }, 5000);
       }
     }
     this.messageError = messageError;
