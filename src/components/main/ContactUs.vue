@@ -58,7 +58,7 @@ export default {
       position: absolute;
       width: 100%;
       .back {
-        background-color: #007e8a;
+        background-color: #00ccbc;
         width: 100%;
         height: 500px;
         transform: skewY(-6deg);
