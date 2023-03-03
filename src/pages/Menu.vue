@@ -42,13 +42,17 @@
         <div>
           <button
             @click="store.addToCart(product)"
-            class="unit mt-3"
+            class="mt-3 style-button"
             v-if="product.quantity === 0"
+            style="color: #00ccbc"
           >
             Aggiungi al carrello
           </button>
           <div v-else>
-            <button @click="store.addToCart(product)" class="mt-3 style-button">
+            <button
+              @click="store.addToCart(product)"
+              class="mt-3 style-button unit"
+            >
               <i class="fa-solid fa-plus"></i>
             </button>
             <span
@@ -192,11 +196,14 @@ select {
   border-radius: 5%;
   border: 0;
   outline: 0;
-  padding: 10px;
+  padding: 14px;
   box-shadow: inset 2px 2px 5px $color-shadow, inset -5px -5px 10px $color-white;
   background-color: $color-bg;
   text-shadow: 1px 1px 0 $color-white;
   transition: all 0.3s;
+  @media only screen and (max-width: 576px) {
+    margin-right: 0;
+  }
 }
 .product-card:hover {
   box-shadow: inset 1px 1px 2px $color-shadow, inset -1px -1px 2px $color-white;
@@ -223,7 +230,8 @@ select,
 i {
   color: $primary_color;
 }
-.style_button {
+
+.style-button {
   border: 0;
   outline: 0;
   font-size: $ruler;
