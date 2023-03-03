@@ -129,8 +129,8 @@ export default {
         Acquista
       </button>
       <router-link :to="{ name: 'returnhp' }">
-        <button v-if="showNewButton" class="red my-3" type="button">
-          Conferma Pagamento
+        <button v-if="showNewButton" class="final-order my-3" type="button">
+          Ordine Completato
         </button>
       </router-link>
       <!-- </router-link> -->
@@ -320,5 +320,18 @@ button {
     margin: 0;
     flex: 1;
   }
+}
+
+.final-order {
+  color: #00ccbc;
+  width: 100%;
+  font-weight: bold;
+  border: 0;
+  outline: 0;
+  font-size: $ruler;
+  border-radius: $ruler * 20;
+  padding: $ruler;
+  background-color: $color-bg;
+  text-shadow: 1px 1px 0 $color-white;
 }
 </style>
