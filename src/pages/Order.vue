@@ -30,7 +30,6 @@ export default {
       function (err, instance) {
         button.addEventListener("click", function () {
           instance.requestPaymentMethod(function (err, payload) {});
-          this.showNewButton = true;
         });
       }
     );
@@ -56,7 +55,9 @@ export default {
             });
           }
           localStorage.clear();
-          this.$router.push({ path: "/returnhp" });
+          setTimeout(() => {
+            this.$router.push({ path: "/returnhp" });
+          }, 2000);
 
           console.log(res);
         });
