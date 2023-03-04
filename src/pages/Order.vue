@@ -26,10 +26,20 @@ export default {
       {
         authorization: "sandbox_g42y39zw_348pk9cgf3bgyw2b",
         selector: "#dropin-container",
+        locale: "it_IT",
       },
       function (err, instance) {
         button.addEventListener("click", function () {
-          instance.requestPaymentMethod(function (err, payload) {});
+          instance.requestPaymentMethod(function (err, payload) {
+            if (payload) {
+              console.log(localStorage.getItem("paid"));
+              localStorage.setItem("paid", true);
+              console.log(localStorage.getItem("paid"));
+            } else {
+              console.log("Dentro errore paymenent", err, payload);
+              console.log(localStorage.getItem("paid"));
+            }
+          });
         });
       }
     );
