@@ -24,6 +24,7 @@
     </div>
     <div class="container d-flex justify-content-around flex-wrap my-3 col-12">
       <!-- CARD -->
+      <div v-if="store.filteredArray.length === 0">Nessun Ristorante</div>
       <div
         v-if="store.filteredArray.length > 4"
         class="col-12 col-md-6"

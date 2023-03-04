@@ -31,13 +31,14 @@ export default {
       function (err, instance) {
         button.addEventListener("click", function () {
           instance.requestPaymentMethod(function (err, payload) {
+            console.log(err, payload);
             if (payload) {
-              console.log(localStorage.getItem("paid"));
+              //   console.log(localStorage.getItem("paid"));
               localStorage.setItem("paid", true);
-              console.log(localStorage.getItem("paid"));
+              //   console.log(localStorage.getItem("paid"));
             } else {
-              console.log("Dentro errore paymenent", err, payload);
-              console.log(localStorage.getItem("paid"));
+              //   console.log("Dentro errore paymenent", err, payload);
+              //   console.log(localStorage.getItem("paid"));
             }
           });
         });
@@ -46,31 +47,34 @@ export default {
   },
   methods: {
     addOrder() {
-      axios
-        .post(`${this.store.api_url}/orders`, {
-          name: this.formData.name,
-          surname: this.formData.surname,
-          address: this.formData.address,
-          telephone: this.formData.telephone,
-          email: this.formData.mail,
-          total: this.formData.total.toFixed(2),
-          products: this.store.cartProducts,
-        })
-        .then((res) => {
-          if (store.cartProducts.length >= 0) {
-            store.cartProducts = [];
-            store.products.forEach((element) => {
-              element.quantity = 0;
-              element.totalPrice = 0;
-            });
-          }
-          localStorage.clear();
-          setTimeout(() => {
-            this.$router.push({ path: "/returnhp" });
-          }, 2000);
+      const isPaid = localStorage.getItem("paid");
+      if (isPaid) {
+        axios
+          .post(`${this.store.api_url}/orders`, {
+            name: this.formData.name,
+            surname: this.formData.surname,
+            address: this.formData.address,
+            telephone: this.formData.telephone,
+            email: this.formData.mail,
+            total: this.formData.total.toFixed(2),
+            products: this.store.cartProducts,
+          })
+          .then((res) => {
+            if (store.cartProducts.length >= 0) {
+              store.cartProducts = [];
+              store.products.forEach((element) => {
+                element.quantity = 0;
+                element.totalPrice = 0;
+              });
+            }
+            localStorage.clear();
+            setTimeout(() => {
+              this.$router.push({ path: "/returnhp" });
+            }, 2000);
 
-          console.log(res);
-        });
+            console.log(res);
+          });
+      }
     },
   },
 };

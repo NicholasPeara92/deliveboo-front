@@ -26,7 +26,7 @@
 
         <div
           v-if="store.getTotalQuantity() > 0"
-          class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger p-2"
+          class="position-absolute top-0 start-100 translate-middle badge border border-light rounded-circle bg-danger counter"
         >
           {{ store.getTotalQuantity() }}
         </div>
@@ -195,5 +195,13 @@ img {
   &:active {
     background-color: darken($primary-color, 20%);
   }
+}
+
+.counter {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>
