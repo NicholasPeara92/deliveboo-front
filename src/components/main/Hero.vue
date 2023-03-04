@@ -1,20 +1,22 @@
 <template>
   <section class="hero">
     <div class="hero-content">
-      <h1>
-        I Piatti dei Ristoranti che Ami <br />
-        a Domicilio
-      </h1>
-      <b>
-        <p id="slogan">
-          Ordina i piatti più amati da tutta la famiglia <br />
-          e fai una pausa dai fornelli.
-        </p>
-        <p>
-          <a id="login" href="http://127.0.0.1:8000/login">Accedi</a> per
-          visualizzare il tuo profilo.
-        </p>
-      </b>
+      <div class="d-flex justify-content-center align-items-center flex-column">
+        <h1>
+          I Piatti dei Ristoranti che Ami <br />
+          a Domicilio
+        </h1>
+        <b>
+          <p id="slogan">
+            Ordina i piatti più amati da tutta la famiglia <br />
+            e fai una pausa dai fornelli.
+          </p>
+          <p>
+            <a id="login" href="http://127.0.0.1:8000/login">Accedi</a> per
+            visualizzare il tuo profilo.
+          </p>
+        </b>
+      </div>
     </div>
     <img src="../../assets/Fast-food-hamburger-cola_5120x2880.jpg" alt="" />
   </section>
@@ -48,7 +50,6 @@ $font-color: #fff; // bianco
   #slogan {
     color: white;
     font-size: 32px;
-    margin-top: 40px;
     display: block;
     @media only screen and (max-width: 576px) {
       font-size: 24px;
@@ -57,7 +58,6 @@ $font-color: #fff; // bianco
   #login {
     text-decoration: none;
     color: $primary-color;
-    margin-top: 20px;
     display: inline-block;
   }
   #login:hover {
@@ -78,11 +78,12 @@ $font-color: #fff; // bianco
     object-fit: cover;
   }
   .hero-content {
+    height: 100%;
+    width: 100%;
     text-align: center;
     position: absolute;
     display: flex;
     justify-content: center;
-    margin-top: 250px;
     flex-direction: column;
     color: white;
     z-index: 1;
