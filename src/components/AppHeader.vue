@@ -77,7 +77,10 @@
             >
           </div>
           <div>
-            <span><strong>Totale:</strong> {{ store.getTotalPrice() }} €</span>
+            <span
+              ><strong>Totale:</strong>
+              {{ store.getTotalPrice().toFixed(2) }} €</span
+            >
           </div>
           <button class="paga" @click="store.clear_cart()">SVUOTA</button>
         </div>

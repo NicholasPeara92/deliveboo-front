@@ -1,7 +1,7 @@
 <template>
   <section id="about-us" class="about py-4">
     <div class="container-titleCards">
-      <h3 class="text-center">IL NOSTRO TEAM</h3>
+      <h3 class="text-center">Il Nostro Team</h3>
     </div>
     <div class="container-cards">
       <div class="card">
@@ -72,7 +72,7 @@ export default {};
   align-items: center;
 
   h3 {
-    font-size: 32px;
+    font-size: 40px;
     font-weight: bold;
     color: #00ccbc;
   }

@@ -3,7 +3,7 @@
     id="restaurants"
     class="container-fluid d-flex flex-column align-items-center"
   >
-    <h1 class="text-center py-sm-5"><strong>RISTORANTI</strong></h1>
+    <h1 class="text-center py-sm-5"><strong>Scegli Il Ristorante</strong></h1>
     <div class="mb-4 d-flex flex-wrap justify-content-around">
       <div v-for="category in store.categories" class="m-2">
         <div class="category-box">
@@ -266,6 +266,10 @@ $color-red: #ae1100;
 $color-bg: #ebecf0;
 $color-shadow: #babecc;
 $color-white: #fff;
+
+h1{
+  color: #00ccbc;
+}
 
 #restaurants {
   background-color: $color-bg;
