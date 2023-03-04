@@ -26,11 +26,20 @@ export default {
       {
         authorization: "sandbox_g42y39zw_348pk9cgf3bgyw2b",
         selector: "#dropin-container",
+        locale: "it_IT",
       },
       function (err, instance) {
         button.addEventListener("click", function () {
-          instance.requestPaymentMethod(function (err, payload) {});
-          this.showNewButton = true;
+          instance.requestPaymentMethod(function (err, payload) {
+            if (payload) {
+              console.log(localStorage.getItem("paid"));
+              localStorage.setItem("paid", true);
+              console.log(localStorage.getItem("paid"));
+            } else {
+              console.log("Dentro errore paymenent", err, payload);
+              console.log(localStorage.getItem("paid"));
+            }
+          });
         });
       }
     );
@@ -56,7 +65,9 @@ export default {
             });
           }
           localStorage.clear();
-          this.$router.push({ path: "/returnhp" });
+          setTimeout(() => {
+            this.$router.push({ path: "/returnhp" });
+          }, 2000);
 
           console.log(res);
         });

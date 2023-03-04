@@ -50,10 +50,7 @@ import { ref } from "vue";
       </div>
     </div>
     <div>
-      <button class="top-btn">
-        <a href="#top"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-            <path fill="#fff" d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.707 14.293c-.391.391-1.023.391-1.414 0l-4.293-4.293-4.293 4.293c-.391.391-1.023.391-1.414 0-.391-.391-.391-1.023 0-1.414l4.999-4.999c.191-.191.447-.293.707-.293s.516.102.707.293l4.999 4.999c.391.391.391 1.023 0 1.414z"/></svg></a>
-      </button>
+
     </div>
   </div>
 </template>
@@ -162,37 +159,5 @@ ul a:hover {
 .apple {
   width: 104px;
   height: 40px;
-}
-
-.top-btn {
-  background-color: #66cccc;
-  border-radius: 50%;
-  color: #fff;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 48px;
-  height: 48px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  z-index: 100;
-  margin-bottom: 50px;
-}
-
-.top-btn:hover {
-  background-color: #55aaaa;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.top-btn svg {
-  width: 24px;
-  height: 24px;
-  fill: #fff;
 }
 </style>
