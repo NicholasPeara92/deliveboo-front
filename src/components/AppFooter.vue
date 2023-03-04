@@ -181,7 +181,7 @@ ul a:hover {
   outline: none;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  z-index: 100;
+  z-index: 99;
   margin-bottom: 50px;
 }
 
