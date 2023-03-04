@@ -163,36 +163,4 @@ ul a:hover {
   width: 104px;
   height: 40px;
 }
-
-.top-btn {
-  background-color: #66cccc;
-  border-radius: 50%;
-  color: #fff;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 48px;
-  height: 48px;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  z-index: 99;
-  margin-bottom: 50px;
-}
-
-.top-btn:hover {
-  background-color: #55aaaa;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.top-btn svg {
-  width: 24px;
-  height: 24px;
-  fill: #fff;
-}
 </style>
