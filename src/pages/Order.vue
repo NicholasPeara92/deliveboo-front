@@ -134,7 +134,7 @@ export default {
       />
       <h3 class="my-2">
         Totale:
-        {{ formData.total }} €
+        {{ formData.total.toFixed(2) }} €
       </h3>
 
       <div id="dropin-container"></div>
