@@ -129,13 +129,6 @@
         Next
       </button>
     </div>
-    <!-- <button
-      class="ms-btn-primary"
-      @click="totRestaurants += 4"
-      v-if="totRestaurants < restaurants.length"
-    >
-      Mostra altri
-    </button> -->
   </div>
 </template>
 
