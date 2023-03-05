@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-view></router-view>
+    <router-view style="min-height: 100vh"></router-view>
   </div>
 </template>
 

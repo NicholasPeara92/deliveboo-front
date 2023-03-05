@@ -153,7 +153,6 @@ export default {
       searchRestaurantName: "",
       searchRestaurantCategory: "",
       checkedCategories: [],
-      totRestaurants: 4,
       checkedIdCategories: [],
       currentPage: 1,
       perPage: 4,
