@@ -82,15 +82,17 @@
               {{ store.getTotalPrice().toFixed(2) }} €</span
             >
           </div>
-          <button class="paga" @click="store.clear_cart()">SVUOTA</button>
         </div>
         <div v-if="store.getTotalQuantity() > 0">
+          <button class="svuota" @click="store.clear_cart()">
+            Svuota carrello
+          </button>
           <router-link :to="{ name: 'order' }"
             ><button
               @click="hide_cart"
               data-bs-dismiss="offcanvas"
               aria-label="Close"
-              class="paga"
+              class="ordina mb-5"
             >
               Paga ora
             </button></router-link
@@ -177,10 +179,33 @@ img {
 .x {
   width: 55%;
 }
-.paga {
+.svuota {
+  background-color: red;
   margin-top: 20px;
   margin-right: 10px;
+  color: $font-color;
+  border: none;
+  border-radius: 50px;
+  width: 90%;
+  height: 40px;
+  font-size: 24px;
+  margin-bottom: 5px;
+  margin-left: 25px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  &:hover {
+    background-color: darken(red, 10%);
+  }
+
+  &:active {
+    background-color: darken(red, 20%);
+  }
+}
+
+.ordina {
   background-color: $primary-color;
+  margin-top: 20px;
+  margin-right: 10px;
   color: $font-color;
   border: none;
   border-radius: 50px;
