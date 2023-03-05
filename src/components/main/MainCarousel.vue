@@ -47,7 +47,7 @@ export default {
       },
       {
         title: "Slide #5",
-        content: `<img src="https://www.tandoori.it/wp-content/uploads/2018/02/Logo-Tandoori-sh-tr02.png">`,
+        content: `<img src="https://scontent-fco2-1.xx.fbcdn.net/v/t39.30808-6/327973729_700720308354598_5424718633700778066_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=II-V7eCtxn0AX8gTM04&_nc_ht=scontent-fco2-1.xx&oh=00_AfC6Tc6sDYmDOcqtI1yTkINoXMOWTbeqgnDDa-jOp38wXw&oe=64092B18">`,
       },
       {
         title: "Slide #6",
