@@ -55,7 +55,7 @@
         </p>
       </div>
       <div class="card">
-        <img src="../../assets/person 5.png" alt="" />
+        <img id="img-fra" src="../../assets/Foto cv.jpg" alt="" />
         <h5>Francesco</h5>
         <p>
           <i class="fa-solid fa-quote-left"></i> La passione di Deliveboo è il
@@ -73,6 +73,10 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+#img-fra {
+  height: 120px;
+  object-fit: cover;
+}
 .about {
   height: 500px;
   position: relative;
