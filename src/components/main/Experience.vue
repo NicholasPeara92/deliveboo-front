@@ -75,8 +75,12 @@ $color-bg: #ebecf0;
     max-width: 1120px;
     padding: 20px 16px;
     margin: 0 auto;
+    @media only screen and (max-width: 424px) {
+      max-width: 420px;
+    }
     .riders,
     .chef {
+      width: 100%;
       margin: 0 0 48px;
       display: flex;
       flex-direction: row;
@@ -85,7 +89,6 @@ $color-bg: #ebecf0;
       @media only screen and (max-width: 576px) {
         flex-direction: column;
         padding: 0 17px;
-        margin: 0 17px;
       }
       .rider-left,
       .chef-right {
@@ -97,7 +100,7 @@ $color-bg: #ebecf0;
         flex-shrink: 0;
         overflow: hidden;
         @media only screen and (max-width: 576px) {
-          width: 450px;
+          width: 100%;
         }
         .image-rider {
           background-image: url(../../assets/rider.jpg);
@@ -110,6 +113,7 @@ $color-bg: #ebecf0;
           width: 100%;
           height: 100%;
         }
+
         .image-chef {
           background-image: url(../../assets/chef.jpg);
           background-size: cover;
@@ -132,10 +136,13 @@ $color-bg: #ebecf0;
         border-radius: 10px;
         box-shadow: 0 7px 4px rgb(0 0 0 / 13%), 0 0 1px rgb(0 0 0 / 8%);
         @media only screen and (max-width: 576px) {
-          width: 450px;
           margin: 0;
           padding: 0;
           margin-top: 20px;
+        }
+        @media only screen and (max-width: 424px) {
+          width: 100%;
+          padding: 20px;
         }
         .content p {
           margin: 0;
@@ -159,6 +166,10 @@ $color-bg: #ebecf0;
       padding: 0;
       margin-top: 20px;
       margin-bottom: 20px;
+    }
+    @media only screen and (max-width: 424px) {
+      width: 100%;
+      padding: 20px;
     }
     .content p {
       margin-top: 15px;
