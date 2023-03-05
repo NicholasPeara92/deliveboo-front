@@ -187,7 +187,7 @@ img {
   width: 90%;
   height: 40px;
   font-size: 24px;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
   margin-left: 25px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
