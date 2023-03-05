@@ -7,10 +7,10 @@
       </router-link>
     </div>
     <div class="header-buttons">
-      <button class="ms-btn-primary">
+      <button class="ms-btn-primary desktop">
         <a href="http://127.0.0.1:8000/register">Registrati</a>
       </button>
-      <button class="ms-btn-primary">
+      <button class="ms-btn-primary desktop">
         <a href="http://127.0.0.1:8000/login">Log in</a>
       </button>
       <!-- Bottone carrello -->
@@ -31,6 +31,30 @@
           {{ store.getTotalQuantity() }}
         </div>
       </button>
+      <div class="dropdown">
+        <a
+          class="btn btn-secondary"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </a>
+
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="http://127.0.0.1:8000/login"
+              >Login</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="http://127.0.0.1:8000/register"
+              >Registrati</a
+            >
+          </li>
+        </ul>
+      </div>
       <div
         class="offcanvas offcanvas-end"
         tabindex="-1"
@@ -169,6 +193,31 @@ header {
   }
   &.scrolled {
     background-color: $color-bg;
+  }
+}
+
+@media only screen and (max-width: 424px) {
+  .header-buttons {
+    display: flex;
+  }
+}
+
+.dropdown {
+  display: none;
+  @media only screen and (max-width: 425px) {
+    display: block;
+    margin-left: 15px;
+  }
+  .btn {
+    background-color: #00ccbc;
+    border: none;
+    padding: 8px 16px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .desktop {
+    display: none;
   }
 }
 
