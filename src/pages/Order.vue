@@ -68,13 +68,13 @@ export default {
               });
             }
             localStorage.clear();
-            setTimeout(() => {
-              this.$router.push({ path: "/returnhp" });
-            }, 2000);
 
             console.log(res);
           });
       }
+      setTimeout(() => {
+        this.$router.push({ path: "/returnhp" });
+      }, 2000);
     },
   },
 };
