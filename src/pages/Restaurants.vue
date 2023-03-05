@@ -128,14 +128,14 @@
         class="ms-btn-primary"
         @click="restaurantSplice('prev')"
       >
-        Prev
+        Indietro
       </button>
       <button
         v-if="currentPage !== 3"
         class="ms-btn-primary"
         @click="restaurantSplice('next')"
       >
-        Next
+        Avanti
       </button>
     </div>
   </div>
