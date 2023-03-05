@@ -123,10 +123,18 @@
     </div>
 
     <div v-if="store.filteredArray.length > 4" class="d-flex">
-      <button class="ms-btn-primary" @click="restaurantSplice('prev')">
+      <button
+        v-if="currentPage !== 1"
+        class="ms-btn-primary"
+        @click="restaurantSplice('prev')"
+      >
         Prev
       </button>
-      <button class="ms-btn-primary" @click="restaurantSplice('next')">
+      <button
+        v-if="currentPage !== 3"
+        class="ms-btn-primary"
+        @click="restaurantSplice('next')"
+      >
         Next
       </button>
     </div>
@@ -267,7 +275,7 @@ $color-bg: #ebecf0;
 $color-shadow: #babecc;
 $color-white: #fff;
 
-h1{
+h1 {
   color: #00ccbc;
 }
 

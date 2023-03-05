@@ -60,20 +60,19 @@ export default {
             products: this.store.cartProducts,
           })
           .then((res) => {
-            if (store.cartProducts.length >= 0) {
-              store.cartProducts = [];
-              store.products.forEach((element) => {
-                element.quantity = 0;
-                element.totalPrice = 0;
-              });
-            }
-            localStorage.clear();
-            setTimeout(() => {
-              this.$router.push({ path: "/returnhp" });
-            }, 2000);
-
             console.log(res);
           });
+        if (store.cartProducts.length >= 0) {
+          store.cartProducts = [];
+          store.products.forEach((element) => {
+            element.quantity = 0;
+            element.totalPrice = 0;
+          });
+        }
+        localStorage.clear();
+        setTimeout(() => {
+          this.$router.push({ path: "/returnhp" });
+        }, 2000);
       }
     },
   },
@@ -143,7 +142,7 @@ export default {
 
       <div id="dropin-container"></div>
       <!-- <router-link :to="{ name: 'returnhp' }"> -->
-      <button id="submit-button" class="red my-3" type="submit">
+      <button id="submit-button" class="red my-3 buy" type="submit">
         Acquista
       </button>
 
