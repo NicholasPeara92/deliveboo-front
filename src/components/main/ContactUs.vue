@@ -86,6 +86,9 @@ export default {
     position: relative;
     display: flex;
     justify-content: center;
+    @media only screen and (max-width: 576px) {
+      padding: 0;
+    }
 
     .answer {
       display: flex;
@@ -104,6 +107,9 @@ export default {
       a:hover {
         text-decoration: underline;
         opacity: 55%;
+      }
+      @media only screen and (max-width: 576px) {
+        width: 80%;
       }
     }
   }

@@ -54,6 +54,9 @@ $font-color: #fff; // bianco
     @media only screen and (max-width: 576px) {
       font-size: 24px;
     }
+    @media only screen and (max-width: 424px) {
+      padding: 20px;
+    }
   }
   #login {
     text-decoration: none;
@@ -92,7 +95,7 @@ $font-color: #fff; // bianco
     }
     @media only screen and (max-width: 576px) {
       margin-top: 0;
-      top: 120px;
+      top: 70px;
     }
 
     button {
