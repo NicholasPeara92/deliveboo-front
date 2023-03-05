@@ -142,7 +142,7 @@ export default {
 
       <div id="dropin-container"></div>
       <!-- <router-link :to="{ name: 'returnhp' }"> -->
-      <button id="submit-button" class="red my-3" type="submit">
+      <button id="submit-button" class="red my-3 buy" type="submit">
         Acquista
       </button>
 

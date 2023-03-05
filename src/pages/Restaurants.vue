@@ -27,7 +27,7 @@
       <div v-if="store.filteredArray.length === 0">Nessun Ristorante</div>
       <div
         v-if="store.filteredArray.length > 4"
-        class="col-12 col-md-6"
+        class="col-12 col-xl-6"
         v-for="(restaurant, index) in store.slicedArray"
         :key="index"
       >
@@ -75,7 +75,7 @@
       </div>
       <div
         v-else
-        class="col-12 col-md-6"
+        class="col-12 col-xl-6"
         v-for="(restaurant, index) in store.filteredArray"
       >
         <div class="card mb-4 mx-auto my-5" v-if="restaurant.selected">
