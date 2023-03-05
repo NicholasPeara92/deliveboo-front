@@ -31,17 +31,17 @@
         v-for="(restaurant, index) in store.slicedArray"
         :key="index"
       >
-        <div class="card mb-4 mx-auto my-5" v-if="restaurant.selected">
-          <div class="d-flex g-0">
-            <div class="col-md-4 d-flex left">
+        <div class="card mb-4 mx-auto my-5 w-100" v-if="restaurant.selected">
+          <div class="d-flex g-0 w-100">
+            <div id="img-card" class="col-md-4 d-flex left">
               <img
                 :src="restaurant.image_url"
                 class="img-fluid rounded-start ms-img"
                 alt="..."
               />
             </div>
-            <div class="position-relative col-md-8">
-              <div class="card-body pt-4">
+            <div id="description-card" class="position-relative col-md-8">
+              <div class="card-body pt-md-4">
                 <h5 class="ms-card-title card-title">{{ restaurant.name }}</h5>
                 <p class="card-text mb-0">
                   <b><i class="fa-solid fa-phone"></i></b>
@@ -278,7 +278,12 @@ $color-white: #fff;
 h1 {
   color: #00ccbc;
 }
-
+#img-card {
+  max-width: 40%;
+}
+#description-card {
+  max-width: 100%;
+}
 #restaurants {
   background-color: $color-bg;
   width: 100%;
@@ -326,12 +331,17 @@ h1 {
   .card-title {
     color: #00ccbc;
   }
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
   button {
     border: 0;
     outline: 0;
     font-size: $ruler;
     border-radius: $ruler * 20;
-    padding: 12px;
+    padding: 10px;
     background-color: $color-bg;
     text-shadow: 1px 1px 0 $color-white;
     color: #00ccbc;
@@ -364,7 +374,7 @@ h1 {
   @media only screen and (max-width: 576px) {
     width: 100%;
     height: 200px;
-    padding-top: 20px;
+    padding-top: 10px;
     .ms-badge {
       flex-wrap: nowrap;
       left: 0;
