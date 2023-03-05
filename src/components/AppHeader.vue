@@ -196,7 +196,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 424px) {
+@media only screen and (max-width: 576px) {
   .header-buttons {
     display: flex;
   }
@@ -204,7 +204,7 @@ header {
 
 .dropdown {
   display: none;
-  @media only screen and (max-width: 425px) {
+  @media only screen and (max-width: 576px) {
     display: block;
     margin-left: 15px;
   }
@@ -215,7 +215,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 576px) {
   .desktop {
     display: none;
   }
