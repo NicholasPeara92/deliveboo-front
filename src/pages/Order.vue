@@ -60,21 +60,20 @@ export default {
             products: this.store.cartProducts,
           })
           .then((res) => {
-            if (store.cartProducts.length >= 0) {
-              store.cartProducts = [];
-              store.products.forEach((element) => {
-                element.quantity = 0;
-                element.totalPrice = 0;
-              });
-            }
-            localStorage.clear();
-
             console.log(res);
           });
+        if (store.cartProducts.length >= 0) {
+          store.cartProducts = [];
+          store.products.forEach((element) => {
+            element.quantity = 0;
+            element.totalPrice = 0;
+          });
+        }
+        localStorage.clear();
+        setTimeout(() => {
+          this.$router.push({ path: "/returnhp" });
+        }, 2000);
       }
-      setTimeout(() => {
-        this.$router.push({ path: "/returnhp" });
-      }, 2000);
     },
   },
 };
